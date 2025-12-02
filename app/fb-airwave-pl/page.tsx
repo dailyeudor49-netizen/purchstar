@@ -214,8 +214,8 @@ export default function LandingPage() {
       const tmfp = tmfpInput?.value || '';
 
       const params = new URLSearchParams({
-        uid: '019a913c-483e-7c52-ba2a-c2435daa4254',
-        key: 'df01e23521627b9519a81f',
+        uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
+        key: 'ec15cab563da6cf51f0c7c',
         offer: '66',
         lp: '66',
         name: nomeCompleto,
@@ -281,7 +281,7 @@ export default function LandingPage() {
 
       {/* Click Pixel */}
       <img
-        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=66&uid=019a913c-483e-7c52-ba2a-c2435daa4254&lp=66"
+        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=66&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=66"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
