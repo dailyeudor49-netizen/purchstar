@@ -1,0 +1,7 @@
+/* Nasconde header globale solo per questa landing */
+
+/* Header globale (sticky top-0 z-50 bg-white shadow-sm) */
+body > header.sticky.bg-white.shadow-sm,
+header.sticky.bg-white.shadow-sm:not(.backdrop-blur-md) {
+  display: none !important;
+}

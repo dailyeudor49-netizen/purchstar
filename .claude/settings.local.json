@@ -1,17 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(*)",
-      "Read(*)",
-      "Write(*)",
-      "Edit(*)",
-      "Glob(*)",
-      "Grep(*)",
-      "WebFetch(*)",
-      "WebSearch(*)",
-      "Task(*)",
-      "TodoWrite(*)",
-      "NotebookEdit(*)"
+      "Bash(ls -la \"C:\\purchstar\\public\\images\\robot-asp\"\" 2>/dev/null || dir \"C:purchstarpublicimagesrobot-asp\" 2>/dev/null || ls -la \"C:purchstarimagesrobot-asp \")"
     ],
     "deny": [],
     "ask": []
