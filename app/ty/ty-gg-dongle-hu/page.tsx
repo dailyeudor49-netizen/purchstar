@@ -3,8 +3,36 @@
 import React, { useState, useEffect } from 'react';
 import Script from 'next/script';
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    __conversionFired?: boolean;
+  }
+}
+
+const CONVERSION_ID = 'AW-17321474795';
+const CONVERSION_LABEL = 'AW-17321474795/bxRaCNHk1c4bEOv1wsNA';
+
 export default function ThankYouPage() {
   const [orderCode, setOrderCode] = useState('');
+
+  // Fallback: check if gtag is already available (e.g., from cache)
+  useEffect(() => {
+    const checkAndFire = () => {
+      if (window.__conversionFired) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': CONVERSION_LABEL
+        });
+        window.__conversionFired = true;
+      }
+    };
+
+    checkAndFire();
+    const timeout = setTimeout(checkAndFire, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     let code = sessionStorage.getItem('orderCode');
@@ -15,24 +43,30 @@ export default function ThankYouPage() {
     setOrderCode(code);
   }, []);
 
+  const handleGtagLoad = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', CONVERSION_ID);
+
+    if (!window.__conversionFired) {
+      window.gtag('event', 'conversion', {
+        'send_to': CONVERSION_LABEL
+      });
+      window.__conversionFired = true;
+    }
+  };
+
   return (
     <>
       {/* Google Tag (gtag.js) */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17321474795"
+        src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}
         strategy="afterInteractive"
+        onLoad={handleGtagLoad}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-17321474795');
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17321474795/bxRaCNHk1c4bEOv1wsNA'
-          });
-        `}
-      </Script>
 
       <div style={{
       minHeight: '100vh',
