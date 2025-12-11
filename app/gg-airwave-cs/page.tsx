@@ -216,14 +216,19 @@ export default function LandingPage() {
       const params = new URLSearchParams({
         uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
         key: 'ec15cab563da6cf51f0c7c',
-        offer: '67',
-        lp: '67',
+        offer: '68',
+        lp: '68',
         name: nomeCompleto,
         tel: telefono,
         'street-address': indirizzo,
-        ua: navigator.userAgent,
         tmfp: tmfp,
       });
+
+      // Add ip and ua only if fingerprint is missing
+      if (!tmfp) {
+        params.append('ua', navigator.userAgent);
+        // Note: ip should be captured server-side, client cannot reliably get own IP
+      }
 
       // Add UTM parameters if present
       const urlParams = new URLSearchParams(window.location.search);
@@ -232,12 +237,22 @@ export default function LandingPage() {
       const utmCampaign = urlParams.get('utm_campaign');
       const utmContent = urlParams.get('utm_content');
       const utmTerm = urlParams.get('utm_term');
+      const subid = urlParams.get('subid');
+      const subid2 = urlParams.get('subid2');
+      const subid3 = urlParams.get('subid3');
+      const subid4 = urlParams.get('subid4');
+      const pubid = urlParams.get('pubid');
 
       if (utmSource) params.append('utm_source', utmSource);
       if (utmMedium) params.append('utm_medium', utmMedium);
       if (utmCampaign) params.append('utm_campaign', utmCampaign);
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
+      if (subid) params.append('subid', subid);
+      if (subid2) params.append('subid2', subid2);
+      if (subid3) params.append('subid3', subid3);
+      if (subid4) params.append('subid4', subid4);
+      if (pubid) params.append('pubid', pubid);
 
       const response = await fetch('https://offers.supertrendaffiliateprogram.com/forms/api/', {
         method: 'POST',
@@ -295,7 +310,7 @@ export default function LandingPage() {
 
       {/* Click Pixel */}
       <img
-        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=67&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=67"
+        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=68&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=68"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
