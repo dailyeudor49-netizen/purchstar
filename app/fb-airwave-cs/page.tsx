@@ -216,8 +216,8 @@ export default function LandingPage() {
       const params = new URLSearchParams({
         uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
         key: 'ec15cab563da6cf51f0c7c',
-        offer: '67',
-        lp: '67',
+        offer: '68',
+        lp: '68',
         name: nomeCompleto,
         tel: telefono,
         'street-address': indirizzo,
@@ -281,7 +281,7 @@ export default function LandingPage() {
 
       {/* Click Pixel */}
       <img
-        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=67&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=67"
+        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=68&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=68"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
