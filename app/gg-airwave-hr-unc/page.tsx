@@ -221,14 +221,9 @@ export default function LandingPage() {
         name: nomeCompleto,
         tel: telefono,
         'street-address': indirizzo,
+        ua: navigator.userAgent,
         tmfp: tmfp,
       });
-
-      // Add ip and ua only if fingerprint is missing
-      if (!tmfp) {
-        params.append('ua', navigator.userAgent);
-        // Note: ip should be captured server-side, client cannot reliably get own IP
-      }
 
       // Add UTM parameters if present
       const urlParams = new URLSearchParams(window.location.search);
@@ -237,22 +232,12 @@ export default function LandingPage() {
       const utmCampaign = urlParams.get('utm_campaign');
       const utmContent = urlParams.get('utm_content');
       const utmTerm = urlParams.get('utm_term');
-      const subid = urlParams.get('subid');
-      const subid2 = urlParams.get('subid2');
-      const subid3 = urlParams.get('subid3');
-      const subid4 = urlParams.get('subid4');
-      const pubid = urlParams.get('pubid');
 
       if (utmSource) params.append('utm_source', utmSource);
       if (utmMedium) params.append('utm_medium', utmMedium);
       if (utmCampaign) params.append('utm_campaign', utmCampaign);
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
-      if (subid) params.append('subid', subid);
-      if (subid2) params.append('subid2', subid2);
-      if (subid3) params.append('subid3', subid3);
-      if (subid4) params.append('subid4', subid4);
-      if (pubid) params.append('pubid', pubid);
 
       const response = await fetch('https://offers.uncappednetwork.com/forms/api/', {
         method: 'POST',
@@ -494,7 +479,7 @@ export default function LandingPage() {
               <div className="info-box">
                 <span className="icon">⚡</span>
                 <div className="info-box-content">
-                  <p>Samo ~0,55 € dnevno</p>
+                  <p>Samo ~0,40 € dnevno</p>
                   <span>Prosječno korištenje 4-5 sati u štednom načinu rada</span>
                 </div>
               </div>
@@ -966,7 +951,7 @@ export default function LandingPage() {
                 }}>
                     <div style={{ position: 'absolute', inset: 0, borderRadius: '12px', padding: '2px', background: 'linear-gradient(135deg, #FFB800, #FF8C00)', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', pointerEvents: 'none' }}></div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                        <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FF8C00' }}>~0,55 € dnevno</div>
+                        <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FF8C00' }}>~0,40 € dnevno</div>
                         <div style={{ height: '30px', width: '1px', background: '#cccccc' }}></div>
                         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>Pri prosječnoj uporabi 4-5 sati u Eco načinu rada</div>
                     </div>
@@ -1097,7 +1082,7 @@ export default function LandingPage() {
                         <strong>Čak 60% niži računi</strong> u odnosu na druge klima uređaje i plinsko grijanje zahvaljujući ThermoPanel tehnologiji i energetskoj klasi A+++.
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #e5e7eb' }}>
-                        <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FF8C00' }}>~0,55 € dnevno</div>
+                        <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FF8C00' }}>~0,40 € dnevno</div>
                         <div style={{ height: '20px', width: '1px', background: '#cccccc' }}></div>
                         <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>Prosječno korištenje 4-5 sati u štednom načinu rada</div>
                     </div>
