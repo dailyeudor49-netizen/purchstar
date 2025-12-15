@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Star, Award, CheckCircle, Shield, Zap, Battery, ChevronDown, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Award, CheckCircle, Shield, Zap, Thermometer, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Dichiarazioni TypeScript per Google Ads
 declare global {
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export default function CesoiaElettricaLanding() {
+export default function AirWaveSmartLanding() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showOrderPopup, setShowOrderPopup] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<number>(57 * 60); // 57 minuti in secondi
@@ -30,15 +30,12 @@ export default function CesoiaElettricaLanding() {
 
   // Array delle immagini del carosello
   const carouselImages = [
-    '/images/cesoia/img_princ.png',
-    '/images/cesoia/carosello_1.jpg',
-    '/images/cesoia/carosello_2.jpg',
-    '/images/cesoia/carosello_3.jpg',
-    '/images/cesoia/carosello_4.jpg',
-    '/images/cesoia/carosello_5.jpg',
-    '/images/cesoia/carosello_6.jpg',
-    '/images/cesoia/carosello_7.jpg',
-    '/images/cesoia/carosello_8.jpg',
+    '/images/condizionatore/specifiche.webp',
+    '/images/condizionatore/caldo-freddo.webp',
+    '/images/condizionatore/installazione.webp',
+    '/images/condizionatore/riscaldamento.webp',
+    '/images/condizionatore/risparmio.webp',
+    '/images/condizionatore/silenzioso.webp',
   ];
 
   // Carica Google Ads script quando il componente si monta
@@ -129,7 +126,7 @@ export default function CesoiaElettricaLanding() {
       try {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-17104994752/jZlCPqKod4aEMCDptw',
-          'value': 66.99,
+          'value': 199,
           'currency': 'EUR',
           'transaction_id': `ORDER_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`,
         });
@@ -284,7 +281,7 @@ export default function CesoiaElettricaLanding() {
           // Redirect con parametro per evitare re-tracciamento
           const timestamp = Date.now();
           if (typeof window !== 'undefined') {
-            window.location.href = `/ty-cesoia?converted=1&t=${timestamp}`;
+            window.location.href = `/ty-airwave?converted=1&t=${timestamp}`;
           }
           return;
         }
@@ -305,7 +302,7 @@ export default function CesoiaElettricaLanding() {
           
           const timestamp = Date.now();
           if (typeof window !== 'undefined') {
-            window.location.href = `/ty-cesoia?converted=1&test=1&t=${timestamp}`;
+            window.location.href = `/ty-airwave?converted=1&test=1&t=${timestamp}`;
           }
           return;
         }
@@ -374,58 +371,68 @@ export default function CesoiaElettricaLanding() {
 
   const benefits = [
     {
-      image: "/images/cesoia/carosello_2.jpg",
-      title: "18 ore senza ricaricare",
-      description: "2 batterie potentissime da 40V incluse nel prezzo. Lavori tutto il giorno senza fermarti. Quando una si scarica, metti l'altra e continui il lavoro."
+      image: "/images/condizionatore/caldo-freddo.webp",
+      title: "Un Solo Apparecchio, Tre Problemi Risolti",
+      description: "D'estate ti raffredda quando fuori ci sono 40 gradi. D'inverno ti riscalda quando i termosifoni non bastano. E quando l'umidità ti soffoca, la elimina. Tutto con un solo acquisto."
     },
     {
-      image: "/images/cesoia/carosello_4.jpg",
-      title: "1.050W di pura potenza",
-      description: "Un motore che non si ferma davanti a nulla. Taglia rami di 8cm come fossero grissini. Velocità regolabile per ogni tipo di lavoro."
+      image: "/images/condizionatore/installazione.webp",
+      title: "Zero Complicazioni (Anche Senza Installazione)",
+      description: "Niente preventivi da 500€ per l'installazione. Niente muratori che ti bucano le pareti. Lo appoggi dove vuoi o lo fissi al muro con due viti. Il condominio non c'entra nulla."
     },
     {
-      image: "/images/cesoia/carosello_5.jpg",
-      title: "Leggera ma indistruttibile",
-      description: "Pesa pochissimo ma è robustissima. Blocco di sicurezza per non farti mai male. La usi per ore senza stancarti, perfetta anche per chi è alle prime armi."
+      image: "/images/condizionatore/silenzioso.webp",
+      title: "Così Silenzioso Che Ti Dimentichi Sia Acceso",
+      description: "Chi ha provato i condizionatori portatili sa quanto rumore fanno. Questo no. Puoi dormirci accanto senza tappi nelle orecchie. I tuoi vicini non sapranno nemmeno che ce l'hai."
     },
     {
-      image: "/images/cesoia/carosello_7.jpg",
-      title: "Lame giapponesi che durano anni",
-      description: "Acciaio SKS come i coltelli dei migliori chef. Restano affilate a lungo. E nel kit trovi anche 2 lame di ricambio gratis."
+      image: "/images/condizionatore/risparmio.webp",
+      title: "La Bolletta Non Schizza Alle Stelle",
+      description: "Classe A+++ non è marketing: significa consumare fino al 60% in meno. Chi l'ha comprato ci ha detto che la differenza in bolletta è quasi inesistente. Alcuni dicono che si è ripagato in un anno."
+    },
+    {
+      image: "/images/condizionatore/specifiche.webp",
+      title: "Potenza Vera: 12.000 BTU per 60m²",
+      description: "Non è un giocattolo da scrivania. Parliamo di un apparecchio che raffresca o riscalda un intero soggiorno in pochi minuti. Regoli la temperatura da 16°C a 32°C come vuoi tu."
+    },
+    {
+      image: "/images/condizionatore/riscaldamento.webp",
+      title: "Nessuna Unità Esterna = Nessun Problema",
+      description: "Il sistema ThermoPanel funziona senza quel cassone rumoroso fuori dalla finestra. Significa che non devi chiedere permessi, non devi litigare col condominio, non devi aspettare mesi."
     }
   ];
 
   const faqs = [
     {
-      question: "Non ho mai usato attrezzi elettrici, ce la faccio?",
-      answer: "Certo, è facilissima. La prendi in mano, premi il grilletto e taglia. Ha il blocco di sicurezza quindi è impossibile farsi male. La usano tutti, anche chi non ha mai potato in vita sua."
+      question: "Ma davvero non serve un tecnico per installarlo?",
+      answer: "Zero. Niente. Lo apri, lo appoggi dove vuoi (o lo fissi al muro con due viti e i ganci inclusi), lo attacchi alla corrente. Fatto. Nessun preventivo, nessuna attesa di settimane, nessun muratore che ti sporca casa. In 10 minuti sei operativo."
     },
     {
-      question: "Ma taglia davvero rami grossi?",
-      answer: "Eccome. Rami di 8cm li taglia come fossero burro. Il motore da 1.050W è una bestia. E puoi regolare la velocità come preferisci."
+      question: "Come fa a funzionare senza quell'unità esterna rumorosa?",
+      answer: "Il sistema ThermoPanel è progettato proprio per questo. Recupera e ricircola l'aria senza bisogno del cassone esterno. Tradotto: nessuna autorizzazione condominiale, nessun vicino che si lamenta del rumore, nessuna lite in assemblea."
     },
     {
-      question: "Quanto dura la batteria?",
-      answer: "Tantissimo. Una batteria dura 9 ore, e nel kit ce ne sono due. Totale: 18 ore di lavoro. Si ricaricano in soli 55 minuti, non resti mai a secco."
+      question: "Ma non mi fa schizzare la bolletta?",
+      answer: "Questa è la parte che sorprende tutti. Classe A+++ significa consumare fino al 60% in meno rispetto a un climatizzatore normale. I nostri clienti ci scrivono che la bolletta è rimasta praticamente uguale. Qualcuno dice che in un anno si è già ripagato."
     },
     {
-      question: "E se si rompe?",
-      answer: "Nessun problema. Hai 3 anni di garanzia totale. Se si rompe per qualsiasi motivo, te la cambiamo gratis. Zero rischi per te."
+      question: "Posso usarlo in camera da letto senza impazzire per il rumore?",
+      answer: "È stato progettato esattamente per questo. Chi ha provato altri portatili sa che sembrano aerei in decollo. Questo no. Puoi dormirci accanto tranquillamente. Niente ronzii, niente vibrazioni, niente unità esterna che sveglia il palazzo."
     },
     {
-      question: "Devo pagare subito?",
-      answer: "No, paghi solo quando arriva a casa tua. Il corriere ti porta il pacco e paghi direttamente a lui. Zero rischi."
+      question: "E se non mi trovo bene? Sono bloccato?",
+      answer: "Assolutamente no. Hai 30 giorni per provarlo: se non ti convince, lo rispedisci e ti rimborsiamo tutto. Più 24 mesi di garanzia completa. E paghi solo alla consegna, quindi non anticipi nemmeno un euro. Rischio zero."
     }
   ];
 
   const comparisonData = [
-    { feature: "Potenza Motore", cesoia: "1.050W", competitor1: "800W", competitor2: "450W" },
-    { feature: "Batterie Incluse", cesoia: "2x 40V - 5.000mAh", competitor1: "1x18V - 2.000mAh", competitor2: "1x12V - 1.500mAh" },
-    { feature: "Autonomia", cesoia: "18 ore", competitor1: "4 ore", competitor2: "2 ore" },
-    { feature: "Diametro Taglio", cesoia: "8 cm", competitor1: "5 cm", competitor2: "3 cm" },
-    { feature: "Kit Completo", cesoia: "✓", competitor1: "✗", competitor2: "✗" },
-    { feature: "Garanzia", cesoia: "3 anni", competitor1: "1 anno", competitor2: "6 mesi" },
-    { feature: "Prezzo", cesoia: "€66,99", competitor1: "€129,90", competitor2: "€89,90" }
+    { feature: "Potenza", airwave: "12.000 BTU", competitor1: "9.000 BTU", competitor2: "7.000 BTU" },
+    { feature: "Copertura", airwave: "60 m²", competitor1: "35 m²", competitor2: "25 m²" },
+    { feature: "Funzioni", airwave: "3 in 1 (Caldo/Freddo/Deumidifica)", competitor1: "Solo freddo", competitor2: "Solo freddo" },
+    { feature: "Classe Energetica", airwave: "A+++", competitor1: "A", competitor2: "B" },
+    { feature: "Unità Esterna", airwave: "Non necessaria", competitor1: "Richiesta", competitor2: "Richiesta" },
+    { feature: "Installazione", airwave: "Fai da te (parete o pavimento)", competitor1: "Tecnico obbligatorio", competitor2: "Tecnico obbligatorio" },
+    { feature: "Garanzia", airwave: "24 mesi", competitor1: "12 mesi", competitor2: "6 mesi" }
   ];
 
   return (
@@ -479,14 +486,14 @@ export default function CesoiaElettricaLanding() {
       `}</style>
       
       {/* Fixed CTA Button */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t-2 border-green-500 shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t-2 border-orange-500 shadow-2xl">
         <div className="max-w-md mx-auto p-4">
           <button
             onClick={openOrderForm}
-            className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full bg-gradient-to-r from-orange-500 to-amber-600 text-white py-4 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-amber-700 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 cursor-pointer"
           >
-            <span>ORDINA ORA - €66,99</span>
-            <span className="text-sm bg-white/20 px-2 py-1 rounded">💳 Paga alla consegna</span>
+            <span>LO VOGLIO A €199</span>
+            <span className="text-sm bg-white/20 px-2 py-1 rounded">💳 Pago alla consegna</span>
           </button>
         </div>
       </div>
@@ -498,18 +505,18 @@ export default function CesoiaElettricaLanding() {
       
       
       {/* Emotional Hero Title Section */}
-      <section className="bg-[#035aa6] text-white pt-4 pb-2 md:py-6 px-4">
+      <section className="bg-gradient-to-r from-orange-600 to-amber-600 text-white pt-4 pb-2 md:py-6 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
-            TAGLIA RAMI FINO A 8CM COME IL BURRO
+            BASTA SUDARE D'ESTATE E TREMARE D'INVERNO
           </h1>
-          <p className="text-base md:text-lg text-slate-300 mb-4">
-            Basta spaccarti la schiena. Con Instant Cut Pro poti tutto il giardino <span className="text-green-400 font-bold">senza fatica</span> e <span className="text-green-400 font-bold">in metà del tempo</span>.
+          <p className="text-base md:text-lg text-orange-100 mb-4">
+            Il climatizzatore che <span className="text-white font-bold">non richiede installazione</span>, non ha bisogno di tecnici e <span className="text-white font-bold">non serve l'autorizzazione del condominio</span>. Lo colleghi alla presa e in 5 minuti hai il clima perfetto.
           </p>
           <div className="flex flex-wrap justify-center gap-2 text-xs md:text-sm">
-            <span className="bg-slate-800 px-3 py-1 rounded-full">Zero fatica</span>
-            <span className="bg-slate-800 px-3 py-1 rounded-full">Zero dolori</span>
-            <span className="bg-slate-800 px-3 py-1 rounded-full">Risultati da professionista</span>
+            <span className="bg-orange-800/50 px-3 py-1 rounded-full">12.000 BTU di potenza</span>
+            <span className="bg-orange-800/50 px-3 py-1 rounded-full">3 funzioni in 1</span>
+            <span className="bg-orange-800/50 px-3 py-1 rounded-full">Classe A+++ = Bolletta leggera</span>
           </div>
         </div>
       </section>
@@ -520,11 +527,11 @@ export default function CesoiaElettricaLanding() {
 
           {/* Left: Image Gallery */}
           <div className="space-y-4">
-            {/* Main Image - GIF */}
+            {/* Main Image */}
             <div className="aspect-square bg-gray-50 rounded-2xl overflow-hidden">
               <img
-                src="images/cesoia/cesoia_gif.gif"
-                alt="Cesoia Elettrica in azione"
+                src={carouselImages[currentCarouselIndex]}
+                alt="Air Wave Smart - Condizionatore Portatile 3 in 1"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -540,13 +547,13 @@ export default function CesoiaElettricaLanding() {
                     <div key={index} className="flex-shrink-0 w-1/2 px-1">
                       <div
                         className={`aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
-                          index === currentCarouselIndex ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200 hover:border-gray-300'
+                          index === currentCarouselIndex ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200 hover:border-gray-300'
                         }`}
                         onClick={() => goToCarouselSlide(index)}
                       >
                         <img
                           src={image}
-                          alt={`Cesoia Elettrica vista ${index + 1}`}
+                          alt={`Air Wave Smart vista ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -576,7 +583,7 @@ export default function CesoiaElettricaLanding() {
                     key={index}
                     onClick={() => goToCarouselSlide(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      index === currentCarouselIndex ? 'bg-green-500' : 'bg-gray-300 hover:bg-gray-400'
+                      index === currentCarouselIndex ? 'bg-orange-500' : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                   />
                 ))}
@@ -589,75 +596,79 @@ export default function CesoiaElettricaLanding() {
             {/* Product Title & Rating */}
             <div className="text-left mb-6">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                Instant Cut Pro - Cesoia Elettrica 1.050W
+                Air Wave Smart™ – Climatizzatore Senza Installazione
               </h1>
-              <p className="text-lg text-gray-600 mb-3">2 Batterie 40V da 5.000mAh - 18 ore di autonomia</p>
+              <p className="text-lg text-gray-600 mb-3">Niente tecnici. Niente buchi. Niente autorizzazioni. Solo 12.000 BTU di potenza per 60m² di comfort immediato.</p>
               <a href="#recensioni" className="flex items-center justify-start space-x-2 cursor-pointer hover:opacity-80 transition-opacity mb-4">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-500 text-sm">(1.924 recensioni)</span>
+                <span className="text-gray-500 text-sm">(2.847 recensioni)</span>
               </a>
 
               {/* Bullet Points Emotivi */}
-              <div className="bg-[#035aa6] rounded-xl p-4 mb-4 text-left">
-                <ul className="space-y-3 text-white text-sm">
+              <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl p-4 mb-4 text-left">
+                <ul className="space-y-3 text-white text-base">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span><strong>Addio Braccia Distrutte:</strong> Rami di 8cm tagliati come burro. Zero sforzo, zero dolori il giorno dopo.</span>
+                    <Thermometer className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
+                    <span><strong>Estate, inverno, non importa:</strong> Raffredda quando sudi, riscalda quando tremi, deumidifica quando l'aria è pesante. Un solo apparecchio, problema risolto.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Battery className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span><strong>Batteria Infinita (18 Ore):</strong> Pota giardini interi. 2 batterie incluse, quando una finisce metti l'altra e vai.</span>
+                    <CheckCircle className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
+                    <span><strong>Dimentica tecnici e permessi:</strong> Lo tiri fuori dalla scatola, lo attacchi alla corrente. Fine. Funziona. Il condominio non può dirti nulla.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Zap className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span><strong>Rami Grossi? Spariti:</strong> 1.050W di potenza bruta. Quello che prima ti prendeva ore, ora lo fai in minuti.</span>
+                    <Zap className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
+                    <span><strong>La bolletta? Quasi non se ne accorge:</strong> Classe A+++ significa consumare il 60% in meno. Chi lo ha comprato dice che si ripaga da solo in un anno.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Award className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span><strong>Lame Giapponesi Affilatissime:</strong> Tagli netti e precisi che non rovinano le piante. Acciaio SKS che dura anni.</span>
+                    <Award className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
+                    <span><strong>Così silenzioso che te ne dimentichi:</strong> Nessun ronzio fastidioso, nessuna unità esterna che sveglia i vicini. Perfetto anche in camera da letto.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-yellow-300 flex-shrink-0 mt-0.5" />
+                    <span><strong>Lo controlli dal divano (o dal lavoro):</strong> Con l'app puoi accenderlo prima di tornare a casa. Entri e trovi già il clima perfetto.</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Price Box */}
-            <div id="order-form-section" className="bg-white border-2 border-green-500 rounded-2xl p-5 mb-6 shadow-lg relative">
+            <div id="order-form-section" className="bg-white border-2 border-orange-500 rounded-2xl p-5 mb-6 shadow-lg relative">
               {/* Bollino Sconto */}
               <div className="absolute -top-4 -right-4 bg-red-600 text-white text-base font-bold w-14 h-14 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.4)] transform rotate-12 flex items-center justify-center">
-                -50%
+                -60%
               </div>
-              <h3 className="text-xl font-bold text-gray-900 text-center">Instant Cut Pro</h3>
-              <p className="text-gray-600 text-center mb-3">Cesoia Elettrica 1.050W</p>
+              <h3 className="text-xl font-bold text-gray-900 text-center">Air Wave Smart™</h3>
+              <p className="text-gray-600 text-center mb-3">Il climatizzatore che non ti complica la vita</p>
               <div className="flex items-center justify-center space-x-3 mb-2">
-                <span className="text-gray-400 line-through text-xl">€167,48</span>
-                <span className="text-4xl font-bold text-green-600">€66,99</span>
+                <span className="text-gray-400 line-through text-xl">€499</span>
+                <span className="text-4xl font-bold text-orange-600">€199</span>
               </div>
               <div className="flex justify-center mb-3">
-                <span className="bg-red-800 text-white font-medium py-2 px-4 rounded-full shadow-md text-sm">Risparmi €100 - Offerta a tempo limitato</span>
+                <span className="bg-red-800 text-white font-medium py-2 px-4 rounded-full shadow-md text-sm">Risparmi €300 - Offerta a tempo limitato</span>
               </div>
 
               {/* Kit Incluso */}
               <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-xl p-4 mb-4">
                 <p className="font-bold text-amber-800 text-base mb-3 flex items-center justify-center gap-2">
-                  🎁 Incluso nel prezzo (valore €100+)
+                  🎁 Incluso nel prezzo
                 </p>
                 <div className="grid grid-cols-2 gap-2 text-sm text-slate-700">
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> 2 Batterie 40V</span>
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> Caricatore rapido</span>
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> 2 Lame di ricambio</span>
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> Valigia trasporto</span>
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> Chiavi inglesi</span>
-                  <span className="flex items-center gap-1"><span className="text-green-500">✓</span> Manuale istruzioni</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> Telecomando</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> Batterie telecomando</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> Kit di installazione</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> 2 Filtri HEPA</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> App Android/iOS gratuita</span>
+                  <span className="flex items-center gap-1"><span className="text-orange-500">✓</span> Manuale in 60 lingue</span>
                 </div>
               </div>
 
               <button
                 onClick={() => setShowOrderPopup(!showOrderPopup)}
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold text-lg transition-all cursor-pointer shadow-lg"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-lg transition-all cursor-pointer shadow-lg"
               >
                 {showOrderPopup ? 'Chiudi' : 'Ordina Ora - Paghi alla Consegna'}
               </button>
@@ -690,7 +701,7 @@ export default function CesoiaElettricaLanding() {
                         name="name"
                         value={orderData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         placeholder="Inserisci il tuo nome completo"
                         disabled={isSubmitting}
                       />
@@ -706,7 +717,7 @@ export default function CesoiaElettricaLanding() {
                         name="phone"
                         value={orderData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         placeholder="Inserisci il tuo numero di telefono"
                         disabled={isSubmitting}
                       />
@@ -722,7 +733,7 @@ export default function CesoiaElettricaLanding() {
                         name="address"
                         value={orderData.address}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         placeholder="Inserisci il tuo indirizzo completo"
                         disabled={isSubmitting}
                       />
@@ -741,10 +752,10 @@ export default function CesoiaElettricaLanding() {
                     className={`w-full py-3 px-4 rounded-lg font-bold transition duration-300 ${
                       isSubmitting
                         ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
-                        : 'bg-green-600 hover:bg-green-700 text-white cursor-pointer'
+                        : 'bg-orange-500 hover:bg-orange-600 text-white cursor-pointer'
                     }`}
                   >
-                    {isSubmitting ? 'INVIO IN CORSO...' : 'CONFERMA ORDINE - €66,99'}
+                    {isSubmitting ? 'INVIO IN CORSO...' : 'CONFERMO – MANDATEMELO A CASA'}
                   </button>
 
                   <p className="mt-3 text-center text-xs text-gray-500">
@@ -755,15 +766,15 @@ export default function CesoiaElettricaLanding() {
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-2 text-center text-xs mt-4">
                 <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                  <Shield className="w-5 h-5 mx-auto mb-1 text-green-600" />
-                  <span className="text-gray-700">Garanzia 3 anni</span>
+                  <Shield className="w-5 h-5 mx-auto mb-1 text-orange-600" />
+                  <span className="text-gray-700">Garanzia 2 anni</span>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                  <CheckCircle className="w-5 h-5 mx-auto mb-1 text-green-600" />
+                  <CheckCircle className="w-5 h-5 mx-auto mb-1 text-orange-600" />
                   <span className="text-gray-700">Reso entro 30 giorni</span>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                  <Zap className="w-5 h-5 mx-auto mb-1 text-green-600" />
+                  <Zap className="w-5 h-5 mx-auto mb-1 text-orange-600" />
                   <span className="text-gray-700">Spedizione 48h</span>
                 </div>
               </div>
@@ -777,62 +788,40 @@ export default function CesoiaElettricaLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Perché scegliere Instant Cut Pro
+              Perché più di 2.000 persone lo hanno già scelto
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
-              Semplice: non hai bisogno di fare sforzi, potare il giardino diventa un piacere.
+            <p className="text-xl text-slate-600 mb-4">
+              Perché risolve un problema che tutti hanno: stare bene in casa propria, senza complicazioni e senza spendere una fortuna.
             </p>
-            
-            {/* Action Images */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto mb-12">
-              <div className="bg-gradient-to-r from-slate-100 to-gray-100 p-6 lg:p-3 rounded-2xl shadow-xl border border-slate-200">
-                <img
-                  src="images/cesoia/cesoia_gif_2.gif"
-                  alt="Cesoia Elettrica in azione"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
-                <div className="mt-4 lg:mt-3 text-center">
-                  <p className="text-base lg:text-xs font-semibold text-slate-800 italic">
-                    "Nel kit c'è tutto: 2 batterie, caricatore, valigia... Non devi comprare nient'altro"
-                  </p>
-                </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-400 rounded-full px-5 py-2">
+                <span className="text-xl">⚡</span>
+                <span className="text-amber-800 font-bold text-sm">Solo ~€0,30/giorno</span>
               </div>
-              <div className="bg-gradient-to-r from-slate-100 to-gray-100 p-6 lg:p-3 rounded-2xl shadow-xl border border-slate-200">
-                <img
-                  src="images/cesoia/cesoia_gif_3.gif"
-                  alt="Cesoia Elettrica in azione"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
-                <div className="mt-4 lg:mt-3 text-center">
-                  <p className="text-base lg:text-xs font-semibold text-slate-800 italic">
-                    "Apri la valigia e sei già pronto. Zero montaggio, zero complicazioni"
-                  </p>
-                </div>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-400 rounded-full px-5 py-2">
+                <span className="text-xl">🏠</span>
+                <span className="text-green-800 font-bold text-sm">Nessuna Autorizzazione Condominiale</span>
               </div>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition-shadow overflow-hidden">
-                <div className="flex flex-col md:flex-row md:h-full">
-                  <div className="p-4 pb-0 md:p-4 md:pr-0 flex-shrink-0">
-                    <div className="w-full md:w-32 aspect-square rounded-lg overflow-hidden">
-                      <img
-                        src={benefit.image}
-                        alt={benefit.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex-1 p-4 pt-3 md:p-5 flex flex-col justify-center">
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-slate-700 text-sm leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
+              <div key={index} className="bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition-shadow overflow-hidden p-7">
+                <div className="mb-4 overflow-hidden rounded-xl">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-slate-700 text-sm leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -841,12 +830,12 @@ export default function CesoiaElettricaLanding() {
       </section>
 
       {/* Trust Section - Compact */}
-      <section className="py-8 bg-[#035aa6]">
+      <section className="py-8 bg-gradient-to-r from-orange-600 to-amber-600">
         <div className="max-w-4xl mx-auto px-4">
           <div className="grid grid-cols-3 gap-4 text-center text-white mb-6">
             <div>
               <Shield className="w-6 h-6 mx-auto mb-1" />
-              <p className="text-sm font-semibold">Garanzia 3 Anni</p>
+              <p className="text-sm font-semibold">Garanzia 2 Anni</p>
             </div>
             <div>
               <CheckCircle className="w-6 h-6 mx-auto mb-1" />
@@ -860,73 +849,106 @@ export default function CesoiaElettricaLanding() {
           <div className="text-center">
             <button
               onClick={openOrderForm}
-              className="bg-green-500 hover:bg-green-600 text-white py-3 px-8 rounded-xl font-bold text-lg transition-all cursor-pointer"
+              className="bg-white text-orange-600 hover:bg-gray-100 py-3 px-8 rounded-xl font-bold text-lg transition-all cursor-pointer"
             >
-              Ordina Ora - Paghi alla Consegna
+              Lo Voglio a €199
             </button>
           </div>
         </div>
       </section>
 
-      {/* 3 Steps Section */}
+      {/* Installation Section */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-              FACILISSIMA DA USARE!<br />Bastano 3 secondi
+              Due Modi Per Usarlo. Zero Complicazioni.
             </h2>
+            <p className="text-slate-600">Scegli tu come preferisci. In entrambi i casi, sei operativo in 10 minuti.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Foto */}
-            <div className="order-1 lg:order-1">
-              <div className="rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            {/* Installazione a parete */}
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-2xl">🔩</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Fissalo al Muro</h3>
+              </div>
+              <div className="rounded-xl overflow-hidden mb-4">
                 <img
-                  src="images/cesoia/carosello_3.jpg"
-                  alt="Cesoia Elettrica"
-                  className="w-full h-auto object-cover"
+                  src="/images/condizionatore/installazione.webp"
+                  alt="Air Wave Smart - Installazione a parete"
+                  className="w-full aspect-video object-cover"
                 />
               </div>
+              <ul className="space-y-2 text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">✓</span>
+                  <span>Ganci già inclusi, non devi comprare nulla</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">✓</span>
+                  <span>Due viti e sei a posto. Nessun muratore.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">✓</span>
+                  <span>Liberi tutto lo spazio a terra</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">✓</span>
+                  <span>L'aria si distribuisce meglio dall'alto</span>
+                </li>
+              </ul>
             </div>
 
-            {/* Steps */}
-            <div className="order-2 lg:order-2 space-y-6">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl font-bold text-[#035aa6]">1.</span>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">Metti la batteria</h3>
-                  <p className="text-slate-600">Un click e sei pronto. 2 batterie nel kit = 18 ore di lavoro.</p>
+            {/* Installazione da tavolo */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-2xl">🏠</span>
                 </div>
+                <h3 className="text-xl font-bold text-slate-900">Poggialo Dove Vuoi</h3>
               </div>
-
-              <div className="flex items-start gap-4">
-                <span className="text-4xl font-bold text-[#035aa6]">2.</span>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">Impugna e premi il pulsante</h3>
-                  <p className="text-slate-600">Un click e il ramo viene via in un attimo, senza sforzi.</p>
-                </div>
+              <div className="rounded-xl overflow-hidden mb-4">
+                <img
+                  src="/images/condizionatore/specifiche.webp"
+                  alt="Air Wave Smart - Installazione da tavolo"
+                  className="w-full aspect-video object-cover"
+                />
               </div>
-
-              <div className="flex items-start gap-4">
-                <span className="text-4xl font-bold text-[#035aa6]">3.</span>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">Ricarica le batterie</h3>
-                  <p className="text-slate-600">Quando scariche, collega le batterie al caricatore: da 0 a 100% in 30 minuti.</p>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <button
-                  onClick={openOrderForm}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold transition-all cursor-pointer"
-                >
-                  <span className="text-xl">ORDINA ORA</span>
-                  <br />
-                  <span className="text-sm font-normal">Offerta a tempo limitato</span>
-                </button>
-                <p className="text-center text-red-600 text-sm mt-2 font-medium">Solo 8 pezzi rimasti, poi torna a prezzo pieno</p>
-              </div>
+              <ul className="space-y-2 text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold">✓</span>
+                  <span>Tavolo, mobile, pavimento: decidi tu</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold">✓</span>
+                  <span>Lo tiri fuori dalla scatola e funziona</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold">✓</span>
+                  <span>Lo sposti da una stanza all'altra in 2 secondi</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 font-bold">✓</span>
+                  <span>Sei in affitto? Nessun buco, nessun problema</span>
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <div className="max-w-md mx-auto">
+            <button
+              onClick={openOrderForm}
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-bold transition-all cursor-pointer"
+            >
+              <span className="text-xl">LO VOGLIO ADESSO</span>
+              <br />
+              <span className="text-sm font-normal">€199 invece di €499 – Pago alla consegna</span>
+            </button>
+            <p className="text-center text-red-600 text-sm mt-2 font-medium">Lo sconto del 60% non durerà per sempre</p>
           </div>
         </div>
       </section>
@@ -936,10 +958,10 @@ export default function CesoiaElettricaLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Confronta tu stesso
+              Non Fidarti di Noi. Confronta i Numeri.
             </h2>
             <p className="text-xl text-slate-600">
-              Instant Cut Pro vs altri brand sul mercato
+              Abbiamo messo Air Wave Smart accanto ai portatili più venduti. Guarda tu stesso.
             </p>
           </div>
           <div className="overflow-x-auto">
@@ -947,10 +969,10 @@ export default function CesoiaElettricaLanding() {
               <thead className="bg-slate-800 text-white">
                 <tr>
                   <th className="px-6 py-4 text-left">Caratteristiche</th>
-                  <th className="px-6 py-4 text-center bg-teal-600">
+                  <th className="px-6 py-4 text-center bg-orange-600">
                     <div>
-                      <div className="font-bold">Instant Cut Pro</div>
-                      <div className="text-xs text-teal-100 font-normal">Il nostro prodotto</div>
+                      <div className="font-bold">Air Wave Smart</div>
+                      <div className="text-xs text-orange-100 font-normal">Il nostro prodotto</div>
                     </div>
                   </th>
                   <th className="px-6 py-4 text-center bg-gray-500">
@@ -972,9 +994,9 @@ export default function CesoiaElettricaLanding() {
                   <tr key={index} className={index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
                     <td className="px-6 py-4 font-semibold text-slate-900">{row.feature}</td>
                     <td className={`px-6 py-4 text-center font-bold ${
-                      row.feature === 'Prezzo' ? 'text-green-700 bg-green-50' : 'text-teal-700 bg-teal-50'
+                      row.feature === 'Prezzo' ? 'text-orange-700 bg-orange-50' : 'text-orange-700 bg-orange-50'
                     }`}>
-                      {row.cesoia}
+                      {row.airwave}
                     </td>
                     <td className="px-6 py-4 text-center text-gray-400">{row.competitor1}</td>
                     <td className="px-6 py-4 text-center text-gray-400">{row.competitor2}</td>
@@ -990,28 +1012,28 @@ export default function CesoiaElettricaLanding() {
       <section className="bg-gradient-to-r from-red-600 to-red-700 py-6">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-white text-lg md:text-xl font-bold mb-3">
-            Solo 8 pezzi rimasti a €66,99
+            Questa offerta a €199 non durerà per sempre. Il prezzo pieno è €499.
           </p>
           <button
             onClick={openOrderForm}
-            className="bg-white text-green-600 hover:bg-gray-100 py-3 px-8 rounded-xl font-bold text-lg transition-all cursor-pointer"
+            className="bg-white text-orange-600 hover:bg-gray-100 py-3 px-8 rounded-xl font-bold text-lg transition-all cursor-pointer"
           >
-            La voglio, ordina ora
+            Voglio approfittarne adesso
           </button>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section id="recensioni" className="py-20 bg-[#035aa6] reviews-section">
+      <section id="recensioni" className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 reviews-section">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Recensioni</h2>
-            <p className="text-xl text-white font-bold">1.924 recensioni verificate</p>
-            <p className="text-xl text-gray-300">Puoi vedere tutte le altre recensioni sul sito ufficiale</p>
+            <p className="text-xl text-white font-bold">2.847 recensioni verificate</p>
+            <p className="text-xl text-blue-100">Puoi vedere tutte le altre recensioni sul sito ufficiale</p>
           </div>
           <div className="relative">
             <button
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center shadow-lg transition-all duration-300 text-xl md:text-2xl cursor-pointer"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-blue-600 rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center shadow-lg transition-all duration-300 text-xl md:text-2xl cursor-pointer"
               onClick={() => {
                 setReviewsAutoScroll(false);
                 const container = document.querySelector('.reviews-container');
@@ -1023,7 +1045,7 @@ export default function CesoiaElettricaLanding() {
               ‹
             </button>
             <button
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center shadow-lg transition-all duration-300 text-xl md:text-2xl cursor-pointer"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-blue-600 rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center shadow-lg transition-all duration-300 text-xl md:text-2xl cursor-pointer"
               onClick={() => {
                 setReviewsAutoScroll(false);
                 const container = document.querySelector('.reviews-container') as HTMLElement;
@@ -1043,157 +1065,157 @@ export default function CesoiaElettricaLanding() {
               <div className="reviews-container flex gap-6 overflow-x-auto scrollbar-hide scroll-snap-x snap-x snap-mandatory px-10 md:px-16 py-4">
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">M</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">M</div>
                     <div>
                       <p className="font-bold text-gray-900">Marco P.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Pensavo avesse fatto almeno un po' di fatica e invece nulla, come stesse tagliando l'acqua. Le due batterie mi permettono di lavorare tutto il giorno.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">ragazzi io non ci credevo ma funziona davvero. la camera da letto adesso è fresca e finalmente riesco a dormire senza svegliarmi sudato alle 3 di notte</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">L</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">G</div>
                     <div>
-                      <p className="font-bold text-gray-900">Luca R.</p>
+                      <p className="font-bold text-gray-900">Giovanni R.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Potare i rami è diventato un piacere, prima era uno stress. Leggerissima e potente, la uso ogni settimana.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Sono in affitto e il padrone di casa non voleva farmi mettere il condizionatore. Con questo ho risolto, lo sposto dove voglio e quando me ne vado me lo porto via</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">G</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">F</div>
                     <div>
-                      <p className="font-bold text-gray-900">Giuseppe T.</p>
-                      <div className="text-yellow-400 text-lg">★★★★★</div>
-                    </div>
-                  </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Ho fatto bene a fidarmi, si paga alla consegna e si può visionare il prodotto prima di pagare... 5 stelle meritate!</p>
-                </div>
-                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">A</div>
-                    <div>
-                      <p className="font-bold text-gray-900">Alessandro F.</p>
-                      <div className="text-yellow-400 text-lg">★★★★★</div>
-                    </div>
-                  </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Le batterie durano davvero 18 ore come promesso. Ricarica velocissima in 55 minuti. Fantastica!</p>
-                </div>
-                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">F</div>
-                    <div>
-                      <p className="font-bold text-gray-900">Francesco M.</p>
+                      <p className="font-bold text-gray-900">Fabio T.</p>
                       <div className="text-yellow-400 text-lg">★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Taglia rami anche di 8cm senza problemi. La potenza di 1.050W si sente tutta. Professionale!</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">arrivato in 2 giorni e la spedizione costava tipo 5 euro, niente. onestamente ero scettico ma devo dire che fa il suo lavoro, per la camera va benissimo</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">S</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">S</div>
                     <div>
-                      <p className="font-bold text-gray-900">Stefano L.</p>
+                      <p className="font-bold text-gray-900">Sara M.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Leggerissima ma potentissima. Il kit completo è davvero completo, hanno pensato a tutto!</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Ho la pressione bassa e col caldo stavo malissimo. Adesso in casa sto bene, non ho più quei giramenti di testa che avevo prima. Per me è stato un acquisto necessario</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">R</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">L</div>
+                    <div>
+                      <p className="font-bold text-gray-900">Luca B.</p>
+                      <div className="text-yellow-400 text-lg">★★★★★</div>
+                    </div>
+                  </div>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">il bello è che lo uso anche d'inverno per scaldare lo studio. praticamente due prodotti in uno, alla fine ho risparmiato</p>
+                </div>
+                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                    <div>
+                      <p className="font-bold text-gray-900">Angela D.</p>
+                      <div className="text-yellow-400 text-lg">★★★★★</div>
+                    </div>
+                  </div>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Mio marito non voleva spendere soldi per il tecnico e i buchi nel muro. Questo l'ha montato lui in 10 minuti e adesso non si lamenta più del caldo ahah</p>
+                </div>
+                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">R</div>
                     <div>
                       <p className="font-bold text-gray-900">Roberto C.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">La fondina con cavo anticaduta è geniale. Sicurezza al primo posto, mi sento tranquillo usandola.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Lo uso in ufficio, i colleghi all'inizio mi prendevano in giro poi hanno visto che funziona e adesso vogliono comprarlo anche loro</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">D</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">V</div>
                     <div>
-                      <p className="font-bold text-gray-900">Daniela G.</p>
+                      <p className="font-bold text-gray-900">Valentina G.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Spedizione velocissima, imballaggio perfetto. Per questo prezzo è un affare incredibile!</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Il mio bambino di 2 anni dormiva malissimo con il caldo. Da quando abbiamo questo dorme tutta la notte e anche noi finalmente riposiamo!</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">C</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">P</div>
                     <div>
-                      <p className="font-bold text-gray-900">Carlo B.</p>
+                      <p className="font-bold text-gray-900">Paolo N.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Mia moglie diceva che non serviva, adesso la usa lei più di me! Le batterie durano tantissimo.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">ho 72 anni e con il caldo mi sentivo sempre stanco e spossato. adesso sto molto meglio, mia figlia aveva ragione a insistere che lo comprassi</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">V</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">C</div>
                     <div>
-                      <p className="font-bold text-gray-900">Vincenzo N.</p>
+                      <p className="font-bold text-gray-900">Chiara L.</p>
+                      <div className="text-yellow-400 text-lg">★★★★</div>
+                    </div>
+                  </div>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">La bolletta non è aumentata come temevo e la consegna è stata velocissima, in due giorni era già a casa. Lo uso ogni giorno e sono contenta</p>
+                </div>
+                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">D</div>
+                    <div>
+                      <p className="font-bold text-gray-900">Davide S.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Prima impiegavo ore per potare tutto, adesso in mezz'ora ho finito. Le lame giapponesi tagliano che è una meraviglia.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">nel mio condominio non si possono mettere condizionatori fuori, quindi questo era l'unica soluzione. E devo dire che va alla grande</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">P</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">E</div>
                     <div>
-                      <p className="font-bold text-gray-900">Paolo D.</p>
+                      <p className="font-bold text-gray-900">Elena F.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Ho 68 anni e non riuscivo più a potare come una volta. Con questa cesoia mi sento di nuovo un ragazzino!</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Lavoro da casa e d'estate non riuscivo a concentrarmi. Ora ho l'ufficio sempre fresco e rendo molto di più, soldi spesi bene</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">E</div>
-                    <div>
-                      <p className="font-bold text-gray-900">Enrico S.</p>
-                      <div className="text-yellow-400 text-lg">★★★★★</div>
-                    </div>
-                  </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Il kit completo vale davvero la pena. Il powerbank è geniale, così non resto mai senza carica.</p>
-                </div>
-                <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">M</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">M</div>
                     <div>
                       <p className="font-bold text-gray-900">Matteo V.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Lavoro come giardiniere e questa è la migliore che abbia mai usato. Veloce, potente e sicura.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">l'app è comoda, accendo il condizionatore mentre torno a casa e quando arrivo è già tutto fresco. piccole cose che fanno la differenza</p>
                 </div>
                 <div className="flex-shrink-0 w-80 bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 snap-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#D93025] rounded-full flex items-center justify-center text-white font-bold">I</div>
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">F</div>
                     <div>
-                      <p className="font-bold text-gray-900">Isabella H.</p>
+                      <p className="font-bold text-gray-900">Francesca R.</p>
                       <div className="text-yellow-400 text-lg">★★★★★</div>
                     </div>
                   </div>
-                  <div className="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
-                  <p className="text-gray-700 leading-relaxed">Non credevo potesse tagliare rami così grossi! E il pagamento alla consegna mi ha convinta subito.</p>
+                  <div className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-3">✔ Recensione verificata</div>
+                  <p className="text-gray-700 leading-relaxed">Ero indecisa se prenderlo o no, poi ho visto che si paga alla consegna e mi sono detta vabbè proviamo. Ora ne voglio comprare un altro per la camera dei bambini</p>
                 </div>
               </div>
             </div>
@@ -1244,7 +1266,7 @@ export default function CesoiaElettricaLanding() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Hai qualche dubbio? Ti rispondiamo subito!
+              Le Domande Che Tutti Ci Fanno (E Le Risposte Oneste)
             </h2>
           </div>
           <div className="space-y-3">
@@ -1277,53 +1299,56 @@ export default function CesoiaElettricaLanding() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-[#035aa6] py-16 pb-32">
+      <section className="bg-gradient-to-r from-orange-600 to-amber-600 py-16 pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left: Product Image */}
             <div className="order-1">
               <img
-                src="images/cesoia/img_princ.png"
-                alt="Instant Cut Pro"
+                src="/images/condizionatore/specifiche.webp"
+                alt="Air Wave Smart"
                 className="w-full h-auto rounded-lg shadow-md max-w-sm mx-auto lg:mx-0"
               />
             </div>
 
             {/* Right: Content */}
             <div className="order-2 text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Instant Cut Pro
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Sei Arrivato Fin Qui. C'è Un Motivo.
               </h2>
+              <p className="text-orange-100 text-lg mb-6">
+                Forse sei stanco di sudare d'estate. Forse hai freddo d'inverno e i termosifoni non bastano. Forse il tuo condominio ti ha già detto no al condizionatore. Qualunque sia il motivo, Air Wave Smart è la risposta.
+              </p>
 
               <div className="text-left mb-6">
-                <p className="text-lg text-white font-semibold mb-3">Include:</p>
-                <ul className="text-slate-200 space-y-1">
-                  <li>• 2 Batterie 40V 5.000mAh</li>
-                  <li>• 2 Lame di ricambio</li>
-                  <li>• Caricatore con ricarica rapida</li>
-                  <li>• Valigia trasporto</li>
-                  <li>• Chiavi inglesi</li>
-                  <li>• Manuale di istruzioni</li>
-                  <li>• Garanzia 3 Anni</li>
+                <p className="text-lg text-white font-semibold mb-3">Ricevi tutto questo:</p>
+                <ul className="text-orange-100 space-y-1">
+                  <li>✓ Climatizzatore 12.000 BTU (raffredda, riscalda, deumidifica)</li>
+                  <li>✓ Telecomando + Batterie incluse</li>
+                  <li>✓ App Android/iOS gratuita</li>
+                  <li>✓ Kit di installazione completo</li>
+                  <li>✓ 2 Filtri HEPA inclusi</li>
+                  <li>✓ Manuale in 60 lingue</li>
+                  <li>✓ Garanzia 24 mesi + Reso 30 giorni</li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-xl inline-block mb-6">
-                <div className="text-3xl font-bold text-teal-600 mb-2">€66,99</div>
-                <div className="text-slate-500 line-through text-lg">€167,48</div>
-                <div className="text-red-600 font-semibold mb-4">Sconto 60% - Offerta limitata</div>
+                <div className="text-3xl font-bold text-orange-600 mb-2">€199</div>
+                <div className="text-slate-500 line-through text-lg">€499</div>
+                <div className="text-red-600 font-semibold mb-4">Risparmi €300 – Ma non per sempre</div>
                 <button
                   onClick={openOrderForm}
-                  className="bg-gradient-to-r from-teal-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-teal-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg w-full cursor-pointer"
+                  className="bg-gradient-to-r from-orange-500 to-amber-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-orange-600 hover:to-amber-700 transition-all transform hover:scale-105 shadow-lg w-full cursor-pointer"
                 >
-                  Sì, la voglio
+                  Ordina Ora – Pago alla Consegna
                 </button>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-2 text-slate-200 text-sm justify-center lg:justify-start">
-                <span>✓ Spedizione rapida in 48h</span>
-                <span>✓ Garanzia 3 anni completa</span>
-                <span>✓ Reso gratuito entro 30 giorni</span>
+              <div className="flex flex-col md:flex-row gap-2 text-orange-100 text-sm justify-center lg:justify-start">
+                <span>✓ Arriva in 48h</span>
+                <span>✓ Paghi solo quando lo ricevi</span>
+                <span>✓ Non ti piace? Lo restituisci.</span>
               </div>
             </div>
           </div>
