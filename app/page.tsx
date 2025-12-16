@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <>
+      <Header />
+      <main className="bg-white">
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-rose-900 to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
@@ -122,6 +126,8 @@ export default function Home() {
           <p className="text-rose-200 text-sm mt-4">Or email info@purchstar.com</p>
         </div>
       </section>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }
