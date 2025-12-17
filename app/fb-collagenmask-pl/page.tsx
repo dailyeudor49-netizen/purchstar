@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import {
   ArrowDown,
   Star,
@@ -705,9 +705,9 @@ const OrderForm = ({ id, utmParams }: { id: string; utmParams: UTMParams }) => {
   );
 };
 
-// --- MAIN PAGE ---
+// --- MAIN PAGE CONTENT ---
 
-export default function LandingPage() {
+function LandingPageContent() {
   const searchParams = useSearchParams();
 
   const utmParams: UTMParams = {
@@ -782,5 +782,15 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// --- MAIN PAGE ---
+
+export default function LandingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Ładowanie...</div>}>
+      <LandingPageContent />
+    </Suspense>
   );
 }

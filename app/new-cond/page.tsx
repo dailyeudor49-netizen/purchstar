@@ -5,8 +5,9 @@ import { Star, Award, CheckCircle, Shield, Zap, Thermometer, ChevronDown, Chevro
 // Dichiarazioni TypeScript per Google Ads - CORRETTE
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    __conversionFired?: boolean;
   }
 }
 
@@ -45,7 +46,7 @@ export default function AirWaveSmartLanding() {
     
     // Verifica se lo script è già caricato
     const existingScript = document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
-    if (existingScript && window.gtag) return;
+    if (existingScript && typeof window.gtag === 'function') return;
 
     // Carica Google Ads Global Site Tag
     const gtagScript = document.createElement('script');
