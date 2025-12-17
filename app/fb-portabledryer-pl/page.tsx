@@ -25,8 +25,6 @@ interface OrderFormData {
   fullName: string;
   phone: string;
   address: string;
-  city: string;
-  zipCode: string;
 }
 
 interface UTMParams {
@@ -500,9 +498,7 @@ const OrderForm = ({ utmParams }: { utmParams: UTMParams }) => {
   const [formData, setFormData] = useState<OrderFormData>({
     fullName: '',
     phone: '',
-    address: '',
-    city: '',
-    zipCode: ''
+    address: ''
   });
   const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -532,7 +528,7 @@ const OrderForm = ({ utmParams }: { utmParams: UTMParams }) => {
       apiFormData.append('offer', API_CONFIG.offer);
       apiFormData.append('lp', API_CONFIG.lp);
       apiFormData.append('name', formData.fullName);
-      apiFormData.append('street-address', `${formData.address}, ${formData.city} ${formData.zipCode}`);
+      apiFormData.append('street-address', formData.address);
       apiFormData.append('tel', formData.phone);
 
       if (fingerprint) {
@@ -683,7 +679,7 @@ const OrderForm = ({ utmParams }: { utmParams: UTMParams }) => {
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1">Adres i Numer *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-1">Pełny Adres *</label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
                   <input
@@ -692,35 +688,8 @@ const OrderForm = ({ utmParams }: { utmParams: UTMParams }) => {
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
-                    placeholder="ul. Warszawska 10"
+                    placeholder="ul. Warszawska 10, 00-001 Warszawa"
                     className="w-full border border-gray-300 rounded-md pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-base"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Miasto *</label>
-                  <input
-                    required
-                    type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    placeholder="Warszawa"
-                    className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-base"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Kod Pocztowy *</label>
-                  <input
-                    required
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleChange}
-                    placeholder="00-001"
-                    className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-base"
                   />
                 </div>
               </div>
