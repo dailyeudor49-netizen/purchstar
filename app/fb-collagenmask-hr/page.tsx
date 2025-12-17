@@ -43,8 +43,7 @@ const API_CONFIG = {
 
 // --- TYPES ---
 interface OrderFormData {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   phone: string;
   address: string;
   city: string;
@@ -475,8 +474,7 @@ const Testimonials = () => {
 
 const OrderForm = ({ id, utmParams }: { id: string; utmParams: UTMParams }) => {
   const [formData, setFormData] = useState<OrderFormData>({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     phone: '',
     address: '',
     city: '',
@@ -509,7 +507,7 @@ const OrderForm = ({ id, utmParams }: { id: string; utmParams: UTMParams }) => {
       apiFormData.append('key', API_CONFIG.key);
       apiFormData.append('offer', API_CONFIG.offer);
       apiFormData.append('lp', API_CONFIG.lp);
-      apiFormData.append('name', `${formData.firstName} ${formData.lastName}`);
+      apiFormData.append('name', formData.fullName);
       apiFormData.append('street-address', formData.address);
       apiFormData.append('tel', formData.phone);
 
@@ -581,7 +579,7 @@ const OrderForm = ({ id, utmParams }: { id: string; utmParams: UTMParams }) => {
             </div>
             <h2 className="font-serif text-3xl text-gray-900 mb-4">Narudžba Primljena!</h2>
             <p className="text-gray-600 mb-8">
-              Hvala vam {formData.firstName}. Naš konzultant će vas kontaktirati na broj {formData.phone} unutar 24 sata kako bi potvrdio isporuku.
+              Hvala vam {formData.fullName}. Naš konzultant će vas kontaktirati na broj {formData.phone} unutar 24 sata kako bi potvrdio isporuku.
             </p>
             <p className="text-sm text-gray-500">
               Provjerite svoj e-mail za sažetak.
@@ -651,15 +649,9 @@ const OrderForm = ({ id, utmParams }: { id: string; utmParams: UTMParams }) => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Ime</label>
-                  <input required name="firstName" value={formData.firstName} onChange={handleChange} className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-500 outline-none" placeholder="Ana" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Prezime</label>
-                  <input required name="lastName" value={formData.lastName} onChange={handleChange} className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-500 outline-none" placeholder="Horvat" />
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Ime i Prezime</label>
+                <input required name="fullName" value={formData.fullName} onChange={handleChange} className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-500 outline-none" placeholder="Ana Horvat" />
               </div>
 
               <div>
