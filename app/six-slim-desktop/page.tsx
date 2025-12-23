@@ -1,176 +1,200 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function SixSlimDesktopPage() {
+  const [formData, setFormData] = useState({ nome: '', telefono: '', indirizzo: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const affSub1 = urlParams.get('aff_sub1') || urlParams.get('utm_source') || '';
+      const affSub2 = urlParams.get('aff_sub2') || urlParams.get('utm_campaign') || '';
+
+      const params = new URLSearchParams({
+        source_id: 'cac06d3486f2',
+        aff_sub1: affSub1,
+        aff_sub2: affSub2,
+        name: formData.nome,
+        phone: formData.telefono,
+        address: formData.indirizzo
+      });
+
+      await fetch('https://network.worldfilia.net/manager/inventory/buy/ntm_sixslim_2x49.json?api_key=bzIGfLM1XwmR4l44_6rydQ', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+        mode: 'no-cors'
+      });
+
+      window.location.href = '/ty/ty-six-slim';
+    } catch (error) {
+      console.error('Order submission error:', error);
+      window.location.href = '/ty/ty-six-slim';
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4 max-w-4xl">
-          <div className="flex items-center justify-between">
-            <div className="text-xl font-semibold text-gray-800">Benessere & Salute</div>
-            <nav className="hidden md:flex gap-6 text-sm text-gray-600">
-              <a href="#" className="hover:text-gray-900">Home</a>
-              <a href="#" className="hover:text-gray-900">Fitness</a>
-              <a href="#" className="hover:text-gray-900">Nutrizione</a>
-              <a href="#" className="hover:text-gray-900">Lifestyle</a>
-            </nav>
-          </div>
+      <header className="bg-green-600 text-white py-3">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm font-medium">Spedizione Gratuita in tutta Italia | Pagamento alla Consegna</p>
         </div>
       </header>
 
-      {/* Main Article */}
+      {/* Main Content */}
       <main className="container mx-auto px-4 py-12 max-w-3xl">
-        <article>
-          {/* Category & Date */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">FITNESS</span>
-            <span className="text-gray-400 text-sm">15 Dicembre 2024</span>
-            <span className="text-gray-400 text-sm">• 5 min lettura</span>
-          </div>
 
-          {/* Title */}
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
-            I benefici dell'attività fisica: perché muoversi fa bene a corpo e mente
+        {/* Product Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Six-Slim
           </h1>
+          <p className="text-lg text-gray-600 mb-8">
+            Integratore alimentare naturale per il controllo del peso
+          </p>
 
-          {/* Author */}
-          <div className="flex items-center gap-3 mb-8 pb-8 border-b border-gray-200">
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-semibold">DR</div>
+          {/* Product Image */}
+          <div className="mb-8">
+            <img
+              src="/images/six-slim/hero.png"
+              alt="Six-Slim Integratore"
+              className="max-w-xs mx-auto"
+            />
+          </div>
+        </div>
+
+        {/* Description */}
+        <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-10">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Informazioni sul prodotto</h2>
+
+          <div className="space-y-4 text-gray-700">
+            <p>
+              Six-Slim è un integratore alimentare formulato con ingredienti di origine naturale,
+              pensato per supportare il normale metabolismo e contribuire al controllo del peso
+              nell'ambito di una dieta equilibrata e uno stile di vita sano.
+            </p>
+
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-semibold text-gray-900 mb-2">Modalità d'uso</h3>
+              <p>Assumere 1 compressa al giorno con un bicchiere d'acqua, preferibilmente al mattino.</p>
+            </div>
+
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-semibold text-gray-900 mb-2">Contenuto della confezione</h3>
+              <p>Ogni confezione contiene 30 compresse (trattamento per 1 mese).</p>
+            </div>
+
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-semibold text-gray-900 mb-2">Avvertenze</h3>
+              <p className="text-sm text-gray-600">
+                Gli integratori non vanno intesi come sostituti di una dieta variata ed equilibrata
+                e di uno stile di vita sano. Non superare la dose giornaliera consigliata.
+                Tenere fuori dalla portata dei bambini al di sotto dei 3 anni.
+                Consultare il medico in caso di gravidanza, allattamento o patologie.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Offer */}
+        <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10 text-center">
+          <p className="text-green-800 font-semibold mb-2">Offerta Speciale</p>
+          <p className="text-3xl font-bold text-green-700 mb-1">2 Confezioni a €49,00</p>
+          <p className="text-sm text-green-600">60 compresse totali - Spedizione gratuita</p>
+        </div>
+
+        {/* Order Form */}
+        <div id="ordina" className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm">
+          <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">Ordina Ora</h2>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <p className="font-medium text-gray-900">Dott.ssa Roberta Mancini</p>
-              <p className="text-sm text-gray-500">Specialista in Medicina dello Sport</p>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="mb-10 rounded-xl overflow-hidden bg-gradient-to-br from-green-100 to-blue-100 h-64 flex items-center justify-center">
-            <span className="text-6xl">🏃‍♀️</span>
-          </div>
-
-          {/* Content */}
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-            <p className="text-xl text-gray-600 font-medium">
-              L'attività fisica regolare è uno dei pilastri fondamentali per mantenere uno stile di vita sano.
-              Non si tratta solo di estetica, ma di un vero e proprio investimento sulla propria salute a lungo termine.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Benefici per il corpo</h2>
-
-            <p>
-              Muoversi con regolarità apporta numerosi benefici al nostro organismo. L'esercizio fisico aiuta a
-              mantenere un peso corporeo equilibrato, migliora la circolazione sanguigna e rafforza il sistema
-              cardiovascolare. Anche solo 30 minuti di camminata al giorno possono fare la differenza.
-            </p>
-
-            <p>
-              L'attività fisica contribuisce inoltre a rafforzare muscoli e ossa, riducendo il rischio di
-              osteoporosi e mantenendo una buona mobilità articolare anche con l'avanzare dell'età.
-              Non è necessario diventare atleti professionisti: bastano piccoli gesti quotidiani.
-            </p>
-
-            <div className="bg-green-50 border-l-4 border-green-500 p-6 my-8 rounded-r-lg">
-              <p className="text-green-800 font-medium">
-                💡 Lo sapevi? Secondo l'OMS, gli adulti dovrebbero praticare almeno 150 minuti di attività
-                fisica moderata a settimana per mantenersi in salute.
-              </p>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Nome e Cognome</label>
+              <input
+                required
+                type="text"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                placeholder="Mario Rossi"
+                value={formData.nome}
+                onChange={(e) => setFormData({...formData, nome: e.target.value})}
+              />
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Benefici per la mente</h2>
-
-            <p>
-              L'esercizio fisico non fa bene solo al corpo: è un potente alleato anche per la salute mentale.
-              Durante l'attività fisica, il nostro cervello rilascia endorfine, i cosiddetti "ormoni della felicità",
-              che contribuiscono a migliorare l'umore e ridurre stress e ansia.
-            </p>
-
-            <p>
-              Numerosi studi scientifici hanno dimostrato che l'attività fisica regolare può aiutare a combattere
-              la depressione e migliorare la qualità del sonno. Muoversi aiuta anche a mantenere la mente attiva
-              e può contribuire a prevenire il declino cognitivo.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Come iniziare</h2>
-
-            <p>
-              Se non sei abituato a fare esercizio, inizia gradualmente. Ecco alcuni consigli pratici:
-            </p>
-
-            <ul className="list-disc pl-6 space-y-2 my-6">
-              <li>Inizia con brevi passeggiate di 15-20 minuti</li>
-              <li>Scegli un'attività che ti piace: nuoto, bicicletta, yoga, ballo</li>
-              <li>Fissa obiettivi realistici e graduali</li>
-              <li>Trova un compagno di allenamento per mantenerti motivato</li>
-              <li>Ascolta il tuo corpo e non esagerare</li>
-            </ul>
-
-            <p>
-              Ricorda: l'importante è essere costanti. Meglio poco ma regolare, piuttosto che sessioni
-              intense ma sporadiche. Ogni passo conta verso una vita più sana e attiva.
-            </p>
-
-            <div className="bg-blue-50 border border-blue-200 p-6 my-8 rounded-xl">
-              <h3 className="font-bold text-blue-900 mb-2">📌 Riassunto</h3>
-              <p className="text-blue-800 text-sm">
-                L'attività fisica regolare migliora la salute cardiovascolare, rafforza muscoli e ossa,
-                aiuta a gestire il peso, riduce stress e ansia, e migliora la qualità del sonno.
-                Bastano 30 minuti al giorno per iniziare a vedere i benefici.
-              </p>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Telefono</label>
+              <input
+                required
+                type="tel"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                placeholder="333 1234567"
+                value={formData.telefono}
+                onChange={(e) => setFormData({...formData, telefono: e.target.value})}
+              />
             </div>
-          </div>
 
-          {/* Tags */}
-          <div className="mt-10 pt-8 border-t border-gray-200">
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">#fitness</span>
-              <span className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">#benessere</span>
-              <span className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">#salute</span>
-              <span className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">#attivitàfisica</span>
-              <span className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">#lifestyle</span>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Indirizzo di spedizione</label>
+              <input
+                required
+                type="text"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                placeholder="Via Roma 1, 00100 Roma (RM)"
+                value={formData.indirizzo}
+                onChange={(e) => setFormData({...formData, indirizzo: e.target.value})}
+              />
             </div>
-          </div>
 
-          {/* Share */}
-          <div className="mt-8 flex items-center gap-4">
-            <span className="text-sm text-gray-500">Condividi:</span>
-            <div className="flex gap-2">
-              <button className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm hover:bg-blue-700 transition">f</button>
-              <button className="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm hover:bg-sky-600 transition">t</button>
-              <button className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm hover:bg-green-600 transition">w</button>
+            {/* Order Summary */}
+            <div className="bg-gray-50 rounded-lg p-4 mt-6">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-gray-600">Six-Slim x2</span>
+                <span className="font-semibold">€49,00</span>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-gray-600">Spedizione</span>
+                <span className="font-semibold text-green-600">Gratuita</span>
+              </div>
+              <div className="border-t border-gray-200 pt-2 mt-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-bold">Totale</span>
+                  <span className="text-xl font-bold text-green-600">€49,00</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2 text-center">Pagamento in contanti alla consegna</p>
             </div>
-          </div>
-        </article>
 
-        {/* Related Articles */}
-        <section className="mt-16">
-          <h3 className="text-xl font-bold text-gray-900 mb-6">Articoli correlati</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "10 esercizi da fare a casa senza attrezzi", category: "Fitness", emoji: "💪" },
-              { title: "Alimentazione sana: i cibi da privilegiare", category: "Nutrizione", emoji: "🥗" },
-              { title: "Come migliorare la qualità del sonno", category: "Lifestyle", emoji: "😴" },
-            ].map((article, i) => (
-              <a key={i} href="#" className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div className="text-3xl mb-3">{article.emoji}</div>
-                <span className="text-xs text-green-600 font-semibold">{article.category}</span>
-                <h4 className="font-semibold text-gray-800 mt-1 text-sm leading-snug">{article.title}</h4>
-              </a>
-            ))}
-          </div>
-        </section>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 rounded-lg transition-colors mt-4"
+            >
+              {isSubmitting ? 'Elaborazione...' : 'Conferma Ordine'}
+            </button>
+          </form>
+        </div>
+
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
+      <footer className="bg-gray-100 border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="text-center text-sm text-gray-500">
-            <p className="mb-2">© 2024 Benessere & Salute - Tutti i diritti riservati</p>
-            <div className="flex justify-center gap-4">
+            <p className="mb-4">
+              Six-Slim è un integratore alimentare. Gli integratori non sostituiscono una dieta variata
+              e uno stile di vita sano. I risultati possono variare da persona a persona.
+            </p>
+            <div className="flex justify-center gap-4 mb-4">
               <a href="#" className="hover:text-gray-700">Privacy Policy</a>
-              <a href="#" className="hover:text-gray-700">Cookie Policy</a>
+              <a href="#" className="hover:text-gray-700">Termini e Condizioni</a>
               <a href="#" className="hover:text-gray-700">Contatti</a>
             </div>
+            <p>© 2024 Six-Slim - Tutti i diritti riservati</p>
           </div>
         </div>
       </footer>
