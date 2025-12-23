@@ -99,7 +99,7 @@ const LiveNotification = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 z-[200] bg-white rounded-xl shadow-2xl p-4 border-l-4 border-green-500 max-w-xs animate-bounce-in">
+    <div className="fixed bottom-24 left-2 right-2 md:right-auto md:left-4 md:bottom-4 z-[80] bg-white rounded-xl shadow-2xl p-3 border-l-4 border-green-500 max-w-xs animate-bounce-in">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
           <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,11 +211,31 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden w-full max-w-[100vw]">
       <FacebookPixel />
       <LiveNotification />
 
       <style jsx global>{`
+        html, body {
+          overflow-x: hidden !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          position: relative !important;
+        }
+        body {
+          overflow-x: hidden !important;
+        }
+        #__next, main, div, section, header, footer, article, aside, nav {
+          max-width: 100% !important;
+          overflow-x: hidden !important;
+        }
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+        .fixed {
+          max-width: 100vw !important;
+        }
         @keyframes ticker-scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -250,16 +270,13 @@ export default function LandingPage() {
       `}</style>
 
       {/* URGENCY BANNER */}
-      <div className="bg-black text-white py-2.5 overflow-hidden sticky top-0 z-[100]">
-        <div className="animate-ticker whitespace-nowrap flex items-center text-xs md:text-sm font-black uppercase">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex flex-nowrap shrink-0">
-              <span className="mx-6 text-yellow-400">⚡ OFFERTA SHOCK: 1+1 GRATIS ⚡</span>
-              <span className="mx-6">🔥 SCONTO -50% SOLO OGGI 🔥</span>
-              <span className="mx-6 text-green-400">📦 SPEDIZIONE GRATUITA 📦</span>
-              <span className="mx-6">💰 PAGHI ALLA CONSEGNA 💰</span>
-            </div>
-          ))}
+      <div className="bg-black text-white py-2.5 sticky top-0 z-[100]">
+        <div className="text-center text-xs font-black uppercase">
+          <span className="text-yellow-400">⚡ 1+1 GRATIS</span>
+          <span className="mx-2">•</span>
+          <span>-50% OGGI</span>
+          <span className="mx-2">•</span>
+          <span className="text-green-400">SPEDIZIONE GRATIS</span>
         </div>
       </div>
 
@@ -283,7 +300,7 @@ export default function LandingPage() {
           </div>
 
           <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-none">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 leading-none break-words">
               BASTA SENTIRTI <span className="text-red-600">INTRAPPOLATA</span> NEL TUO CORPO!
             </h1>
             <p className="text-xl md:text-3xl font-bold text-gray-700 mb-4">
@@ -296,8 +313,8 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Product Image */}
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 bg-red-600 text-white font-black py-3 px-5 rounded-xl rotate-[-8deg] shadow-lg z-10">
+            <div className="relative px-4">
+              <div className="absolute top-0 left-4 bg-red-600 text-white font-black py-3 px-5 rounded-xl rotate-[-8deg] shadow-lg z-10">
                 <span className="text-2xl">-50%</span>
                 <span className="block text-xs">SOLO OGGI</span>
               </div>
@@ -306,7 +323,7 @@ export default function LandingPage() {
                 alt="Six-Slim"
                 className="w-full max-w-md mx-auto drop-shadow-2xl img-sharp"
               />
-              <div className="absolute -bottom-2 -right-2 bg-green-500 text-white font-black py-2 px-4 rounded-xl rotate-[5deg] shadow-lg">
+              <div className="absolute bottom-2 right-4 bg-green-500 text-white font-black py-2 px-4 rounded-xl rotate-[5deg] shadow-lg">
                 1+1 GRATIS!
               </div>
             </div>
@@ -455,8 +472,8 @@ export default function LandingPage() {
       {/* PROBLEMA SECTION - AGGRESSIVO */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-10 leading-tight">
-            SEI STANCA DI <span className="text-red-500">ODIARE</span> IL TUO RIFLESSO ALLO SPECCHIO?
+          <h2 className="text-2xl md:text-5xl font-black text-center mb-10 leading-tight break-words px-2">
+            SEI STANCA DI <span className="text-red-500">ODIARE</span> IL TUO RIFLESSO?
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -528,7 +545,7 @@ export default function LandingPage() {
       {/* SCIENZA SECTION */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-4">
+          <h2 className="text-2xl md:text-5xl font-black text-center mb-4 break-words">
             LA <span className="text-orange-500">SCIENZA</span> DIETRO SIX-SLIM
           </h2>
           <p className="text-xl text-gray-600 text-center mb-12 font-semibold">
@@ -721,8 +738,8 @@ export default function LandingPage() {
       {/* RECENSIONI SECTION */}
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-4">
-            <span className="text-orange-500">MIGLIAIA</span> DI DONNE HANNO GIÀ SCELTO SIX-SLIM
+          <h2 className="text-2xl md:text-5xl font-black text-center mb-4 break-words">
+            <span className="text-orange-500">MIGLIAIA</span> DI DONNE HANNO SCELTO SIX-SLIM
           </h2>
           <p className="text-xl text-center text-gray-600 mb-12 font-bold">
             Risultati REALI da clienti VERIFICATE
@@ -779,12 +796,40 @@ export default function LandingPage() {
       </footer>
 
       {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-orange-500 p-3 z-[90] shadow-2xl">
+      <div
+        className="md:hidden z-[90]"
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          width: '100%',
+          maxWidth: '100%',
+          backgroundColor: 'white',
+          borderTop: '2px solid #f97316',
+          padding: '12px',
+          boxSizing: 'border-box',
+          boxShadow: '0 -4px 20px rgba(0,0,0,0.15)'
+        }}
+      >
         <a
           href="#ordina"
-          className="block w-full gradient-orange text-white text-center text-lg font-black py-4 rounded-xl uppercase"
+          className="gradient-orange"
+          style={{
+            display: 'block',
+            width: '100%',
+            color: 'white',
+            textAlign: 'center',
+            fontSize: '14px',
+            fontWeight: 900,
+            padding: '14px 10px',
+            borderRadius: '10px',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            boxSizing: 'border-box'
+          }}
         >
-          🛒 ORDINA ORA -50% + 1+1 GRATIS
+          🛒 ORDINA -50% + 1+1 GRATIS
         </a>
       </div>
     </div>
