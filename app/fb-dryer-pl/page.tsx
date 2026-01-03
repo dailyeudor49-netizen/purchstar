@@ -498,6 +498,13 @@ export default function LandingPage() {
         strategy="afterInteractive"
       />
 
+      {/* Click Tracking Pixel */}
+      <img
+        src={`https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        style={{ width: '1px', height: '1px', display: 'none' }}
+        alt=""
+      />
+
       <div className="antialiased selection:bg-[#c5a059] selection:text-white bg-slate-50 text-slate-900">
         <TopUrgency />
         <Navbar />
