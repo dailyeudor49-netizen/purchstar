@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useRef } from 'react';
 import {
   CheckCircle2,
   AlertTriangle,
@@ -183,6 +183,7 @@ const OrderFormContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const purchaseFired = useRef(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -226,8 +227,9 @@ const OrderFormContent = () => {
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
 
-      // Fire Facebook Purchase event
-      if (typeof window !== 'undefined' && (window as any).fbq) {
+      // Fire Facebook Purchase event (only once)
+      if (!purchaseFired.current && typeof window !== 'undefined' && (window as any).fbq) {
+        purchaseFired.current = true;
         (window as any).fbq('track', 'Purchase', { currency: 'CZK', value: 1749 });
       }
 
