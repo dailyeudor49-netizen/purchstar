@@ -24,7 +24,7 @@ export default function FacebookPixel() {
         trackPageView(pageViewEventId);
         console.log('[FB Pixel] PageView tracked on:', pathname);
 
-        // Se siamo su una landing page (/fb-airwave-*), traccia ViewContent
+        // Se siamo su una landing page (/fb-airwave-* o /fb-bluebull), traccia ViewContent
         if (pathname.startsWith('/fb-airwave')) {
           const viewContentEventId = generateEventId();
           console.log('[FB Pixel] Landing page detected, tracking ViewContent...');
@@ -36,6 +36,17 @@ export default function FacebookPixel() {
           console.log('[FB Pixel] ViewContent tracked');
         }
 
+        if (pathname.startsWith('/fb-bluebull')) {
+          const viewContentEventId = generateEventId();
+          console.log('[FB Pixel] Blubull landing page detected, tracking ViewContent...');
+          trackViewContent({
+            content_name: 'Blubull',
+            content_category: 'Health',
+            content_type: 'product',
+          }, viewContentEventId);
+          console.log('[FB Pixel] ViewContent tracked for Blubull');
+        }
+
         // Se siamo su una thank you page (/ty/*), traccia Purchase
         if (pathname.startsWith('/ty')) {
           const purchaseEventId = generateEventId();
@@ -43,13 +54,53 @@ export default function FacebookPixel() {
 
           const userData = getUserDataFromStorage();
 
-          const purchaseData = {
+          // Determina i dati di acquisto in base alla thank you page
+          let purchaseData = {
             content_name: 'Airwave Air Conditioner',
             content_category: 'Electronics',
             content_type: 'product',
             currency: 'EUR',
             value: 89.00,
           };
+
+          // Thank you pages per DryPro 360 Ultra
+          if (pathname.includes('ty-fb-dryer-cz')) {
+            purchaseData = {
+              content_name: 'DryPro 360 Ultra',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'CZK',
+              value: 1749,
+            };
+          } else if (pathname.includes('ty-fb-dryer-sk')) {
+            purchaseData = {
+              content_name: 'DryPro 360 Ultra',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'EUR',
+              value: 69.99,
+            };
+          } else if (pathname.includes('ty-fb-dryer-pl')) {
+            purchaseData = {
+              content_name: 'DryPro 360 Ultra',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'PLN',
+              value: 299,
+            };
+          }
+          // Thank you pages per NovaClean Robot
+          else if (pathname.includes('ty-fb-robot-asp')) {
+            purchaseData = {
+              content_name: 'NovaClean X1 Robot',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'PLN',
+              value: 349,
+            };
+          }
+
+          console.log('[FB Pixel] Purchase data:', purchaseData);
 
           // Traccia Purchase via Pixel (client-side)
           trackPurchase(purchaseData, purchaseEventId);
