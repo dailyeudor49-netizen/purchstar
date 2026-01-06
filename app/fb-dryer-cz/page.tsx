@@ -28,11 +28,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
-  uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
-  key: 'ec15cab563da6cf51f0c7c',
-  offer: '578',
-  lp: '578'
+  url: 'https://offers.uncappednetwork.com/forms/api/',
+  uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
+  key: '151af1e45a084aaf75c15f',
+  offer: '3169',
+  lp: '3203'
 };
 
 // --- COLORS ---
@@ -255,7 +255,7 @@ const OrderFormContent = () => {
           <div className="flex items-center gap-4 mb-10 pb-6 border-b border-slate-100">
              <div className="flex-1">
                <span className="text-slate-400 text-xs font-bold uppercase block">Akční Cena</span>
-               <span className="text-4xl font-black text-blue-700">1 749 Kč</span>
+               <span className="text-4xl font-black text-blue-700">1 759 Kč</span>
              </div>
              <div className="text-right">
                <span className="text-slate-400 text-xs font-bold uppercase block">Katalogová Cena</span>
@@ -446,7 +446,7 @@ const Navbar = () => (
 const StickyCTA = () => (
   <div className="md:hidden fixed bottom-0 left-0 right-0 z-[200] bg-white border-t p-4 flex items-center justify-between shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
     <div className="flex flex-col">
-      <span className="text-[#dc2626] font-black text-3xl leading-none">1 749 Kč</span>
+      <span className="text-[#dc2626] font-black text-3xl leading-none">1 759 Kč</span>
       <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Sleva Vyprodání</span>
     </div>
     <a href="#objednavka" className="bg-[#dc2626] text-white px-8 py-4 rounded-2xl font-black text-sm uppercase shadow-xl active:scale-95 transition-all tracking-tighter">
@@ -460,14 +460,14 @@ export default function LandingPage() {
     <>
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.supertrendaffiliateprogram.com/forms/tmfp/"
+        src="https://offers.uncappednetwork.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.uncappednetwork.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
