@@ -2,18 +2,19 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  CheckCircle2, 
-  AlertTriangle, 
-  TrendingDown, 
-  Zap, 
-  ShieldCheck, 
-  Clock, 
-  Package, 
-  Star, 
-  ThumbsUp, 
-  Wind, 
-  Thermometer, 
+import Script from 'next/script';
+import {
+  CheckCircle2,
+  AlertTriangle,
+  TrendingDown,
+  Zap,
+  ShieldCheck,
+  Clock,
+  Package,
+  Star,
+  ThumbsUp,
+  Wind,
+  Thermometer,
   VolumeX,
   ShoppingCart,
   ChevronRight,
@@ -375,8 +376,23 @@ const StickyCTA = () => (
 
 export default function LandingPage() {
   return (
-    <div className="antialiased selection:bg-[#c5a059] selection:text-white bg-slate-50 text-slate-900">
-      <TopUrgency />
+    <>
+      {/* Google Tag (gtag.js) */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17321474795"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17321474795');
+        `}
+      </Script>
+
+      <div className="antialiased selection:bg-[#c5a059] selection:text-white bg-slate-50 text-slate-900">
+        <TopUrgency />
       <Navbar />
       <main className="pb-24">
         <Hero />
@@ -407,7 +423,8 @@ export default function LandingPage() {
         </section>
       </main>
       <StickyCTA />
-    </div>
+      </div>
+    </>
   );
 }
 
