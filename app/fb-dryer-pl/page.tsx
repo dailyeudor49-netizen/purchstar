@@ -458,6 +458,20 @@ const StickyCTA = () => (
 export default function LandingPage() {
   return (
     <>
+      {/* Google Tag (gtag.js) */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17321474795"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17321474795');
+        `}
+      </Script>
+
       {/* Fingerprint Script */}
       <Script
         src="https://offers.uncappednetwork.com/forms/tmfp/"
