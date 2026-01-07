@@ -231,6 +231,13 @@ const OrderFormContent = () => {
         body: params.toString(),
       });
 
+      // Google Ads Conversion
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17321474795/2_mMCND1o9AbEOv1wsNA'
+        });
+      }
+
       router.push('/ty/ty-fb-dryer-cz');
     } catch (error) {
       console.error('[Network API] Error:', error);
