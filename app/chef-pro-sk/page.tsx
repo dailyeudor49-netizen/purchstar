@@ -189,7 +189,7 @@ const OrderFormContent = () => {
   );
 };
 
-const OrderForm = ({ formRef }: { formRef: React.RefObject<HTMLDivElement> }) => (
+const OrderForm = ({ formRef }: { formRef: React.RefObject<HTMLDivElement | null> }) => (
   <section ref={formRef} className="py-24 px-6 bg-rose-50 scroll-mt-20">
     <div className="max-w-md mx-auto">
       <Suspense fallback={<div className="py-20 text-center">Načítava sa...</div>}>
