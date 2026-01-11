@@ -128,7 +128,7 @@ const VideoSection = () => (
   <section className="py-16 px-4 bg-slate-100">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4 px-2">
           ZOBACZ <span className="text-blue-700 italic">MORUS ZERO DRYPRO 360 ULTRA</span> W AKCJI
         </h2>
         <p className="text-slate-500 font-medium">Odkryj jak dziala i dlaczego tysiace Polakow juz go wybralo.</p>
@@ -154,7 +154,7 @@ const PowerSpecs = () => (
   <section className="py-16 px-4 bg-[#0f172a] text-white overflow-hidden relative">
     <div className="absolute top-0 right-0 w-64 h-64 bg-[#c5a059]/10 blur-[100px] rounded-full"></div>
     <div className="max-w-4xl mx-auto relative z-10">
-      <h2 className="text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter leading-none">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter leading-none px-2">
         MOC <span className="text-[#c5a059] italic">BEZ KOMPROMISOW</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -252,7 +252,7 @@ const OrderFormContent = () => {
           <div className="inline-block bg-[#dc2626] text-white px-6 py-1 rounded-full text-sm font-black mb-4 uppercase tracking-widest animate-pulse">
             Oferta czasowa
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 leading-[0.9]">WYPELNIJ FORMULARZ <br/><span className="text-blue-700 italic">PLAC PRZY ODBIORZE</span></h2>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 leading-[0.9] px-2">WYPELNIJ FORMULARZ <br/><span className="text-blue-700 italic">PLAC PRZY ODBIORZE</span></h2>
           <p className="text-slate-500 font-medium">Karta nie jest wymagana. Placisz tylko gdy otrzymasz paczke.</p>
         </div>
 
@@ -343,7 +343,7 @@ const PainPoints = () => (
   <section className="py-20 px-4 bg-white">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-none tracking-tighter mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 leading-none tracking-tighter mb-4 px-2">
           ZMIENIASZ SWOJ DOM <br/><span className="text-red-600 italic underline">W FABRYKE PLESNI?</span>
         </h2>
         <p className="text-slate-500 font-medium">Kazda otwarta suszarka uwalnia do 2 litrow wody do Twoich pluc.</p>
@@ -382,10 +382,10 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-5 py-2 rounded-full font-black text-xs uppercase tracking-widest border border-blue-100 shadow-sm">
             <Zap size={14} className="animate-pulse text-yellow-500 fill-current" /> Limitowana Edycja Premium 2026
           </div>
-          <h1 className="text-5xl md:text-8xl font-black leading-[0.85] text-slate-900 tracking-tighter mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-black leading-[0.85] text-slate-900 tracking-tighter mb-6 px-2">
             LUKSUS SUCHYCH <br/><span className="text-blue-700 italic">I WYSTERYLIZOWANYCH</span> UBRAN W <span className="underline decoration-[#c5a059]">45 MINUT.</span>
           </h1>
-          <p className="text-slate-600 text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-tight">
+          <p className="text-slate-600 text-base sm:text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-tight px-2">
             Przestaj marnowac miejsce i pieniadze. Odkryj jedyna suszarke z <b>Pojemnoscia 4KG</b> i <b>Dezynfekcja w 65°C</b>, ktora zuzywa mniej niz zarowka.
           </p>
         </div>
@@ -420,7 +420,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <a href="#zamowienie" className="group w-full max-w-lg bg-[#dc2626] text-white py-6 md:py-7 rounded-[2rem] font-black text-xl md:text-2xl shadow-[0_20px_40px_rgba(220,38,38,0.4)] flex items-center justify-center gap-4 transition-all hover:scale-105 active:scale-95 uppercase tracking-tighter leading-none">
+        <a href="#zamowienie" className="group w-full max-w-lg bg-[#dc2626] text-white py-6 md:py-7 rounded-[2rem] font-black text-lg sm:text-xl md:text-2xl shadow-[0_20px_40px_rgba(220,38,38,0.4)] flex items-center justify-center gap-4 transition-all hover:scale-105 active:scale-95 uppercase tracking-tighter leading-none mx-2">
           ZAMOW TERAZ -69% <ShoppingCart className="group-hover:rotate-12 transition-transform" />
         </a>
         <p className="mt-4 text-slate-400 text-sm font-bold flex items-center gap-2">

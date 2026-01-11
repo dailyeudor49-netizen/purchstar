@@ -128,7 +128,7 @@ const VideoSection = () => (
   <section className="py-16 px-4 bg-slate-100">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4 px-2">
           PODÍVEJTE SE NA <span className="text-blue-700 italic">MORUS ZERO DRYPRO 360 ULTRA</span> V AKCI
         </h2>
         <p className="text-slate-500 font-medium">Objevte jak funguje a proč si ho už vybraly tisíce Čechů.</p>
@@ -154,7 +154,7 @@ const PowerSpecs = () => (
   <section className="py-16 px-4 bg-[#0f172a] text-white overflow-hidden relative">
     <div className="absolute top-0 right-0 w-64 h-64 bg-[#c5a059]/10 blur-[100px] rounded-full"></div>
     <div className="max-w-4xl mx-auto relative z-10">
-      <h2 className="text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter leading-none">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter leading-none px-2">
         VÝKON <span className="text-[#c5a059] italic">BEZ KOMPROMISŮ</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -252,7 +252,7 @@ const OrderFormContent = () => {
           <div className="inline-block bg-[#dc2626] text-white px-6 py-1 rounded-full text-sm font-black mb-4 uppercase tracking-widest animate-pulse">
             Časově omezená nabídka
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 leading-[0.9]">VYPLŇTE FORMULÁŘ <br/><span className="text-blue-700 italic">PLAŤTE PŘI PŘEVZETÍ</span></h2>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 leading-[0.9] px-2">VYPLŇTE FORMULÁŘ <br/><span className="text-blue-700 italic">PLAŤTE PŘI PŘEVZETÍ</span></h2>
           <p className="text-slate-500 font-medium">Karta není potřeba. Platíte až když dostanete balík.</p>
         </div>
 
@@ -343,7 +343,7 @@ const PainPoints = () => (
   <section className="py-20 px-4 bg-white">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-none tracking-tighter mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 leading-none tracking-tighter mb-4 px-2">
           MĚNÍTE SVŮJ DOMOV <br/><span className="text-red-600 italic underline">NA TOVÁRNU NA PLÍSEŇ?</span>
         </h2>
         <p className="text-slate-500 font-medium">Každý otevřený sušák uvolňuje až 2 litry vody do vašich plic.</p>
@@ -382,10 +382,10 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-5 py-2 rounded-full font-black text-xs uppercase tracking-widest border border-blue-100 shadow-sm">
             <Zap size={14} className="animate-pulse text-yellow-500 fill-current" /> Limitovaná Prémiová Edice 2026
           </div>
-          <h1 className="text-5xl md:text-8xl font-black leading-[0.85] text-slate-900 tracking-tighter mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-black leading-[0.85] text-slate-900 tracking-tighter mb-6 px-2">
             LUXUS SUCHÉHO <br/><span className="text-blue-700 italic">A STERILIZOVANÉHO</span> PRÁDLA ZA <span className="underline decoration-[#c5a059]">45 MINUT.</span>
           </h1>
-          <p className="text-slate-600 text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-tight">
+          <p className="text-slate-600 text-base sm:text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-tight px-2">
             Přestaňte plýtvat prostorem a penězi. Objevte jedinou sušičku s <b>Kapacitou 4KG</b> a <b>Dezinfekcí při 65°C</b>, která spotřebuje méně než žárovka.
           </p>
         </div>
@@ -420,7 +420,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <a href="#objednavka" className="group w-full max-w-lg bg-[#dc2626] text-white py-6 md:py-7 rounded-[2rem] font-black text-xl md:text-2xl shadow-[0_20px_40px_rgba(220,38,38,0.4)] flex items-center justify-center gap-4 transition-all hover:scale-105 active:scale-95 uppercase tracking-tighter leading-none">
+        <a href="#objednavka" className="group w-full max-w-lg bg-[#dc2626] text-white py-6 md:py-7 rounded-[2rem] font-black text-lg sm:text-xl md:text-2xl shadow-[0_20px_40px_rgba(220,38,38,0.4)] flex items-center justify-center gap-4 transition-all hover:scale-105 active:scale-95 uppercase tracking-tighter leading-none mx-2">
           OBJEDNAT NYNÍ -72% <ShoppingCart className="group-hover:rotate-12 transition-transform" />
         </a>
         <p className="mt-4 text-slate-400 text-sm font-bold flex items-center gap-2">
