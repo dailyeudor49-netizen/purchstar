@@ -196,7 +196,19 @@ export default function LandingPage() {
 
           {/* Product Image */}
           <div className="flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.jpg" alt="AuraRelief Pro" className="w-full rounded-3xl shadow-xl" />
+            <img src="/images/massager/04f814d0-d3fb-4d25-9ddb-4720bc4d43b6.avif" alt="AuraRelief Pro" className="w-full rounded-3xl shadow-xl" />
+          </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <img src="/images/massager/3356e3a1-f792-4f07-af17-ce113f50fece.avif" alt="AuraRelief Pro - widok 1" className="w-full rounded-xl shadow-md hover:scale-105 transition-transform" />
+            <img src="/images/massager/415b2963-bc1c-4bca-b880-8b41759bae69.avif" alt="AuraRelief Pro - widok 2" className="w-full rounded-xl shadow-md hover:scale-105 transition-transform" />
+            <img src="/images/massager/5e7927a2-d1a7-4fd1-aa7d-d220886e5432.avif" alt="AuraRelief Pro - widok 3" className="w-full rounded-xl shadow-md hover:scale-105 transition-transform" />
+            <img src="/images/massager/febb6a60-ed84-4cfb-ae14-dec2f92f3be7.avif" alt="AuraRelief Pro - widok 4" className="w-full rounded-xl shadow-md hover:scale-105 transition-transform" />
           </div>
         </div>
       </section>
@@ -252,18 +264,23 @@ export default function LandingPage() {
 
       {/* 5. FEATURES SECTION - Mobile Optimized */}
       <section className="py-12 sm:py-16 md:py-24 bg-white px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 uppercase">Dlaczego Warto Go Wybrać?</h2>
-          <div className="grid gap-6 sm:gap-8">
-            {FEATURES.map((f, i) => (
-              <div key={i} className="flex gap-4 sm:gap-6 items-start bg-gray-50 p-4 sm:p-6 rounded-2xl">
-                <div className="text-3xl sm:text-4xl">{f.icon}</div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold mb-2">{f.title}</h4>
-                  <p className="text-sm sm:text-base text-slate-600">{f.description}</p>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <img src="/images/massager/febb6a60-ed84-4cfb-ae14-dec2f92f3be7.avif" alt="AuraRelief Pro w użyciu" className="w-full rounded-2xl shadow-lg" />
+            </div>
+            <div className="order-1 md:order-2 space-y-6 sm:space-y-8">
+              {FEATURES.map((f, i) => (
+                <div key={i} className="flex gap-4 sm:gap-6 items-start bg-gray-50 p-4 sm:p-6 rounded-2xl">
+                  <div className="text-3xl sm:text-4xl">{f.icon}</div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2">{f.title}</h4>
+                    <p className="text-sm sm:text-base text-slate-600">{f.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
