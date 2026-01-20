@@ -183,9 +183,7 @@ const OrderFormContent = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    address: '',
-    city: '',
-    postalCode: ''
+    address: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -208,8 +206,6 @@ const OrderFormContent = () => {
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        'address-level2': formData.city,
-        'postal-code': formData.postalCode,
       });
 
       // Add fingerprint or fallback to IP/UA
@@ -304,42 +300,16 @@ const OrderFormContent = () => {
               />
             </div>
             <div className="group">
-              <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-1 block group-focus-within:text-blue-600 transition-colors">Adresa de Livrare (Strada, Nr.)</label>
+              <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-1 block group-focus-within:text-blue-600 transition-colors">Adresa de Livrare (Strada, Nr., Oraș, Cod Poștal)</label>
               <input
                 required
                 type="text"
                 name="address"
-                placeholder="Strada Victoriei 10, Bl. A1, Ap. 5"
+                placeholder="Strada Victoriei 10, București, 010101"
                 className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl focus:border-blue-600 transition-all shadow-inner font-bold"
                 value={formData.address}
                 onChange={handleChange}
               />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="group">
-                <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-1 block group-focus-within:text-blue-600 transition-colors">Oraș</label>
-                <input
-                  required
-                  type="text"
-                  name="city"
-                  placeholder="București"
-                  className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl focus:border-blue-600 transition-all shadow-inner font-bold"
-                  value={formData.city}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="group">
-                <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-1 block group-focus-within:text-blue-600 transition-colors">Cod Poștal</label>
-                <input
-                  required
-                  type="text"
-                  name="postalCode"
-                  placeholder="010101"
-                  className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl focus:border-blue-600 transition-all shadow-inner font-bold"
-                  value={formData.postalCode}
-                  onChange={handleChange}
-                />
-              </div>
             </div>
             <div className="group">
               <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-1 block group-focus-within:text-blue-600 transition-colors">Telefon (Pentru livrare)</label>
