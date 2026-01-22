@@ -188,16 +188,28 @@ const OrderFormContent = () => {
           />
         </div>
 
+        {/* Price Display */}
+        <div className="bg-gradient-to-r from-rose-50 to-rose-100 rounded-2xl p-6 border-2 border-rose-200">
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-2 font-medium">Astazi platiti doar:</p>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-gray-400 line-through text-xl">1499 Lei</span>
+              <span className="text-4xl font-black text-rose-600">507 Lei</span>
+            </div>
+            <p className="text-xs text-green-600 font-bold mt-2">Economisiti 992 Lei (-66%)</p>
+          </div>
+        </div>
+
         <button
           disabled={orderStatus === 'loading'}
           className="w-full bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] active:translate-y-1 active:shadow-none transition-all uppercase mt-8 flex items-center justify-center"
         >
           {orderStatus === 'loading' ? (
             <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
-          ) : "Confirmați Comanda ➔"}
+          ) : "Confirmati Comanda ➔"}
         </button>
         <p className="text-[10px] text-center text-gray-400 leading-tight">
-          Prin trimiterea comenzii acceptați condițiile de vânzare. Datele dumneavoastră sunt protejate cu criptare SSL pe 256 de biți.
+          Prin trimiterea comenzii acceptati conditiile de vanzare. Datele dumneavoastra sunt protejate cu criptare SSL pe 256 de biti.
         </p>
       </form>
     </div>

@@ -188,6 +188,18 @@ const OrderFormContent = () => {
           />
         </div>
 
+        {/* Price Display */}
+        <div className="bg-gradient-to-r from-rose-50 to-rose-100 rounded-2xl p-6 border-2 border-rose-200">
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-2 font-medium">Danes plačate samo:</p>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-gray-400 line-through text-xl">299 €</span>
+              <span className="text-4xl font-black text-rose-600">99 €</span>
+            </div>
+            <p className="text-xs text-green-600 font-bold mt-2">Prihranite 200 € (-67%)</p>
+          </div>
+        </div>
+
         <button
           disabled={orderStatus === 'loading'}
           className="w-full bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] active:translate-y-1 active:shadow-none transition-all uppercase mt-8 flex items-center justify-center"

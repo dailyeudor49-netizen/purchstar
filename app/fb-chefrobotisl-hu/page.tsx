@@ -188,16 +188,28 @@ const OrderFormContent = () => {
           />
         </div>
 
+        {/* Price Display */}
+        <div className="bg-gradient-to-r from-rose-50 to-rose-100 rounded-2xl p-6 border-2 border-rose-200">
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-2 font-medium">Ma csak ennyit fizet:</p>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-gray-400 line-through text-lg">119 900 Ft</span>
+              <span className="text-3xl font-black text-rose-600">39 623 Ft</span>
+            </div>
+            <p className="text-xs text-green-600 font-bold mt-2">Megtakarit 80 277 Ft (-67%)</p>
+          </div>
+        </div>
+
         <button
           disabled={orderStatus === 'loading'}
           className="w-full bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] active:translate-y-1 active:shadow-none transition-all uppercase mt-8 flex items-center justify-center"
         >
           {orderStatus === 'loading' ? (
             <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
-          ) : "Rendelés Megerősítése ➔"}
+          ) : "Rendeles Megerositese ➔"}
         </button>
         <p className="text-[10px] text-center text-gray-400 leading-tight">
-          A rendelés elküldésével elfogadja az értékesítési feltételeket. Adatait 256 bites SSL titkosítás védi.
+          A rendeles elkuldesevel elfogadja az ertekesitesi felteteleket. Adatait 256 bites SSL titkositas vedi.
         </p>
       </form>
     </div>
