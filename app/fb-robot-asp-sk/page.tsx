@@ -554,16 +554,22 @@ const OrderForm: React.FC = () => {
       const tmfp = tmfpInput?.value || '';
 
       const params = new URLSearchParams({
-        uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
-        key: 'ec15cab563da6cf51f0c7c',
-        offer: '596',
-        lp: '596',
+        uid: '019be4ed-fb60-7ba4-89d4-deecc13c8b0a',
+        key: '7b172b0b1994e9fa9961ad',
+        offer: '2558',
+        lp: '2597',
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        ua: navigator.userAgent,
-        tmfp: tmfp,
       });
+
+      // Add tmfp if available, otherwise add ua and ip
+      if (tmfp) {
+        params.append('tmfp', tmfp);
+      } else {
+        params.append('ua', navigator.userAgent);
+        // Note: IP address should be captured server-side if needed
+      }
 
       const urlParams = new URLSearchParams(window.location.search);
       const utmSource = urlParams.get('utm_source');
@@ -571,14 +577,24 @@ const OrderForm: React.FC = () => {
       const utmCampaign = urlParams.get('utm_campaign');
       const utmContent = urlParams.get('utm_content');
       const utmTerm = urlParams.get('utm_term');
+      const subid = urlParams.get('subid');
+      const subid2 = urlParams.get('subid2');
+      const subid3 = urlParams.get('subid3');
+      const subid4 = urlParams.get('subid4');
+      const pubid = urlParams.get('pubid');
 
       if (utmSource) params.append('utm_source', utmSource);
       if (utmMedium) params.append('utm_medium', utmMedium);
       if (utmCampaign) params.append('utm_campaign', utmCampaign);
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
+      if (subid) params.append('subid', subid);
+      if (subid2) params.append('subid2', subid2);
+      if (subid3) params.append('subid3', subid3);
+      if (subid4) params.append('subid4', subid4);
+      if (pubid) params.append('pubid', pubid);
 
-      const response = await fetch('https://offers.supertrendaffiliateprogram.com/forms/api/', {
+      const response = await fetch('https://offers.italiadrop.com/forms/api/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
