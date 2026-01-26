@@ -16,11 +16,11 @@ const API_CONFIG = {
 // --- DATA ---
 const REVIEWS = [
   { name: "Maria Silva", title: "Ja nao me imagino sem ele! Mudou a minha vida", rating: 5, date: "Ha 2 dias", text: "Era cetica por causa do preco tao baixo, mas e incrivel. Cozinha tudo sozinho, e facil de limpar e as receitas sao um sucesso garantido. Chegou em 48 horas!", verified: true },
-  { name: "Carlos Santos", title: "Qualidade acima das expectativas", rating: 5, date: "Ha 1 semana", text: "Materiais solidos e motor muito potente. Ontem a noite fiz um risotto e ficou perfeito, cremoso como num restaurante. Por 69 euros e um presente.", verified: true },
+  { name: "Carlos Santos", title: "Qualidade acima das expectativas", rating: 5, date: "Ha 1 semana", text: "Materiais solidos e motor muito potente. Ontem a noite fiz um risotto e ficou perfeito, cremoso como num restaurante. Por 89 euros e um presente.", verified: true },
   { name: "Laura Ferreira", title: "Excelente compra", rating: 4, date: "Ha 3 dias", text: "Comprei como presente para a minha mae, agora a minha irma tambem quer um. O ecra e muito intuitivo.", verified: true },
   { name: "Jose Oliveira", title: "Encomenda chegou intacta e a tempo", rating: 5, date: "Ha 4 dias", text: "O estafeta foi muito simpatico. Paguei em dinheiro como prometido. O robo e robusto e faz imensas coisas. Recomendo!", verified: true },
   { name: "Ana Costa", title: "Substitui tudo na cozinha", rating: 5, date: "Ha 5 dias", text: "Deitei fora a velha batedeira e a panela a vapor. Este faz tudo. O ecra e grande e ve-se muito bem.", verified: true },
-  { name: "Roberto Pereira", title: "Relacao qualidade-preco imbativel", rating: 5, date: "Ha 6 dias", text: "Vi produtos semelhantes a 400 euros. Este a 69 euros e uma oferta irrepetivel. A balanca e muito precisa.", verified: true },
+  { name: "Roberto Pereira", title: "Relacao qualidade-preco imbativel", rating: 5, date: "Ha 6 dias", text: "Vi produtos semelhantes a 400 euros. Este a 89 euros e uma oferta irrepetivel. A balanca e muito precisa.", verified: true },
   { name: "Elena Rodrigues", title: "A minha filha adora", rating: 5, date: "Ha 1 semana", text: "Fazemos sobremesas juntas a ver as videoreceitas. Tornou-se o nosso momento favorito do dia.", verified: true },
   { name: "Miguel Martins", title: "Potente e silencioso", rating: 4, date: "Ha 1 semana", text: "Esperava que fizesse mais barulho ao amassar, mas e bastante silencioso. Perfeito para viver em apartamento.", verified: true },
   { name: "Carmen Almeida", title: "Receitas faceis e deliciosas", rating: 5, date: "Ha 9 dias", text: "Nao sou boa cozinheira, mas com o guia passo a passo nao falho. O meu marido ficou surpreendido!", verified: true },
@@ -112,7 +112,7 @@ const OrderFormContent = () => {
         <h2 className="text-3xl font-black mb-4">ENCOMENDA CONFIRMADA!</h2>
         <p className="text-gray-600 mb-8 font-medium">Obrigado pela sua compra. O nosso consultor ligara em 15 minutos para confirmar os dados de envio.</p>
         <div className="p-4 bg-green-50 text-green-700 font-bold rounded-2xl">
-          A sua encomenda chegara em 24/48h. Prepare 69€ em dinheiro para o estafeta!
+          A sua encomenda chegara em 24/48h. Prepare 89€ em dinheiro para o estafeta!
         </div>
       </div>
     );
@@ -262,7 +262,7 @@ export default function LandingPage() {
               Desconto Imediato -70%
             </div>
             <h1 className="text-4xl md:text-6xl font-black leading-none mb-6 tracking-tighter">
-              COZINHE COMO UM PROFISSIONAL POR APENAS <span className="text-rose-600">69€</span>
+              COZINHE COMO UM PROFISSIONAL POR APENAS <span className="text-rose-600">89€</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
               O Melhor Robo de Cozinha Inteligente. Substitui 15 eletrodomesticos. Videoreceitas e controlo por app.
@@ -276,7 +276,7 @@ export default function LandingPage() {
               />
               <div className="absolute -top-6 -right-6 bg-yellow-400 text-black w-28 h-28 rounded-full flex flex-col items-center justify-center font-black shadow-2xl rotate-12 border-4 border-white animate-pulse">
                 <span className="text-sm line-through opacity-60">229€</span>
-                <span className="text-2xl italic">69€</span>
+                <span className="text-2xl italic">89€</span>
               </div>
             </div>
 
@@ -284,7 +284,7 @@ export default function LandingPage() {
               onClick={scrollToForm}
               className="w-full max-w-md bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] hover:shadow-[0_5px_0_0_#9f1239] hover:translate-y-1 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Sim! Quero por 69€ ➔
+              Sim! Quero por 89€ ➔
             </button>
             <p className="mt-6 text-green-600 font-bold flex items-center justify-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"></path></svg>
@@ -355,7 +355,7 @@ export default function LandingPage() {
           <section className="py-20 bg-gray-900 text-white px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black uppercase mb-4">O KIT MAIS COMPLETO DE SEMPRE</h2>
-              <p className="text-gray-400 italic">Tudo incluido por 69€ - Valor dos acessorios em separado: 149€</p>
+              <p className="text-gray-400 italic">Tudo incluido por 89€ - Valor dos acessorios em separado: 149€</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {ACCESSORIES.map((acc, idx) => (
@@ -480,7 +480,7 @@ export default function LandingPage() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-gray-200 z-50 md:hidden flex items-center justify-between gap-4 animate-in slide-in-from-bottom duration-500">
           <div className="flex flex-col">
             <span className="text-[10px] font-black uppercase text-gray-400">Oferta</span>
-            <span className="text-3xl font-black text-rose-600 leading-none">69€</span>
+            <span className="text-3xl font-black text-rose-600 leading-none">89€</span>
           </div>
           <button
             onClick={scrollToForm}

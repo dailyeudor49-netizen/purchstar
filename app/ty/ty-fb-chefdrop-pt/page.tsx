@@ -129,7 +129,7 @@ export default function ThankYouPage() {
         }}>
           <span style={{ fontSize: '1.5rem' }}>💰</span>
           <div>
-            <div style={{ fontWeight: 600, color: '#92400e', fontSize: '0.9rem' }}>Pagamento contra reembolso: 69,00€</div>
+            <div style={{ fontWeight: 600, color: '#92400e', fontSize: '0.9rem' }}>Pagamento contra reembolso: 89,00€</div>
             <div style={{ color: '#a16207', fontSize: '0.8rem' }}>Prepare o valor exato para o estafeta</div>
           </div>
         </div>
