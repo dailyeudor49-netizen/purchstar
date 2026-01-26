@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   ShieldCheck,
@@ -26,8 +26,8 @@ import {
   Loader2
 } from 'lucide-react';
 
-// --- MAIN LANDING PAGE COMPONENT ---
-export default function LandingPage() {
+// Wrapper component to handle Suspense for useSearchParams
+function LandingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [showStickyCTA, setShowStickyCTA] = useState(false);
@@ -569,5 +569,14 @@ export default function LandingPage() {
       )}
 
     </div>
+  );
+}
+
+// --- MAIN LANDING PAGE COMPONENT ---
+export default function LandingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><Loader2 className="w-8 h-8 animate-spin text-orange-600" /></div>}>
+      <LandingPageContent />
+    </Suspense>
   );
 }
