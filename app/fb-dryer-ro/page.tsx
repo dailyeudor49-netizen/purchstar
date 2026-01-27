@@ -141,7 +141,7 @@ const VideoSection = () => (
           loop
           playsInline
         >
-          <source src="/video/dryer/lp.mp4" type="video/mp4" />
+          <source src="/video/dryer/2.mp4" type="video/mp4" />
           Browser-ul dvs. nu suportă tag-ul video.
         </video>
       </div>
