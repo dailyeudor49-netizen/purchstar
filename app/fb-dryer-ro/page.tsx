@@ -29,8 +29,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 // --- API CONFIG ---
 const API_CONFIG = {
   url: 'https://offers.islaffiliate.com/forms/api/',
-  uid: '019bbd3a-6cf4-7692-a596-6045883270bf',
-  key: '1397416d712560d2e77da8',
+  uid: '019bbd3b-0068-7ba3-b472-c0cccc3adcea',
+  key: 'cdcb358f4654ad7580ddee',
   offer: '1336',
   lp: '2586'
 };
