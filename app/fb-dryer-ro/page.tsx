@@ -388,6 +388,8 @@ const Hero = () => {
     '/images/portable-dryer/1.jpg',
     '/images/portable-dryer/4.jpg',
     '/images/portable-dryer/5.jpg',
+    '/images/portable-dryer/7.webp',
+    '/images/portable-dryer/8.webp',
   ];
 
   return (
