@@ -47,8 +47,8 @@ export default function FacebookPixel() {
           console.log('[FB Pixel] ViewContent tracked for Blubull');
         }
 
-        // Se siamo su una thank you page (/ty/*), traccia Purchase
-        if (pathname.startsWith('/ty')) {
+        // Se siamo su una thank you page (/ty/* o */ty), traccia Purchase
+        if (pathname.startsWith('/ty') || pathname.endsWith('/ty')) {
           const purchaseEventId = generateEventId();
           console.log('[FB Pixel] Thank you page detected, tracking Purchase...');
 
@@ -97,6 +97,32 @@ export default function FacebookPixel() {
               content_type: 'product',
               currency: 'PLN',
               value: 349,
+            };
+          }
+          // Thank you pages per Mini 17 Pro Titanium
+          else if (pathname.includes('fb-miniphonerk-pl/ty')) {
+            purchaseData = {
+              content_name: 'Mini 17 Pro Titanium',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'PLN',
+              value: 349,
+            };
+          } else if (pathname.includes('fb-miniphonerk-sk/ty')) {
+            purchaseData = {
+              content_name: 'Mini 17 Pro Titanium',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'EUR',
+              value: 79.99,
+            };
+          } else if (pathname.includes('fb-miniphonerk-cz/ty')) {
+            purchaseData = {
+              content_name: 'Mini 17 Pro Titanium',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'CZK',
+              value: 1999,
             };
           }
 
