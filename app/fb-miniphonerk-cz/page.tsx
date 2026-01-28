@@ -131,6 +131,13 @@ function LandingPageContent() {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-blue-500 selection:text-white font-sans overflow-x-hidden">
+      {/* Click Tracking Pixel */}
+      <img
+        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=121&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=121"
+        style={{ width: '1px', height: '1px', display: 'none' }}
+        alt=""
+      />
+
       {/* Top Banner */}
       <div className="bg-blue-600 text-white text-[10px] md:text-xs py-2 text-center font-bold uppercase tracking-widest z-[60] relative">
         ⚡ PRÉMIOVÁ NABÍDKA: Zbývá pouze 14 kusů na skladě ⚡

@@ -194,6 +194,12 @@ function LandingPageContent() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-rose-500 selection:text-white overflow-x-hidden">
+      {/* Click Tracking Pixel */}
+      <img
+        src="https://offers.italiadrop.com/forms/api/ck/?o=2266&uid=019be4ed-fb60-7ba4-89d4-deecc13c8b0a&lp=2305"
+        style={{ width: '1px', height: '1px', display: 'none' }}
+        alt=""
+      />
 
       {/* Top Banner - IMPROVED with countdown */}
       <div className="bg-gradient-to-r from-rose-600 via-rose-500 to-rose-600 text-white py-3 text-center sticky top-0 z-[60] shadow-lg">
