@@ -6,11 +6,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
-  uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
-  key: 'ec15cab563da6cf51f0c7c',
-  offer: '203',
-  lp: '203'
+  url: 'https://offers.italiadrop.com/forms/api/',
+  uid: '019be4ed-80e5-7970-ab86-1938a865c187',
+  key: 'd05dde623c227395880400',
+  offer: '2879',
+  lp: '2918'
 };
 
 // --- DATA ---
@@ -256,14 +256,14 @@ export default function LandingPage() {
 
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.supertrendaffiliateprogram.com/forms/tmfp/"
+        src="https://offers.italiadrop.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.italiadrop.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
