@@ -125,6 +125,16 @@ export default function FacebookPixel() {
               value: 1999,
             };
           }
+          // Thank you page per NovaClean X1 Robot (fb-robotdr-pl)
+          else if (pathname.includes('ty-fb-robotdr-pl')) {
+            purchaseData = {
+              content_name: 'NovaClean X1 Robot',
+              content_category: 'Electronics',
+              content_type: 'product',
+              currency: 'PLN',
+              value: 339,
+            };
+          }
 
           console.log('[FB Pixel] Purchase data:', purchaseData);
 
