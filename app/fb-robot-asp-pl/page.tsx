@@ -775,13 +775,13 @@ export default function NovaCleanLandingPL() {
   return (
     <>
       <Script
-        src="https://offers.supertrendaffiliateprogram.com/forms/tmfp/"
+        src="https://offers.italiadrop.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       <img
-        src="https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=595&uid=0198088f-a4bc-7ed8-89aa-83089fe0180e&lp=595"
+        src="https://offers.italiadrop.com/forms/api/ck/?o=2560&uid=019be4ed-fb60-7ba4-89d4-deecc13c8b0a&lp=2599"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
