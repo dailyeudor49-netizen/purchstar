@@ -28,11 +28,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.islaffiliate.com/forms/api/',
-  uid: '019bbd3a-6cf4-7692-a596-6045883270bf',
-  key: '1397416d712560d2e77da8',
-  offer: '1584',
-  lp: '3031'
+  url: 'https://offers.uncappednetwork.com/forms/api/',
+  uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
+  key: '151af1e45a084aaf75c15f',
+  offer: '2944',
+  lp: '2978'
 };
 
 // --- COLORS ---
@@ -278,7 +278,7 @@ const OrderFormContent = () => {
           <div className="flex items-center gap-4 mb-10 pb-6 border-b border-slate-100">
              <div className="flex-1">
                <span className="text-slate-400 text-xs font-bold uppercase block">Promotivna Cijena</span>
-               <span className="text-4xl font-black text-blue-700">89,99€</span>
+               <span className="text-4xl font-black text-blue-700">69,99€</span>
              </div>
              <div className="text-right">
                <span className="text-slate-400 text-xs font-bold uppercase block">Kataloška Cijena</span>
@@ -415,7 +415,7 @@ const Hero = () => {
           />
           <div className="absolute -top-4 -right-4 z-20 bg-[#c5a059] text-[#0f172a] p-8 rounded-[2.5rem] shadow-2xl rotate-12 flex flex-col items-center justify-center border-4 border-white">
              <span className="text-xs font-black uppercase tracking-widest text-center">Popust</span>
-             <span className="text-4xl font-black leading-none">-64%</span>
+             <span className="text-4xl font-black leading-none">-72%</span>
           </div>
 
           {/* Thumbnails */}
@@ -437,7 +437,7 @@ const Hero = () => {
         </div>
 
         <a href="#narudzba" className="group w-full max-w-lg bg-[#dc2626] text-white py-6 md:py-7 rounded-[2rem] font-black text-xl md:text-2xl shadow-[0_20px_40px_rgba(220,38,38,0.4)] flex items-center justify-center gap-4 transition-all hover:scale-105 active:scale-95 uppercase tracking-tighter leading-none">
-          NARUČITE SADA -64% <ShoppingCart className="group-hover:rotate-12 transition-transform" />
+          NARUČITE SADA -72% <ShoppingCart className="group-hover:rotate-12 transition-transform" />
         </a>
         <p className="mt-4 text-slate-400 text-sm font-bold flex items-center gap-2">
           <Clock size={16}/> Već 14.582 ljudi ga je primilo kući
@@ -469,7 +469,7 @@ const Navbar = () => (
 const StickyCTA = () => (
   <div className="md:hidden fixed bottom-0 left-0 right-0 z-[200] bg-white border-t p-4 flex items-center justify-between shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
     <div className="flex flex-col">
-      <span className="text-[#dc2626] font-black text-3xl leading-none">89,99€</span>
+      <span className="text-[#dc2626] font-black text-3xl leading-none">69,99€</span>
       <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Rasprodaja Popust</span>
     </div>
     <a href="#narudzba" className="bg-[#dc2626] text-white px-8 py-4 rounded-2xl font-black text-sm uppercase shadow-xl active:scale-95 transition-all tracking-tighter">
@@ -497,14 +497,14 @@ export default function LandingPage() {
 
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.islaffiliate.com/forms/tmfp/"
+        src="https://offers.uncappednetwork.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.islaffiliate.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.uncappednetwork.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
