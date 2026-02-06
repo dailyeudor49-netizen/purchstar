@@ -28,11 +28,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.islaffiliate.com/forms/api/',
-  uid: '019bbd3a-6cf4-7692-a596-6045883270bf',
-  key: '1397416d712560d2e77da8',
-  offer: '1582',
-  lp: '5271'
+  url: 'https://offers.uncappednetwork.com/forms/api/',
+  uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
+  key: '151af1e45a084aaf75c15f',
+  offer: '2944',
+  lp: '2978'
 };
 
 // --- COLORS ---
@@ -497,14 +497,14 @@ export default function LandingPage() {
 
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.islaffiliate.com/forms/tmfp/"
+        src="https://offers.uncappednetwork.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.islaffiliate.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.uncappednetwork.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
