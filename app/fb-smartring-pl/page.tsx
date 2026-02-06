@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { GoogleGenAI } from "@google/genai";
 
@@ -58,7 +58,7 @@ const SectionTitle = ({ subtitle, title, description, light = false }: any) => (
   </div>
 );
 
-export default function LandingPage() {
+function LandingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [scrolled, setScrolled] = useState(false);
@@ -990,5 +990,17 @@ export default function LandingPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function LandingPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-stone-100 flex items-center justify-center">
+        <div className="text-zinc-900 text-xl">Ładowanie...</div>
+      </div>
+    }>
+      <LandingPageContent />
+    </Suspense>
   );
 }
