@@ -1,14 +1,45 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
+
+// --- FACEBOOK PIXEL CONFIG ---
+const FB_PIXEL_ID = '1576025786901423';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || 'Kliencie';
 
+  useEffect(() => {
+    // Fire Purchase event when page loads
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        value: 168,
+        currency: 'PLN'
+      });
+    }
+  }, []);
+
   return (
+    <>
+      {/* Facebook Pixel */}
+      <Script id="facebook-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${FB_PIXEL_ID}');
+          fbq('track', 'PageView');
+          fbq('track', 'Purchase', {value: 168, currency: 'PLN'});
+        `}
+      </Script>
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Header */}
       <header className="py-4 px-4 border-b border-white/10">
@@ -132,6 +163,7 @@ function ThankYouContent() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
