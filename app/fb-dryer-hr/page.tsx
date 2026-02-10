@@ -31,8 +31,8 @@ const API_CONFIG = {
   url: 'https://offers.uncappednetwork.com/forms/api/',
   uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
   key: '151af1e45a084aaf75c15f',
-  offer: '2944',
-  lp: '2978'
+  offer: '2946',
+  lp: '2980'
 };
 
 // --- COLORS ---
