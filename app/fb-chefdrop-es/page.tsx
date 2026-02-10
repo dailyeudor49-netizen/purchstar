@@ -16,7 +16,7 @@ const API_CONFIG = {
 // --- DATA ---
 const REVIEWS = [
   { name: "Maria Garcia", title: "Ya no me imagino sin el! Ha cambiado mi vida", rating: 5, date: "Hace 2 dias", text: "Era esceptica por el precio tan bajo, pero es increible. Cocina todo solo, es facil de limpiar y las recetas son un exito garantizado. Me llego en 48 horas!", verified: true },
-  { name: "Carlos Rodriguez", title: "Calidad por encima de las expectativas", rating: 5, date: "Hace 1 semana", text: "Materiales solidos y motor muy potente. Anoche hice un risotto y quedo perfecto, cremoso como en un restaurante. Por 89 euros es un regalo.", verified: true },
+  { name: "Carlos Rodriguez", title: "Calidad por encima de las expectativas", rating: 5, date: "Hace 1 semana", text: "Materiales solidos y motor muy potente. Anoche hice un risotto y quedo perfecto, cremoso como en un restaurante. Por 109 euros es un regalo.", verified: true },
   { name: "Laura Martinez", title: "Excelente compra", rating: 4, date: "Hace 3 dias", text: "Lo compre como regalo para mi madre, ahora mi hermana tambien quiere uno. La pantalla es muy intuitiva.", verified: true },
   { name: "Jose Fernandez", title: "Paquete llegado intacto y a tiempo", rating: 5, date: "Hace 4 dias", text: "El mensajero fue muy amable. Pague en efectivo como prometido. El robot es robusto y hace un monton de cosas. Recomendado!", verified: true },
   { name: "Ana Lopez", title: "Sustituye todo en la cocina", rating: 5, date: "Hace 5 dias", text: "Tire la vieja batidora y la vaporera. Este hace todo. La pantalla es grande y se ve muy bien.", verified: true },
@@ -112,7 +112,7 @@ const OrderFormContent = () => {
         <h2 className="text-3xl font-black mb-4">PEDIDO CONFIRMADO!</h2>
         <p className="text-gray-600 mb-8 font-medium">Gracias por tu compra. Nuestro consultor te llamara en 15 minutos para confirmar los datos de envio.</p>
         <div className="p-4 bg-green-50 text-green-700 font-bold rounded-2xl">
-          Tu paquete llegara en 24/48h. Prepara 89€ en efectivo para el mensajero!
+          Tu paquete llegara en 24/48h. Prepara 109€ en efectivo para el mensajero!
         </div>
       </div>
     );
@@ -262,7 +262,7 @@ export default function LandingPage() {
               Descuento Inmediato -70%
             </div>
             <h1 className="text-4xl md:text-6xl font-black leading-none mb-6 tracking-tighter">
-              COCINA COMO UN PROFESIONAL POR SOLO <span className="text-rose-600">89€</span>
+              COCINA COMO UN PROFESIONAL POR SOLO <span className="text-rose-600">109€</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
               El Mejor Robot de Cocina Inteligente. Sustituye 15 electrodomesticos. Videorecetas y control por app.
@@ -276,7 +276,7 @@ export default function LandingPage() {
               />
               <div className="absolute -top-6 -right-6 bg-yellow-400 text-black w-28 h-28 rounded-full flex flex-col items-center justify-center font-black shadow-2xl rotate-12 border-4 border-white animate-pulse">
                 <span className="text-sm line-through opacity-60">229€</span>
-                <span className="text-2xl italic">89€</span>
+                <span className="text-2xl italic">109€</span>
               </div>
             </div>
 
@@ -284,7 +284,7 @@ export default function LandingPage() {
               onClick={scrollToForm}
               className="w-full max-w-md bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] hover:shadow-[0_5px_0_0_#9f1239] hover:translate-y-1 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Si! Lo Quiero por 89€ ➔
+              Si! Lo Quiero por 109€ ➔
             </button>
             <p className="mt-6 text-green-600 font-bold flex items-center justify-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"></path></svg>
@@ -355,7 +355,7 @@ export default function LandingPage() {
           <section className="py-20 bg-gray-900 text-white px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black uppercase mb-4">EL KIT MAS COMPLETO DE LA HISTORIA</h2>
-              <p className="text-gray-400 italic">Todo incluido en 89€ - Valor de los accesorios por separado: 149€</p>
+              <p className="text-gray-400 italic">Todo incluido en 109€ - Valor de los accesorios por separado: 149€</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {ACCESSORIES.map((acc, idx) => (
@@ -480,7 +480,7 @@ export default function LandingPage() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-gray-200 z-50 md:hidden flex items-center justify-between gap-4 animate-in slide-in-from-bottom duration-500">
           <div className="flex flex-col">
             <span className="text-[10px] font-black uppercase text-gray-400">Oferta</span>
-            <span className="text-3xl font-black text-rose-600 leading-none">89€</span>
+            <span className="text-3xl font-black text-rose-600 leading-none">109€</span>
           </div>
           <button
             onClick={scrollToForm}
