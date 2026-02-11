@@ -537,7 +537,9 @@ const OrderForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    address: ''
+    address: '',
+    postalCode: '',
+    city: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -554,16 +556,36 @@ const OrderForm: React.FC = () => {
       const tmfp = tmfpInput?.value || '';
 
       const params = new URLSearchParams({
-        uid: '019be4ed-fb60-7ba4-89d4-deecc13c8b0a',
-        key: '7b172b0b1994e9fa9961ad',
-        offer: '2372',
-        lp: '2411',
+        uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
+        key: '151af1e45a084aaf75c15f',
+        offer: '1134',
+        lp: '1153',
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        ua: navigator.userAgent,
+        'postal-code': formData.postalCode,
         tmfp: tmfp,
       });
+
+      // Add ip and ua only if fingerprint is missing
+      if (!tmfp) {
+        params.append('ua', navigator.userAgent);
+        // IP will be detected server-side, but we can try to get it
+        try {
+          const ipResponse = await fetch('https://api.ipify.org?format=json');
+          const ipData = await ipResponse.json();
+          if (ipData.ip) {
+            params.append('ip', ipData.ip);
+          }
+        } catch {
+          // IP fetch failed, continue without it
+        }
+      }
+
+      // Optional field: address-level2 (city)
+      if (formData.city) {
+        params.append('address-level2', formData.city);
+      }
 
       const urlParams = new URLSearchParams(window.location.search);
       const utmSource = urlParams.get('utm_source');
@@ -571,14 +593,24 @@ const OrderForm: React.FC = () => {
       const utmCampaign = urlParams.get('utm_campaign');
       const utmContent = urlParams.get('utm_content');
       const utmTerm = urlParams.get('utm_term');
+      const subid = urlParams.get('subid');
+      const subid2 = urlParams.get('subid2');
+      const subid3 = urlParams.get('subid3');
+      const subid4 = urlParams.get('subid4');
+      const pubid = urlParams.get('pubid');
 
       if (utmSource) params.append('utm_source', utmSource);
       if (utmMedium) params.append('utm_medium', utmMedium);
       if (utmCampaign) params.append('utm_campaign', utmCampaign);
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
+      if (subid) params.append('subid', subid);
+      if (subid2) params.append('subid2', subid2);
+      if (subid3) params.append('subid3', subid3);
+      if (subid4) params.append('subid4', subid4);
+      if (pubid) params.append('pubid', pubid);
 
-      const response = await fetch('https://offers.italiadrop.com/forms/api/', {
+      const response = await fetch('https://offers.uncappednetwork.com/forms/api/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -677,16 +709,43 @@ const OrderForm: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Puna Adresa</label>
+              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Adresa (Ulica i Broj)</label>
               <input
                 type="text"
                 name="address"
                 required
                 className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
-                placeholder="Ulica Primjer 10, 10000 Zagreb"
+                placeholder="npr. Ulica Primjer 10"
                 value={formData.address}
                 onChange={handleChange}
               />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Poštanski Broj</label>
+                <input
+                  type="text"
+                  name="postalCode"
+                  required
+                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
+                  placeholder="npr. 10000"
+                  value={formData.postalCode}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Grad</label>
+                <input
+                  type="text"
+                  name="city"
+                  required
+                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
+                  placeholder="npr. Zagreb"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
             <div className="mt-6 border-2 border-green-500 bg-green-50 rounded-xl p-4 flex items-center justify-between cursor-pointer relative">
@@ -760,13 +819,13 @@ export default function NovaCleanLandingHR() {
   return (
     <>
       <Script
-        src="https://offers.italiadrop.com/forms/tmfp/"
+        src="https://offers.uncappednetwork.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       <img
-        src="https://offers.italiadrop.com/forms/api/ck/?o=2372&uid=019be4ed-fb60-7ba4-89d4-deecc13c8b0a&lp=2411"
+        src="https://offers.uncappednetwork.com/forms/api/ck/?o=1134&uid=0191dbf2-738a-7d28-82a0-18c3859d5e8f&lp=1153"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
