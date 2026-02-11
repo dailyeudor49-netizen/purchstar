@@ -537,7 +537,9 @@ const OrderForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    address: ''
+    address: '',
+    postalCode: '',
+    city: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -554,21 +556,34 @@ const OrderForm: React.FC = () => {
       const tmfp = tmfpInput?.value || '';
 
       const params = new URLSearchParams({
-        uid: '019be4ed-fb60-7ba4-89d4-deecc13c8b0a',
-        key: '7b172b0b1994e9fa9961ad',
-        offer: '2558',
-        lp: '2597',
+        uid: '0191dbf2-738a-7d28-82a0-18c3859d5e8f',
+        key: '151af1e45a084aaf75c15f',
+        offer: '1259',
+        lp: '1278',
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
+        'postal-code': formData.postalCode,
+        tmfp: tmfp,
       });
 
-      // Add tmfp if available, otherwise add ua and ip
-      if (tmfp) {
-        params.append('tmfp', tmfp);
-      } else {
+      // Add ip and ua only if fingerprint is missing
+      if (!tmfp) {
         params.append('ua', navigator.userAgent);
-        // Note: IP address should be captured server-side if needed
+        try {
+          const ipResponse = await fetch('https://api.ipify.org?format=json');
+          const ipData = await ipResponse.json();
+          if (ipData.ip) {
+            params.append('ip', ipData.ip);
+          }
+        } catch {
+          // IP fetch failed, continue without it
+        }
+      }
+
+      // Optional field: address-level2 (city)
+      if (formData.city) {
+        params.append('address-level2', formData.city);
       }
 
       const urlParams = new URLSearchParams(window.location.search);
@@ -594,7 +609,7 @@ const OrderForm: React.FC = () => {
       if (subid4) params.append('subid4', subid4);
       if (pubid) params.append('pubid', pubid);
 
-      const response = await fetch('https://offers.italiadrop.com/forms/api/', {
+      const response = await fetch('https://offers.uncappednetwork.com/forms/api/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -693,16 +708,43 @@ const OrderForm: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Kompletná Adresa</label>
+              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Adresa (Ulica a Číslo)</label>
               <input
                 type="text"
                 name="address"
                 required
                 className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
-                placeholder="ul. Príkladná 10, 811 01 Bratislava"
+                placeholder="napr. Príkladná 10"
                 value={formData.address}
                 onChange={handleChange}
               />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">PSČ</label>
+                <input
+                  type="text"
+                  name="postalCode"
+                  required
+                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
+                  placeholder="napr. 811 01"
+                  value={formData.postalCode}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Mesto</label>
+                <input
+                  type="text"
+                  name="city"
+                  required
+                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
+                  placeholder="napr. Bratislava"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
             <div className="mt-6 border-2 border-green-500 bg-green-50 rounded-xl p-4 flex items-center justify-between cursor-pointer relative">
@@ -776,13 +818,13 @@ export default function NovaCleanLandingSK() {
   return (
     <>
       <Script
-        src="https://offers.italiadrop.com/forms/tmfp/"
+        src="https://offers.uncappednetwork.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       <img
-        src="https://offers.italiadrop.com/forms/api/ck/?o=2558&uid=019be4ed-fb60-7ba4-89d4-deecc13c8b0a&lp=2597"
+        src="https://offers.uncappednetwork.com/forms/api/ck/?o=1259&uid=0191dbf2-738a-7d28-82a0-18c3859d5e8f&lp=1278"
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
