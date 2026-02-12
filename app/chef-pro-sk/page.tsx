@@ -6,11 +6,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.italiadrop.com/forms/api/',
-  uid: '019be4ed-80e5-7970-ab86-1938a865c187',
-  key: 'd05dde623c227395880400',
-  offer: '2879',
-  lp: '2918'
+  url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
+  uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
+  key: 'ec15cab563da6cf51f0c7c',
+  offer: '449',
+  lp: '449'
 };
 
 // --- DATA ---
@@ -73,9 +73,22 @@ const OrderFormContent = () => {
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        ua: navigator.userAgent,
         tmfp: tmfp,
       });
+
+      // Add ip and ua only if fingerprint is missing
+      if (!tmfp) {
+        params.append('ua', navigator.userAgent);
+        try {
+          const ipResponse = await fetch('https://api.ipify.org?format=json');
+          const ipData = await ipResponse.json();
+          if (ipData.ip) {
+            params.append('ip', ipData.ip);
+          }
+        } catch {
+          // IP fetch failed, continue without it
+        }
+      }
 
       // Add UTM params
       const utmSource = searchParams.get('utm_source');
@@ -83,12 +96,22 @@ const OrderFormContent = () => {
       const utmCampaign = searchParams.get('utm_campaign');
       const utmContent = searchParams.get('utm_content');
       const utmTerm = searchParams.get('utm_term');
+      const subid = searchParams.get('subid');
+      const subid2 = searchParams.get('subid2');
+      const subid3 = searchParams.get('subid3');
+      const subid4 = searchParams.get('subid4');
+      const pubid = searchParams.get('pubid');
 
       if (utmSource) params.append('utm_source', utmSource);
       if (utmMedium) params.append('utm_medium', utmMedium);
       if (utmCampaign) params.append('utm_campaign', utmCampaign);
       if (utmContent) params.append('utm_content', utmContent);
       if (utmTerm) params.append('utm_term', utmTerm);
+      if (subid) params.append('subid', subid);
+      if (subid2) params.append('subid2', subid2);
+      if (subid3) params.append('subid3', subid3);
+      if (subid4) params.append('subid4', subid4);
+      if (pubid) params.append('pubid', pubid);
 
       await fetch(API_CONFIG.url, {
         method: 'POST',
@@ -256,14 +279,14 @@ export default function LandingPage() {
 
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.italiadrop.com/forms/tmfp/"
+        src="https://offers.supertrendaffiliateprogram.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.italiadrop.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
