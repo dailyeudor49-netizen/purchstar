@@ -6,21 +6,21 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 // --- API CONFIG ---
 const API_CONFIG = {
-  url: 'https://offers.italiadrop.com/forms/api/',
-  uid: '019be4ed-80e5-7970-ab86-1938a865c187',
-  key: 'd05dde623c227395880400',
-  offer: '2878',
-  lp: '2917'
+  url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
+  uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
+  key: 'ec15cab563da6cf51f0c7c',
+  offer: '204',
+  lp: '204'
 };
 
 // --- DATA ---
 const REVIEWS = [
   { name: "Frantiska B.", title: "Uz si to bez neho nedovedu predstavit! Zmenilo mi to zivot", rating: 5, date: "pred 2 dny", text: "Byla jsem skepticka kvuli tak nizke cene, ale je uzasny. Vari vsechno sam, snadno se cisti a recepty jsou zaruka uspechu. Dostal jsem ho do 48 hodin!", verified: true },
-  { name: "Marek Novak", title: "Kvalita nad ocekavani", rating: 5, date: "pred 1 tydnem", text: "Solidni materialy a velmi silny motor. Vcera vecer jsem udelal rizoto a bylo perfektni, kremove jako v restauraci. Za 2201 Kc je to darek.", verified: true },
+  { name: "Marek Novak", title: "Kvalita nad ocekavani", rating: 5, date: "pred 1 tydnem", text: "Solidni materialy a velmi silny motor. Vcera vecer jsem udelal rizoto a bylo perfektni, kremove jako v restauraci. Za 2199 Kc je to darek.", verified: true },
   { name: "Valentyna D.", title: "Skvely nakup", rating: 4, date: "pred 3 dny", text: "Koupil jsem to jako darek pro mamu, ted chce moje sestra taky. Displej je velmi intuitivni.", verified: true },
   { name: "Josef L.", title: "Balik dorazil neporuseny a vcas", rating: 5, date: "pred 4 dny", text: "Kurier byl velmi mily. Zaplatil jsem hotove, jak bylo slibeno. Robot je masivni a dela spoustu veci. Doporucuji!", verified: true },
   { name: "Aleksandra M.", title: "Nahradi vsechno v kuchyni", rating: 5, date: "pred 5 dny", text: "Vyhodil jsem stary mixer a parovac. Tenhle dela vsechno. Obrazovka je velka a dobre citelna.", verified: true },
-  { name: "Robert P.", title: "Pomer kvality a ceny je neprekonatelny", rating: 5, date: "pred 6 dny", text: "Videl jsem podobne produkty za 20000 Kc. Tento za 2201 Kc je prilezitost, ktera se neopakuje. Vaha je velmi presna.", verified: true },
+  { name: "Robert P.", title: "Pomer kvality a ceny je neprekonatelny", rating: 5, date: "pred 6 dny", text: "Videl jsem podobne produkty za 20000 Kc. Tento za 2199 Kc je prilezitost, ktera se neopakuje. Vaha je velmi presna.", verified: true },
   { name: "Elena G.", title: "Moje dcera ho miluje", rating: 5, date: "pred 1 tydnem", text: "Spolecne pripravujeme dezerty a divame se na videorecepty. Stal se z toho nas oblibeny moment dne.", verified: true },
   { name: "Klaudius S.", title: "Silny a tichy", rating: 4, date: "pred 1 tydnem", text: "Cekal jsem, ze bude hlucnejsi pri hneteni, ale je docela tichy. Skvely pro byty v panelovych domech.", verified: true },
   { name: "Simona F.", title: "Jednoduche a chutne recepty", rating: 5, date: "pred 9 dny", text: "Nejsem dobra v vareni, ale s pruvodcem krok za krokem nedelam chyby. Muj muz byl prekvapeny!", verified: true },
@@ -73,9 +73,22 @@ const OrderFormContent = () => {
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        ua: navigator.userAgent,
         tmfp: tmfp,
       });
+
+      // Add ip and ua only if fingerprint is missing
+      if (!tmfp) {
+        params.append('ua', navigator.userAgent);
+        try {
+          const ipResponse = await fetch('https://api.ipify.org?format=json');
+          const ipData = await ipResponse.json();
+          if (ipData.ip) {
+            params.append('ip', ipData.ip);
+          }
+        } catch {
+          // IP fetch failed, continue without it
+        }
+      }
 
       // Add UTM params
       const utmSource = searchParams.get('utm_source');
@@ -129,7 +142,7 @@ const OrderFormContent = () => {
         <h2 className="text-3xl font-black mb-4">OBJEDNAVKA POTVRZENA!</h2>
         <p className="text-gray-600 mb-8 font-medium">Dekujeme za vas nakup. Nas konzultant vam zavola do 15 minut pro potvrzeni udaju o doruceni.</p>
         <div className="p-4 bg-green-50 text-green-700 font-bold rounded-2xl">
-          Vas balik dorazi behem 24/48 hodin. Pripravte si 2201 Kc v hotovosti pro kuriera!
+          Vas balik dorazi behem 24/48 hodin. Pripravte si 2199 Kc v hotovosti pro kuriera!
         </div>
       </div>
     );
@@ -266,14 +279,14 @@ export default function LandingPage() {
 
       {/* Fingerprint Script */}
       <Script
-        src="https://offers.italiadrop.com/forms/tmfp/"
+        src="https://offers.supertrendaffiliateprogram.com/forms/tmfp/"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
 
       {/* Click Tracking Pixel */}
       <img
-        src={`https://offers.italiadrop.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
+        src={`https://offers.supertrendaffiliateprogram.com/forms/api/ck/?o=${API_CONFIG.offer}&uid=${API_CONFIG.uid}&lp=${API_CONFIG.lp}`}
         style={{ width: '1px', height: '1px', display: 'none' }}
         alt=""
       />
@@ -293,7 +306,7 @@ export default function LandingPage() {
               Okamzita Sleva -70%
             </div>
             <h1 className="text-4xl md:text-6xl font-black leading-none mb-6 tracking-tighter">
-              VARTE JAKO PROFESIONAL JEN ZA <span className="text-rose-600">2201 Kc</span>
+              VARTE JAKO PROFESIONAL JEN ZA <span className="text-rose-600">2199 Kc</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
               Nejlepsi Inteligentni Kuchynsky Robot. Nahradi 15 spotrebicu. Videorecepty a ovladani pres aplikaci.
@@ -307,7 +320,7 @@ export default function LandingPage() {
               />
               <div className="absolute -top-6 -right-6 bg-yellow-400 text-black w-28 h-28 rounded-full flex flex-col items-center justify-center font-black shadow-2xl rotate-12 border-4 border-white animate-pulse">
                 <span className="text-sm line-through opacity-60">7299 Kc</span>
-                <span className="text-2xl italic">2201 Kc</span>
+                <span className="text-2xl italic">2199 Kc</span>
               </div>
             </div>
 
@@ -315,7 +328,7 @@ export default function LandingPage() {
               onClick={scrollToForm}
               className="w-full max-w-md bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] hover:shadow-[0_5px_0_0_#9f1239] hover:translate-y-1 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Ano! Chci za 2201 Kc ➔
+              Ano! Chci za 2199 Kc ➔
             </button>
             <p className="mt-6 text-green-600 font-bold flex items-center justify-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"></path></svg>
@@ -386,7 +399,7 @@ export default function LandingPage() {
           <section className="py-20 bg-gray-900 text-white px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black uppercase mb-4">NEJKOMPLETNEJSI SADA V HISTORII</h2>
-              <p className="text-gray-400 italic">Vse v cene 2201 Kc - Hodnota prislusenstvi samostatne: 3649 Kc</p>
+              <p className="text-gray-400 italic">Vse v cene 2199 Kc - Hodnota prislusenstvi samostatne: 3649 Kc</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {ACCESSORIES.map((acc, idx) => (
@@ -511,7 +524,7 @@ export default function LandingPage() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-gray-200 z-50 md:hidden flex items-center justify-between gap-4 animate-in slide-in-from-bottom duration-500">
           <div className="flex flex-col">
             <span className="text-[10px] font-black uppercase text-gray-400">Nabidka</span>
-            <span className="text-3xl font-black text-rose-600 leading-none">2201 Kc</span>
+            <span className="text-3xl font-black text-rose-600 leading-none">2199 Kc</span>
           </div>
           <button
             onClick={scrollToForm}
