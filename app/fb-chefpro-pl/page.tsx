@@ -56,8 +56,23 @@ const OrderFormContent = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validatePhone = (phone: string): boolean => {
+    // Remove spaces, dashes, and other common separators
+    const cleanPhone = phone.replace(/[\s\-\(\)\.]/g, '');
+    // Check if it's at least 9 digits (Polish format)
+    const phoneRegex = /^(\+48)?[0-9]{9,}$/;
+    return phoneRegex.test(cleanPhone);
+  };
+
   const handleOrder = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate phone number
+    if (!validatePhone(formData.phone)) {
+      alert('Proszę podać prawidłowy numer telefonu (minimum 9 cyfr)');
+      return;
+    }
+
     setOrderStatus('loading');
 
     try {
