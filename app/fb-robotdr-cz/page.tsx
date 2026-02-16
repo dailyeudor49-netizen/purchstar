@@ -537,9 +537,7 @@ const OrderForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    address: '',
-    postalCode: '',
-    city: ''
+    address: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -563,7 +561,6 @@ const OrderForm: React.FC = () => {
         name: formData.name,
         tel: formData.phone,
         'street-address': formData.address,
-        'postal-code': formData.postalCode,
         tmfp: tmfp,
       });
 
@@ -579,11 +576,6 @@ const OrderForm: React.FC = () => {
         } catch {
           // IP fetch failed, continue without it
         }
-      }
-
-      // Optional field: address-level2 (city)
-      if (formData.city) {
-        params.append('address-level2', formData.city);
       }
 
       const urlParams = new URLSearchParams(window.location.search);
@@ -708,43 +700,16 @@ const OrderForm: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Adresa (Ulice a Číslo)</label>
+              <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Kompletní Adresa (Ulice, Město, PSČ)</label>
               <input
                 type="text"
                 name="address"
                 required
                 className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
-                placeholder="např. Příkladná 10"
+                placeholder="např. Příkladná 10, Praha, 110 00"
                 value={formData.address}
                 onChange={handleChange}
               />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">PSČ</label>
-                <input
-                  type="text"
-                  name="postalCode"
-                  required
-                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
-                  placeholder="např. 110 00"
-                  value={formData.postalCode}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Město</label>
-                <input
-                  type="text"
-                  name="city"
-                  required
-                  className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition font-medium text-gray-900"
-                  placeholder="např. Praha"
-                  value={formData.city}
-                  onChange={handleChange}
-                />
-              </div>
             </div>
 
             <div className="mt-6 border-2 border-green-500 bg-green-50 rounded-xl p-4 flex items-center justify-between cursor-pointer relative">
