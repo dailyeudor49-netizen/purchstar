@@ -43,15 +43,15 @@ const HeroCarousel: React.FC = () => {
   const [autoPlay, setAutoPlay] = useState(true);
 
   const images = [
-    '/images/robot-asp/1.png',
-    '/images/robot-asp/2.png',
-    '/images/robot-asp/3.png',
-    '/images/robot-asp/4.png',
-    '/images/robot-asp/5.png',
-    '/images/robot-asp/6.png',
-    '/images/robot-asp/7.png',
-    '/images/robot-asp/8.png',
-    '/images/robot-asp/9.png',
+    '/images/robot-asp/1.webp',
+    '/images/robot-asp/2.webp',
+    '/images/robot-asp/3.webp',
+    '/images/robot-asp/4.webp',
+    '/images/robot-asp/5.webp',
+    '/images/robot-asp/6.webp',
+    '/images/robot-asp/7.webp',
+    '/images/robot-asp/8.webp',
+    '/images/robot-asp/9.webp',
   ];
 
   useEffect(() => {
@@ -259,7 +259,7 @@ const StationUpgrade: React.FC = () => {
           <div className="w-full md:w-1/2 relative">
              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full"></div>
              <img
-               src="/images/robot-asp/2.png"
+               src="/images/robot-asp/2.webp"
                alt="NovaStation Omni Dock"
                className="relative z-10 rounded-2xl shadow-2xl border border-white/10 w-full object-cover transform hover:scale-105 transition duration-500"
              />
@@ -951,7 +951,7 @@ export default function NovaCleanLandingCS() {
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 flex flex-col md:flex-row items-center gap-8">
                  <div className="w-full md:w-1/2 relative">
                     <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded animate-pulse z-10">VŠE V BALENÍ</div>
-                    <img src="/images/robot-asp/1.png" className="rounded-xl shadow-lg w-full" alt="Obsah balení" />
+                    <img src="/images/robot-asp/1.webp" className="rounded-xl shadow-lg w-full" alt="Obsah balení" />
                  </div>
                  <div className="w-full md:w-1/2">
                     <h3 className="text-xl font-bold mb-4">Sada "Ultimate Clean"</h3>
@@ -982,7 +982,7 @@ export default function NovaCleanLandingCS() {
         </section>
 
         <section className="py-16 px-4 bg-gray-900 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.webp')] opacity-10"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Jak máme takovou cenu?</h2>
 

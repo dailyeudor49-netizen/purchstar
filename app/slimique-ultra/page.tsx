@@ -207,7 +207,7 @@ export default function LandingPage() {
 
           <div className="max-w-md mx-auto relative group">
             <img
-              src="/images/slimique-ultra/1.png"
+              src="/images/slimique-ultra/1.webp"
               alt="Slimique Ultra Pack"
               className="w-full h-auto shadow-2xl mb-10 rounded-lg transform transition-transform group-hover:scale-105 img-sharp"
             />
@@ -252,7 +252,7 @@ export default function LandingPage() {
             {/* Image 4 */}
             <div className="mt-12 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/images/slimique-ultra/4.png"
+                src="/images/slimique-ultra/4.webp"
                 alt="Trasformazione corpo"
                 className="w-full h-auto img-sharp"
               />
@@ -304,7 +304,7 @@ export default function LandingPage() {
               {/* Media Display */}
               <div className="mb-10">
                 <img
-                  src="/images/slimique-ultra/3.png"
+                  src="/images/slimique-ultra/3.webp"
                   className="w-full rounded-lg shadow-lg img-sharp"
                   alt="Come visto su"
                 />
@@ -331,7 +331,7 @@ export default function LandingPage() {
           </h2>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/images/slimique-ultra/2.png"
+              src="/images/slimique-ultra/2.webp"
               alt="Recensioni clienti"
               className="w-full h-auto img-sharp"
             />
@@ -350,7 +350,7 @@ export default function LandingPage() {
           </p>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/images/slimique-ultra/7.png"
+              src="/images/slimique-ultra/7.webp"
               alt="Clienti soddisfatti"
               className="w-full h-auto img-sharp"
             />
@@ -391,7 +391,7 @@ export default function LandingPage() {
           </p>
           <div className="rounded-2xl overflow-hidden shadow-2xl max-w-2xl mx-auto">
             <img
-              src="/images/slimique-ultra/5.png"
+              src="/images/slimique-ultra/5.webp"
               alt="Approvato dal Ministero della Salute"
               className="w-full h-auto img-sharp"
             />

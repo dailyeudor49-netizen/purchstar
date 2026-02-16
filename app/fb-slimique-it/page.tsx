@@ -311,7 +311,7 @@ export default function AdvertorialPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
                 <img
-                  src="/images/slimique/3.png"
+                  src="/images/slimique/3.webp"
                   className="w-full aspect-square object-cover"
                   alt="Metabolismo Bloccato"
                 />
@@ -387,7 +387,7 @@ export default function AdvertorialPage() {
               </div>
               <div className="w-full md:w-1/3 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-inner">
                  <img
-                   src="/images/slimique/14.png"
+                   src="/images/slimique/14.webp"
                    className="w-full h-full object-cover"
                    alt="Slimique Kit"
                  />
@@ -466,7 +466,7 @@ export default function AdvertorialPage() {
                 alt="Dott.ssa Rinaldi"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-50">
-                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Signature_of_Barack_Obama.svg/1024px-Signature_of_Barack_Obama.svg.png" className="h-10 opacity-30 invert" alt="Firma Autografa" />
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Signature_of_Barack_Obama.svg/1024px-Signature_of_Barack_Obama.svg.webp" className="h-10 opacity-30 invert" alt="Firma Autografa" />
               </div>
            </div>
            <div>
@@ -558,7 +558,7 @@ export default function AdvertorialPage() {
                   {/* Product Image */}
                   <div className="mb-6 rounded-2xl overflow-hidden">
                     <img
-                      src="/images/slimique/slimique.png"
+                      src="/images/slimique/slimique.webp"
                       alt="Slimique Cerotto Metabolico"
                       className="w-full h-auto"
                     />

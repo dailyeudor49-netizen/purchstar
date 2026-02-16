@@ -15,15 +15,15 @@ const ProductGallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const images = [
-    '/images/robot-asp/1.png',
-    '/images/robot-asp/2.png',
-    '/images/robot-asp/3.png',
-    '/images/robot-asp/4.png',
-    '/images/robot-asp/5.png',
-    '/images/robot-asp/6.png',
-    '/images/robot-asp/7.png',
-    '/images/robot-asp/8.png',
-    '/images/robot-asp/9.png',
+    '/images/robot-asp/1.webp',
+    '/images/robot-asp/2.webp',
+    '/images/robot-asp/3.webp',
+    '/images/robot-asp/4.webp',
+    '/images/robot-asp/5.webp',
+    '/images/robot-asp/6.webp',
+    '/images/robot-asp/7.webp',
+    '/images/robot-asp/8.webp',
+    '/images/robot-asp/9.webp',
   ];
 
   return (
@@ -446,7 +446,7 @@ const StationSection: React.FC = () => (
     <div className="p-5 bg-orange-50">
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/3">
-          <img src="/images/robot-asp/2.png" alt="NovaStation" className="w-full rounded-xl border-2 border-orange-200 shadow-lg" />
+          <img src="/images/robot-asp/2.webp" alt="NovaStation" className="w-full rounded-xl border-2 border-orange-200 shadow-lg" />
         </div>
         <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-orange-100">

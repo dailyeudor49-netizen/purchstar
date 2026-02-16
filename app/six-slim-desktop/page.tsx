@@ -62,7 +62,7 @@ export default function SixSlimDesktopPage() {
           {/* Product Image */}
           <div className="mb-8">
             <img
-              src="/images/six-slim/hero.png"
+              src="/images/six-slim/hero.webp"
               alt="Six-Slim Integratore"
               className="max-w-xs mx-auto"
             />

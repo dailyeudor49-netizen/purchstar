@@ -175,7 +175,7 @@ function LandingPageContent() {
           <div className="relative">
             <div className="absolute -top-12 -right-12 w-64 h-64 bg-orange-200 rounded-full blur-3xl opacity-20 animate-pulse hidden md:block"></div>
             <div className="relative bg-white rounded-[40px] p-3 shadow-2xl border border-gray-100 overflow-hidden">
-              <img src="/images/airfryer/1.png" className="w-full rounded-[32px] hover:scale-105 transition-transform duration-700" alt="PureGlass XXL" />
+              <img src="/images/airfryer/1.webp" className="w-full rounded-[32px] hover:scale-105 transition-transform duration-700" alt="PureGlass XXL" />
               <div className="absolute top-8 right-8 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-xl border border-orange-100 flex items-center gap-2 animate-bounce">
                 <div className="bg-orange-500 w-2 h-2 rounded-full animate-ping"></div>
                 <span className="font-bold text-gray-900 text-sm">Bardzo popularna: 147 zamówień dziś</span>
@@ -247,7 +247,7 @@ function LandingPageContent() {
         {/* CAPACITY SECTION */}
         <section id="capacity" className="py-20 px-4 md:px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
-            <img src="/images/airfryer/2.png" className="rounded-[40px] shadow-2xl w-full" alt="10L XXL" />
+            <img src="/images/airfryer/2.webp" className="rounded-[40px] shadow-2xl w-full" alt="10L XXL" />
             <div className="absolute -bottom-6 right-0 md:-right-6 bg-gray-900 text-white p-6 md:p-8 rounded-3xl shadow-xl">
               <p className="text-5xl font-black text-orange-500 mb-1 leading-none">10L</p>
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-300">Gigantyczna Pojemność</p>
@@ -300,14 +300,14 @@ function LandingPageContent() {
               </div>
               <div className="p-8 border border-white/10 rounded-[32px] bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10">
                 <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-6 shadow-xl">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" className="w-10 h-10 invert" alt="Flavor" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.webp" className="w-10 h-10 invert" alt="Flavor" />
                 </div>
                 <b className="block text-xl mb-3">Naturalny Aromat</b>
                 <p className="text-xs text-gray-400 leading-relaxed">Cząsteczki smaku nie są zmieniane przez chemiczne opary gorącego Teflonu.</p>
               </div>
             </div>
             <div className="flex flex-col items-center">
-               <img src="/images/airfryer/3.png" className="max-w-md w-full rounded-2xl shadow-2xl mb-8" alt="Details" />
+               <img src="/images/airfryer/3.webp" className="max-w-md w-full rounded-2xl shadow-2xl mb-8" alt="Details" />
                <p className="text-orange-500 font-bold uppercase tracking-widest animate-pulse">Zobacz jak gotuje. Smakuj jak nigdy dotąd.</p>
             </div>
           </div>
@@ -418,7 +418,7 @@ function LandingPageContent() {
             <div className="lg:col-span-2 bg-gray-950 text-white p-8 md:p-12">
               <h2 className="text-3xl font-black mb-10 leading-tight">Zainwestuj w swoje zdrowie.</h2>
               <div className="flex items-center gap-4 mb-10">
-                <img src="/images/airfryer/4.png" className="w-24 h-24 rounded-2xl object-cover bg-white p-1" alt="PureGlass" />
+                <img src="/images/airfryer/4.webp" className="w-24 h-24 rounded-2xl object-cover bg-white p-1" alt="PureGlass" />
                 <div>
                   <b className="block text-xl">PureGlass XXL 10L</b>
                   <span className="text-orange-400 font-bold text-sm">Model Platinum 2024</span>

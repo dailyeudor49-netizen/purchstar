@@ -173,7 +173,7 @@ export default function LandingPage() {
         <div className="relative w-full max-w-4xl mx-auto group cursor-crosshair">
           <div className="absolute -inset-10 bg-blue-500/20 blur-[100px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
           <img
-            src="/images/miniphone17/1.png"
+            src="/images/miniphone17/1.webp"
             className="w-full h-auto rounded-[3rem] shadow-2xl border border-white/10 relative z-10 scale-100 group-hover:scale-[1.01] transition-transform duration-700"
             alt="Mini 17 Pro Hero"
           />
@@ -289,7 +289,7 @@ export default function LandingPage() {
           <div className="relative group overflow-hidden rounded-2xl md:rounded-[3rem]">
             <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
             <img
-              src="/images/miniphone17/2.png"
+              src="/images/miniphone17/2.webp"
               className="w-full h-auto object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               alt="Mini 17 Pro Design"
             />
@@ -297,7 +297,7 @@ export default function LandingPage() {
           <div className="relative group overflow-hidden rounded-2xl md:rounded-[3rem]">
             <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
             <img
-              src="/images/miniphone17/3.png"
+              src="/images/miniphone17/3.webp"
               className="w-full h-auto object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               alt="Mini 17 Pro Detail"
             />

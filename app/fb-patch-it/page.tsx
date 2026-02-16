@@ -359,7 +359,7 @@ export default function GlycoBlockLanding() {
                 {/* Product Image */}
                 <div className="mb-6 rounded-2xl overflow-hidden">
                   <img
-                    src="/images/patch/patch.png"
+                    src="/images/patch/patch.webp"
                     alt="GlycoBlock Cerotto Metabolico"
                     className="w-full h-auto"
                   />

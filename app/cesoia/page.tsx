@@ -31,7 +31,7 @@ export default function CesoiaElettricaLanding() {
 
   // Array delle immagini del carosello
   const carouselImages = [
-    '/images/cesoia/img_princ.png',
+    '/images/cesoia/img_princ.webp',
     '/images/cesoia/carosello_1.jpg',
     '/images/cesoia/carosello_2.jpg',
     '/images/cesoia/carosello_3.jpg',
@@ -1286,7 +1286,7 @@ export default function CesoiaElettricaLanding() {
             {/* Left: Product Image */}
             <div className="order-1">
               <img
-                src="images/cesoia/img_princ.png"
+                src="images/cesoia/img_princ.webp"
                 alt="Instant Cut Pro"
                 className="w-full h-auto rounded-lg shadow-md max-w-sm mx-auto lg:mx-0"
               />

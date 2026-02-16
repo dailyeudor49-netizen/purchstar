@@ -21,10 +21,10 @@ import {
 
 // --- CONSTANTS ---
 const IMAGES = {
-  heroBackground: "/images/collagen-mask/hero.png",
-  productPack: "/images/collagen-mask/2.png",
-  solutionTexture: "/images/collagen-mask/3.png",
-  application: "/images/collagen-mask/4.png"
+  heroBackground: "/images/collagen-mask/hero.webp",
+  productPack: "/images/collagen-mask/2.webp",
+  solutionTexture: "/images/collagen-mask/3.webp",
+  application: "/images/collagen-mask/4.webp"
 };
 
 // --- TYPES ---
@@ -157,7 +157,7 @@ const ProblemSolution = () => {
             <div className="mt-8">
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/images/collagen-mask/5.png"
+                  src="/images/collagen-mask/5.webp"
                   alt="Prima e dopo l'applicazione della Bio-Collagen Mask"
                   className="w-full h-auto"
                 />

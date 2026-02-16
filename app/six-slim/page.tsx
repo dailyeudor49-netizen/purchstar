@@ -196,18 +196,18 @@ export default function LandingPage() {
   };
 
   const recensioniImages = [
-    '/images/six-slim/recensione-1.png',
-    '/images/six-slim/recensione-2.png',
-    '/images/six-slim/recensione-3.png',
+    '/images/six-slim/recensione-1.webp',
+    '/images/six-slim/recensione-2.webp',
+    '/images/six-slim/recensione-3.webp',
     '/images/six-slim/recensione-4.jpg',
-    '/images/six-slim/recensione-5.png',
-    '/images/six-slim/recensione-6.png',
-    '/images/six-slim/recensione-7.png',
-    '/images/six-slim/recensione-8.png',
-    '/images/six-slim/recensione-9.png',
-    '/images/six-slim/recensione-10.png',
-    '/images/six-slim/recensione-11.png',
-    '/images/six-slim/recensione-12.png',
+    '/images/six-slim/recensione-5.webp',
+    '/images/six-slim/recensione-6.webp',
+    '/images/six-slim/recensione-7.webp',
+    '/images/six-slim/recensione-8.webp',
+    '/images/six-slim/recensione-9.webp',
+    '/images/six-slim/recensione-10.webp',
+    '/images/six-slim/recensione-11.webp',
+    '/images/six-slim/recensione-12.webp',
   ];
 
   return (
@@ -319,7 +319,7 @@ export default function LandingPage() {
                 <span className="block text-xs">SOLO OGGI</span>
               </div>
               <img
-                src="/images/six-slim/hero.png"
+                src="/images/six-slim/hero.webp"
                 alt="Six-Slim"
                 className="w-full max-w-md mx-auto drop-shadow-2xl img-sharp"
               />
@@ -437,7 +437,7 @@ export default function LandingPage() {
               <div className="my-8">
                 <div className="bg-gradient-to-r from-red-100 to-green-100 p-4 rounded-2xl">
                   <img
-                    src="/images/six-slim/prima-dopo.png"
+                    src="/images/six-slim/prima-dopo.webp"
                     alt="Trasformazione Francesca - Prima e Dopo Six-Slim"
                     className="w-full rounded-xl shadow-2xl img-sharp"
                   />
@@ -576,7 +576,7 @@ export default function LandingPage() {
 
           <div className="bg-gray-100 p-8 rounded-2xl text-center">
             <img
-              src="/images/six-slim/img-2.png"
+              src="/images/six-slim/img-2.webp"
               alt="Six-Slim Formula"
               className="max-w-sm mx-auto mb-6 img-sharp"
             />

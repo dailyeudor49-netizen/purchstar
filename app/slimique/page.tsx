@@ -298,7 +298,7 @@ export default function AdvertorialPage() {
                 alt="Dott.ssa Rinaldi"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-50">
-                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Signature_of_Barack_Obama.svg/1024px-Signature_of_Barack_Obama.svg.png" className="h-10 opacity-30 invert" alt="Firma Autografa" />
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Signature_of_Barack_Obama.svg/1024px-Signature_of_Barack_Obama.svg.webp" className="h-10 opacity-30 invert" alt="Firma Autografa" />
               </div>
            </div>
            <div>

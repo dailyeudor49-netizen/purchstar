@@ -783,10 +783,10 @@ export default function LandingPage() {
                 </button>
                 <p className="mt-6 text-[10px] text-zinc-400 font-bold uppercase tracking-[0.2em]">Serie 002: Solo 142 unità rimanenti</p>
                 <div className="flex justify-center gap-4 mt-6">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/124px-PayPal.svg.png" alt="PayPal" className="h-5 opacity-40" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" className="h-5 opacity-40" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" className="h-5 opacity-40" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/100px-Apple_logo_black.svg.png" alt="Apple Pay" className="h-5 opacity-40" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/124px-PayPal.svg.webp" alt="PayPal" className="h-5 opacity-40" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.webp" alt="Mastercard" className="h-5 opacity-40" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.webp" alt="Visa" className="h-5 opacity-40" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/100px-Apple_logo_black.svg.webp" alt="Apple Pay" className="h-5 opacity-40" />
                 </div>
               </div>
             </div>

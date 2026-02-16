@@ -54,7 +54,7 @@ const Hero = ({ onCTA }: { onCTA: () => void }) => (
       <div className="flex flex-col md:flex-row items-center gap-10 w-full mb-12">
         <div className="md:w-1/2 relative">
            <img
-            src="/images/blubull/offert.png"
+            src="/images/blubull/offert.webp"
             alt="Blubull Power"
             className="w-full max-w-md mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
           />
@@ -245,7 +245,7 @@ export default function LandingPage() {
         <section className="py-20 px-6 bg-gray-100">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <img src="/images/blubull/science.png" alt="Science" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+              <img src="/images/blubull/science.webp" alt="Science" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
             </div>
             <div className="md:w-1/2">
               <h2 className="text-4xl font-black text-blue-900 mb-6 uppercase">IL PROTOCOLLO BLUBULL: LA SCIENZA HA VINTO</h2>

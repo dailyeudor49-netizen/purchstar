@@ -68,13 +68,13 @@ export default function AntennaLandingPagePL() {
   };
 
   const productImages = [
-    '/images/dongle/pl/1.png',
-    '/images/dongle/pl/2.png',
-    '/images/dongle/pl/3.png',
-    '/images/dongle/pl/4.png',
-    '/images/dongle/pl/5.png',
-    '/images/dongle/pl/8.png',
-    '/images/dongle/pl/7.png',
+    '/images/dongle/pl/1.webp',
+    '/images/dongle/pl/2.webp',
+    '/images/dongle/pl/3.webp',
+    '/images/dongle/pl/4.webp',
+    '/images/dongle/pl/5.webp',
+    '/images/dongle/pl/8.webp',
+    '/images/dongle/pl/7.webp',
   ];
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -412,7 +412,7 @@ export default function AntennaLandingPagePL() {
               </svg>
                             <div className="w-full md:w-1/2 lg:w-2/5 relative z-10">
                 <div className="aspect-square bg-slate-200 rounded-3xl md:rounded-3xl rounded-b-none flex items-center justify-center overflow-hidden md:shadow-2xl relative">
-                  <img src="/images/dongle/sliderhero/8.png" alt="Filmy i seriale za darmo na antenie cyfrowej" className="w-full h-full object-cover" />
+                  <img src="/images/dongle/sliderhero/8.webp" alt="Filmy i seriale za darmo na antenie cyfrowej" className="w-full h-full object-cover" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-blue-800/50 to-transparent md:hidden"></div>
                 </div>
               </div>
@@ -466,7 +466,7 @@ export default function AntennaLandingPagePL() {
               </div>
               <div className="w-full md:w-1/2 lg:w-2/5 order-1 md:order-2 relative z-10">
                 <div className="aspect-square bg-slate-200 rounded-3xl md:rounded-3xl rounded-b-none flex items-center justify-center overflow-hidden md:shadow-2xl relative">
-                  <img src="/images/dongle/sliderhero/5.png" alt="Sport na żywo za darmo ze Smart Aerial TV" className="w-full h-full object-cover" />
+                  <img src="/images/dongle/sliderhero/5.webp" alt="Sport na żywo za darmo ze Smart Aerial TV" className="w-full h-full object-cover" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-orange-700/50 to-transparent md:hidden"></div>
                 </div>
               </div>
@@ -490,7 +490,7 @@ export default function AntennaLandingPagePL() {
               </svg>
                             <div className="w-full md:w-1/2 lg:w-2/5 relative z-10">
                 <div className="aspect-square bg-slate-200 rounded-3xl md:rounded-3xl rounded-b-none flex items-center justify-center overflow-hidden md:shadow-2xl relative">
-                  <img src="/images/dongle/sliderhero/4.png" alt="Programy dla dzieci i gry na Smart Aerial TV" className="w-full h-full object-cover" />
+                  <img src="/images/dongle/sliderhero/4.webp" alt="Programy dla dzieci i gry na Smart Aerial TV" className="w-full h-full object-cover" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-green-700/50 to-transparent md:hidden"></div>
                 </div>
               </div>
@@ -669,7 +669,7 @@ export default function AntennaLandingPagePL() {
 
             {/* Image box */}
             <div className="flex bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-2xl overflow-hidden items-center justify-center min-h-[250px] lg:min-h-[400px] order-last lg:order-none">
-              <img src="/images/dongle/sliderhero/7.png" alt="Specyfikacja techniczna Smart Aerial TV" className="w-full h-full object-contain" />
+              <img src="/images/dongle/sliderhero/7.webp" alt="Specyfikacja techniczna Smart Aerial TV" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
@@ -815,7 +815,7 @@ export default function AntennaLandingPagePL() {
 
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1.25rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'center' }}>
-                <img src="/images/dongle/pl/1.png" alt="Smart Aerial TV w promocji" style={{ width: '80px', height: '80px', borderRadius: '12px', objectFit: 'cover' }} />
+                <img src="/images/dongle/pl/1.webp" alt="Smart Aerial TV w promocji" style={{ width: '80px', height: '80px', borderRadius: '12px', objectFit: 'cover' }} />
                 <div>
                   <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>Smart Aerial TV</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Zawiera kabel Premium + zestaw montażowy</div>
