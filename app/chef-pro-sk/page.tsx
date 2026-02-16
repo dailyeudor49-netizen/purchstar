@@ -33,12 +33,12 @@ const REVIEWS = [
 ];
 
 const ACCESSORIES = [
-  { name: "XL Nádoba 4.5L", img: "/images/chef-pro/boccale.jpg" },
-  { name: "Kompletná Parná Sada", img: "/images/chef-pro/vapore.jpg" },
-  { name: "Varný Košík", img: "/images/chef-pro/cestello-di-cottura.jpg" },
-  { name: "Miešacie Metličky", img: "/images/chef-pro/accessorio-mixer.jpg" },
-  { name: "Silikónová Stierka", img: "/images/chef-pro/spatola.jpg" },
-  { name: "Nerezové Čepele", img: "/images/chef-pro/lame.jpg" }
+  { name: "XL Nádoba 4.5L", img: "/images/chef-pro/boccale.webp" },
+  { name: "Kompletná Parná Sada", img: "/images/chef-pro/vapore.webp" },
+  { name: "Varný Košík", img: "/images/chef-pro/cestello-di-cottura.webp" },
+  { name: "Miešacie Metličky", img: "/images/chef-pro/accessorio-mixer.webp" },
+  { name: "Silikónová Stierka", img: "/images/chef-pro/spatola.webp" },
+  { name: "Nerezové Čepele", img: "/images/chef-pro/lame.webp" }
 ];
 
 // --- ORDER FORM COMPONENT ---
@@ -314,7 +314,7 @@ export default function LandingPage() {
 
             <div className="relative max-w-lg mx-auto mb-10 group">
               <img
-                src="/images/chef-pro/monsieur-cuisine-smart.jpg"
+                src="/images/chef-pro/monsieur-cuisine-smart.webp"
                 alt="Inteligentný Kuchynský Robot"
                 className="w-full h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -370,13 +370,13 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/images/chef-pro/monsieur-cuisine-smart (1).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Video recepty" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (1).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Video recepty" />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <img src="/images/chef-pro/monsieur-cuisine-smart (2).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Aplikácia pre smartfón" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (2).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Aplikácia pre smartfón" />
               </div>
               <div>
                 <span className="text-rose-600 font-black uppercase text-sm tracking-widest">Dedikovaná Aplikácia</span>

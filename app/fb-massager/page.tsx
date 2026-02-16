@@ -143,7 +143,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex-1 w-full max-w-md lg:max-w-2xl">
-            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.jpg" alt="AuraRelief Pro" className="w-full rounded-[4rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-1000" />
+            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.webp" alt="AuraRelief Pro" className="w-full rounded-[4rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-1000" />
           </div>
         </div>
       </section>
@@ -204,7 +204,7 @@ export default function LandingPage() {
       <section className="py-24 md:py-40 bg-white px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1">
-             <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.jpg" alt="Features" className="rounded-[3rem] shadow-2xl" />
+             <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.webp" alt="Features" className="rounded-[3rem] shadow-2xl" />
           </div>
           <div className="order-1 md:order-2 space-y-12">
             <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">PERCHÉ SCEGLIERLO?</h2>

@@ -181,7 +181,7 @@ export default function LandingPage() {
 
           {/* Product Image */}
           <div className="flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.jpg" alt="AuraRelief Pro" className="w-full rounded-3xl shadow-xl" />
+            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.webp" alt="AuraRelief Pro" className="w-full rounded-3xl shadow-xl" />
           </div>
         </div>
       </section>

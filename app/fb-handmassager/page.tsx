@@ -107,7 +107,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex-1 w-full max-w-md lg:max-w-2xl">
-            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.jpg" alt="AuraRelief Pro" className="w-full rounded-[4rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-1000" />
+            <img src="https://ae01.alicdn.com/kf/S8f2c8d8b6a3f4c6e9e4a8a5f8e5f8e5f8/Massaggiatore-Cervicale-Elettrico-EMS-Impulsi-Neck-Massager-Terapia-Magnetica-Riscaldamento-Sollievo-Dolore-Cervicale.webp" alt="AuraRelief Pro" className="w-full rounded-[4rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-1000" />
           </div>
         </div>
       </section>

@@ -33,12 +33,12 @@ const REVIEWS = [
 ];
 
 const ACCESSORIES = [
-  { name: "Dzbanek XL 4.5L", img: "/images/chef-pro/boccale.jpg" },
-  { name: "Kompletny Zestaw Parowy", img: "/images/chef-pro/vapore.jpg" },
-  { name: "Koszyk do Gotowania", img: "/images/chef-pro/cestello-di-cottura.jpg" },
-  { name: "Mieszadlo Motylkowe", img: "/images/chef-pro/accessorio-mixer.jpg" },
-  { name: "Silikonowa Lopatka", img: "/images/chef-pro/spatola.jpg" },
-  { name: "Ostrza ze Stali Nierdzewnej", img: "/images/chef-pro/lame.jpg" }
+  { name: "Dzbanek XL 4.5L", img: "/images/chef-pro/boccale.webp" },
+  { name: "Kompletny Zestaw Parowy", img: "/images/chef-pro/vapore.webp" },
+  { name: "Koszyk do Gotowania", img: "/images/chef-pro/cestello-di-cottura.webp" },
+  { name: "Mieszadlo Motylkowe", img: "/images/chef-pro/accessorio-mixer.webp" },
+  { name: "Silikonowa Lopatka", img: "/images/chef-pro/spatola.webp" },
+  { name: "Ostrza ze Stali Nierdzewnej", img: "/images/chef-pro/lame.webp" }
 ];
 
 // --- ORDER FORM COMPONENT ---
@@ -329,7 +329,7 @@ export default function LandingPage() {
 
             <div className="relative max-w-lg mx-auto mb-10 group">
               <img
-                src="/images/chef-pro/monsieur-cuisine-smart.jpg"
+                src="/images/chef-pro/monsieur-cuisine-smart.webp"
                 alt="Inteligentny Robot Kuchenny"
                 className="w-full h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -385,13 +385,13 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/images/chef-pro/monsieur-cuisine-smart (1).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Wideoprzepisy" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (1).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Wideoprzepisy" />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <img src="/images/chef-pro/monsieur-cuisine-smart (2).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Aplikacja na smartfon" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (2).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Aplikacja na smartfon" />
               </div>
               <div>
                 <span className="text-rose-600 font-black uppercase text-sm tracking-widest">Dedykowana Aplikacja</span>

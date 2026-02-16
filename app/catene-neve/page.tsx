@@ -33,11 +33,11 @@ export default function CateneNeveLanding() {
   const [submitError, setSubmitError] = useState('');
 
   const slides = [
-    '/images/catene/1.jpg',
-    '/images/catene/2.jpg',
-    '/images/catene/3.jpg',
-    '/images/catene/4.jpg',
-    '/images/catene/5.jpg',
+    '/images/catene/1.webp',
+    '/images/catene/2.webp',
+    '/images/catene/3.webp',
+    '/images/catene/4.webp',
+    '/images/catene/5.webp',
   ];
 
   useEffect(() => {
@@ -371,7 +371,7 @@ export default function CateneNeveLanding() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-xl border-4 border-red-500">
               <div className="aspect-video bg-red-100 relative">
                 <img
-                  src="/images/catene/tradizionali.jpg"
+                  src="/images/catene/tradizionali.webp"
                   alt="Catene tradizionali - difficili da montare"
                   className="w-full h-full object-cover"
                 />
@@ -411,7 +411,7 @@ export default function CateneNeveLanding() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-xl border-4 border-sky-500">
               <div className="aspect-video bg-sky-100 relative">
                 <img
-                  src="/images/catene/safesnow.jpg"
+                  src="/images/catene/safesnow.webp"
                   alt="SafeSnow 1-Minute-Ready - montaggio facile"
                   className="w-full h-full object-cover"
                 />
@@ -464,7 +464,7 @@ export default function CateneNeveLanding() {
             {/* Box 1 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/60-secondi.jpg" alt="Montaggio in 60 secondi" className="w-full h-full object-cover" />
+                <img src="/images/catene/60-secondi.webp" alt="Montaggio in 60 secondi" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">60 SECONDI E VIA</h3>
@@ -477,7 +477,7 @@ export default function CateneNeveLanding() {
             {/* Box 2 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/universali.jpg" alt="Compatibilità universale" className="w-full h-full object-cover" />
+                <img src="/images/catene/universali.webp" alt="Compatibilità universale" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">UNA MISURA PER TUTTI</h3>
@@ -490,7 +490,7 @@ export default function CateneNeveLanding() {
             {/* Box 3 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/cerchi-protetti.jpg" alt="Protezione cerchi" className="w-full h-full object-cover" />
+                <img src="/images/catene/cerchi-protetti.webp" alt="Protezione cerchi" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">CERCHI PROTETTI</h3>
@@ -503,7 +503,7 @@ export default function CateneNeveLanding() {
             {/* Box 4 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/aderenza.jpg" alt="Aderenza su neve e ghiaccio" className="w-full h-full object-cover" />
+                <img src="/images/catene/aderenza.webp" alt="Aderenza su neve e ghiaccio" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">ADERENZA BRUTALE</h3>
@@ -516,7 +516,7 @@ export default function CateneNeveLanding() {
             {/* Box 5 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/omologate.jpg" alt="Omologate UE" className="w-full h-full object-cover" />
+                <img src="/images/catene/omologate.webp" alt="Omologate UE" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">100% LEGALI</h3>
@@ -529,7 +529,7 @@ export default function CateneNeveLanding() {
             {/* Box 6 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-transparent hover:border-sky-500 transition-all">
               <div className="aspect-video">
-                <img src="/images/catene/durata.jpg" alt="Durata 10+ anni" className="w-full h-full object-cover" />
+                <img src="/images/catene/durata.webp" alt="Durata 10+ anni" className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-black text-[#0f1c3f] mb-2 tracking-wide">DURANO 10+ ANNI</h3>

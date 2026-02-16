@@ -33,12 +33,12 @@ const REVIEWS = [
 ];
 
 const ACCESSORIES = [
-  { name: "XL Tarto 4.5L", img: "/images/chef-pro/boccale.jpg" },
-  { name: "Teljes Parolo Keszlet", img: "/images/chef-pro/vapore.jpg" },
-  { name: "Fozo Kosar", img: "/images/chef-pro/cestello-di-cottura.jpg" },
-  { name: "Pillango Keveropenge", img: "/images/chef-pro/accessorio-mixer.jpg" },
-  { name: "Szilikon Lapocka", img: "/images/chef-pro/spatola.jpg" },
-  { name: "Rozsdamentes Pengek", img: "/images/chef-pro/lame.jpg" }
+  { name: "XL Tarto 4.5L", img: "/images/chef-pro/boccale.webp" },
+  { name: "Teljes Parolo Keszlet", img: "/images/chef-pro/vapore.webp" },
+  { name: "Fozo Kosar", img: "/images/chef-pro/cestello-di-cottura.webp" },
+  { name: "Pillango Keveropenge", img: "/images/chef-pro/accessorio-mixer.webp" },
+  { name: "Szilikon Lapocka", img: "/images/chef-pro/spatola.webp" },
+  { name: "Rozsdamentes Pengek", img: "/images/chef-pro/lame.webp" }
 ];
 
 // --- ORDER FORM COMPONENT ---
@@ -301,7 +301,7 @@ export default function LandingPage() {
 
             <div className="relative max-w-lg mx-auto mb-10 group">
               <img
-                src="/images/chef-pro/monsieur-cuisine-smart.jpg"
+                src="/images/chef-pro/monsieur-cuisine-smart.webp"
                 alt="Intelligens Konyhai Robot"
                 className="w-full h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -357,13 +357,13 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/images/chef-pro/monsieur-cuisine-smart (1).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Videoreceptek" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (1).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Videoreceptek" />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <img src="/images/chef-pro/monsieur-cuisine-smart (2).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Okostelefon alkalmazas" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (2).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Okostelefon alkalmazas" />
               </div>
               <div>
                 <span className="text-rose-600 font-black uppercase text-sm tracking-widest">Dedikalt Alkalmazas</span>

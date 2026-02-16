@@ -27,7 +27,7 @@ import {
  */
 
 const productImages = [
-  '/images/scarpelavoro/s-l1200.jpg',
+  '/images/scarpelavoro/s-l1200.webp',
   '/images/scarpelavoro/pimg_61811834488ce244955d.webp',
   '/images/scarpelavoro/pimg_a522a71d76b88d3fdd5e.webp',
   '/images/scarpelavoro/pimg_d44f7310a7ca15c077fd.webp',
@@ -152,7 +152,7 @@ export default function LandingPage() {
             <div className="absolute inset-0 bg-yellow-500/20 blur-[120px] rounded-full"></div>
             <div className="relative z-10">
               <img
-                src="/images/scarpelavoro/s-l1200.jpg"
+                src="/images/scarpelavoro/s-l1200.webp"
                 alt="VERTIX PRO Stealth"
                 className="w-full max-w-md h-auto rounded-[2.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.5)] transform md:rotate-6 hover:rotate-0 transition-all duration-1000 ease-out border-4 border-white/10"
               />

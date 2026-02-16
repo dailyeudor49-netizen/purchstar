@@ -197,12 +197,12 @@ const ProductMain = () => {
   const [activeImg, setActiveImg] = useState(0);
 
   const images = [
-    "/images/portable-dryer/1.jpg",
-    "/images/portable-dryer/2.jpg",
-    "/images/portable-dryer/3.jpg",
-    "/images/portable-dryer/4.jpg",
-    "/images/portable-dryer/5.jpg",
-    "/images/portable-dryer/6.jpg"
+    "/images/portable-dryer/1.webp",
+    "/images/portable-dryer/2.webp",
+    "/images/portable-dryer/3.webp",
+    "/images/portable-dryer/4.webp",
+    "/images/portable-dryer/5.webp",
+    "/images/portable-dryer/6.webp"
   ];
 
   const scrollToForm = () => {
@@ -613,7 +613,7 @@ const OrderForm = ({ utmParams }: { utmParams: UTMParams }) => {
           {/* Summary Column */}
           <div className="bg-gray-50 p-4 md:p-8 border-b md:border-b-0 md:border-r border-gray-200">
             <div className="flex items-start gap-4 mb-4 md:mb-6">
-              <img src="/images/portable-dryer/1.jpg" alt="Product" className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md border border-gray-300" />
+              <img src="/images/portable-dryer/1.webp" alt="Product" className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md border border-gray-300" />
               <div>
                 <h4 className="font-bold text-gray-900 leading-tight mb-1 text-sm md:text-base">{PRODUCT_DATA.title}</h4>
                 <div className="text-red-700 font-bold text-lg md:text-xl">{PRODUCT_DATA.price} zł</div>

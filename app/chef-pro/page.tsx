@@ -22,12 +22,12 @@ const REVIEWS = [
 ];
 
 const ACCESSORIES = [
-  { name: "Boccale XL 4.5L", img: "/images/chef-pro/boccale.jpg" },
-  { name: "Set Vapore Completo", img: "/images/chef-pro/vapore.jpg" },
-  { name: "Cestello Cottura", img: "/images/chef-pro/cestello-di-cottura.jpg" },
-  { name: "Farfalla Mescolatrice", img: "/images/chef-pro/accessorio-mixer.jpg" },
-  { name: "Spatola in Silicone", img: "/images/chef-pro/spatola.jpg" },
-  { name: "Lame in Acciaio Inox", img: "/images/chef-pro/lame.jpg" }
+  { name: "Boccale XL 4.5L", img: "/images/chef-pro/boccale.webp" },
+  { name: "Set Vapore Completo", img: "/images/chef-pro/vapore.webp" },
+  { name: "Cestello Cottura", img: "/images/chef-pro/cestello-di-cottura.webp" },
+  { name: "Farfalla Mescolatrice", img: "/images/chef-pro/accessorio-mixer.webp" },
+  { name: "Spatola in Silicone", img: "/images/chef-pro/spatola.webp" },
+  { name: "Lame in Acciaio Inox", img: "/images/chef-pro/lame.webp" }
 ];
 
 // --- COMPONENTS ---
@@ -101,7 +101,7 @@ export default function LandingPage() {
 
           <div className="relative max-w-lg mx-auto mb-10 group">
             <img
-              src="/images/chef-pro/monsieur-cuisine-smart.jpg"
+              src="/images/chef-pro/monsieur-cuisine-smart.webp"
               alt="Robot da Cucina Smart"
               className="w-full h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
             />
@@ -157,13 +157,13 @@ export default function LandingPage() {
               </ul>
             </div>
             <div className="order-1 md:order-2">
-              <img src="/images/chef-pro/monsieur-cuisine-smart (1).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Video ricette" />
+              <img src="/images/chef-pro/monsieur-cuisine-smart (1).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Video ricette" />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <img src="/images/chef-pro/monsieur-cuisine-smart (2).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Smartphone app" />
+              <img src="/images/chef-pro/monsieur-cuisine-smart (2).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Smartphone app" />
             </div>
             <div>
               <span className="text-rose-600 font-black uppercase text-sm tracking-widest">App Dedicata</span>

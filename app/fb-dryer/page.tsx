@@ -281,10 +281,10 @@ const PainPoints = () => (
 const Hero = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const images = [
-    '/images/dryer/1.jpg',
-    '/images/dryer/2.jpg',
-    '/images/dryer/3.jpg',
-    '/images/dryer/4.jpg',
+    '/images/dryer/1.webp',
+    '/images/dryer/2.webp',
+    '/images/dryer/3.webp',
+    '/images/dryer/4.webp',
   ];
 
   return (

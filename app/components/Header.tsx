@@ -22,7 +22,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16 md:h-18">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.webp"
               alt="Purchstar"
               width={150}
               height={45}

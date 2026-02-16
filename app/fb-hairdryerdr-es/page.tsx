@@ -245,7 +245,7 @@ function LandingPageContent() {
 
             {/* Mobile image - show before price card on mobile */}
             <div className="relative lg:hidden">
-              <img src="/images/hairdryer/1.jpeg" className="rounded-2xl shadow-xl border-2 border-white w-full max-h-[250px] object-cover" alt="AuraStyler Kit Completo" />
+              <img src="/images/hairdryer/1.webp" className="rounded-2xl shadow-xl border-2 border-white w-full max-h-[250px] object-cover" alt="AuraStyler Kit Completo" />
             </div>
 
             <div className="bg-white p-5 md:p-8 rounded-2xl md:rounded-[3rem] shadow-xl md:shadow-2xl border border-gray-100 max-w-md mx-auto lg:mx-0 relative overflow-hidden">
@@ -287,7 +287,7 @@ function LandingPageContent() {
           </div>
           {/* Desktop image only */}
           <div className="relative hidden lg:block">
-            <img src="/images/hairdryer/1.jpeg" className="rounded-[3rem] shadow-2xl border-4 border-white w-full object-cover" alt="AuraStyler Kit Completo" />
+            <img src="/images/hairdryer/1.webp" className="rounded-[3rem] shadow-2xl border-4 border-white w-full object-cover" alt="AuraStyler Kit Completo" />
           </div>
         </div>
       </section>
@@ -401,7 +401,7 @@ function LandingPageContent() {
 
           {/* Image 3 - Full width */}
           <div className="relative rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
-            <img src="/images/hairdryer/3.jpg" className="w-full h-[200px] md:h-[400px] object-cover" alt="AuraStyler detalle" />
+            <img src="/images/hairdryer/3.webp" className="w-full h-[200px] md:h-[400px] object-cover" alt="AuraStyler detalle" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end">
               <div className="p-6 md:p-12 text-white">
                 <h3 className="text-xl md:text-4xl font-black uppercase tracking-tighter mb-2">Diseno Premium</h3>

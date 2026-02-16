@@ -33,12 +33,12 @@ const REVIEWS = [
 ];
 
 const ACCESSORIES = [
-  { name: "XL 4.5L Kancsó", img: "/images/chef-pro/boccale.jpg" },
-  { name: "Teljes Pároló Készlet", img: "/images/chef-pro/vapore.jpg" },
-  { name: "Főzőkosár", img: "/images/chef-pro/cestello-di-cottura.jpg" },
-  { name: "Pillangó Keverő", img: "/images/chef-pro/accessorio-mixer.jpg" },
-  { name: "Szilikon Spatula", img: "/images/chef-pro/spatola.jpg" },
-  { name: "Rozsdamentes Penge", img: "/images/chef-pro/lame.jpg" }
+  { name: "XL 4.5L Kancsó", img: "/images/chef-pro/boccale.webp" },
+  { name: "Teljes Pároló Készlet", img: "/images/chef-pro/vapore.webp" },
+  { name: "Főzőkosár", img: "/images/chef-pro/cestello-di-cottura.webp" },
+  { name: "Pillangó Keverő", img: "/images/chef-pro/accessorio-mixer.webp" },
+  { name: "Szilikon Spatula", img: "/images/chef-pro/spatola.webp" },
+  { name: "Rozsdamentes Penge", img: "/images/chef-pro/lame.webp" }
 ];
 
 // --- ORDER FORM COMPONENT ---
@@ -318,7 +318,7 @@ export default function LandingPage() {
 
             <div className="relative max-w-lg mx-auto mb-10 group">
               <img
-                src="/images/chef-pro/monsieur-cuisine-smart.jpg"
+                src="/images/chef-pro/monsieur-cuisine-smart.webp"
                 alt="Okos Konyhai Robot"
                 className="w-full h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -374,13 +374,13 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/images/chef-pro/monsieur-cuisine-smart (1).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Videós receptek" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (1).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Videós receptek" />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <img src="/images/chef-pro/monsieur-cuisine-smart (2).jpg" className="rounded-3xl shadow-2xl border-8 border-white" alt="Okostelefon alkalmazás" />
+                <img src="/images/chef-pro/monsieur-cuisine-smart (2).webp" className="rounded-3xl shadow-2xl border-8 border-white" alt="Okostelefon alkalmazás" />
               </div>
               <div>
                 <span className="text-rose-600 font-black uppercase text-sm tracking-widest">Dedikált Alkalmazás</span>

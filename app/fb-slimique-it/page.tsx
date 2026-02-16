@@ -424,7 +424,7 @@ export default function AdvertorialPage() {
             {/* Image 12 */}
             <div className="mb-10 max-w-md mx-auto">
               <img
-                src="/images/slimique/12.jpeg"
+                src="/images/slimique/12.webp"
                 alt="Trasformazione Slimique"
                 className="w-full h-auto rounded-3xl shadow-xl"
               />

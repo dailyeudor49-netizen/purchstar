@@ -199,7 +199,7 @@ export default function LandingPage() {
     '/images/six-slim/recensione-1.webp',
     '/images/six-slim/recensione-2.webp',
     '/images/six-slim/recensione-3.webp',
-    '/images/six-slim/recensione-4.jpg',
+    '/images/six-slim/recensione-4.webp',
     '/images/six-slim/recensione-5.webp',
     '/images/six-slim/recensione-6.webp',
     '/images/six-slim/recensione-7.webp',
