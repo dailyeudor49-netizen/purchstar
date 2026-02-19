@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   ShieldCheck,
@@ -342,7 +342,7 @@ const FAQSection = () => {
 
 // --- MAIN PAGE COMPONENT ---
 
-export default function LandingPage() {
+function LandingPageContent() {
   const searchParams = useSearchParams();
   const scrollToOrder = () => {
     document.getElementById('order-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -512,5 +512,13 @@ export default function LandingPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function LandingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <LandingPageContent />
+    </Suspense>
   );
 }
