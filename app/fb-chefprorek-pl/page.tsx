@@ -9,18 +9,18 @@ const API_CONFIG = {
   url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
   uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
   key: 'ec15cab563da6cf51f0c7c',
-  offer: '446',
-  lp: '446'
+  offer: '635',
+  lp: '635'
 };
 
 // --- DATA ---
 const REVIEWS = [
   { name: "Franciszka B.", title: "Juz nie wyobrazam sobie bez tego! Zmienilo moje zycie", rating: 5, date: "2 dni temu", text: "Bylam sceptyczna ze wzgledu na tak niska cene, ale jest niesamowity. Gotuje wszystko sam, latwo sie czysci, a przepisy sa gwarancja sukcesu. Dostalem w 48 godzin!", verified: true },
-  { name: "Marek Kowalski", title: "Jakosc ponad oczekiwania", rating: 5, date: "1 tydzien temu", text: "Solidne materialy i bardzo mocny silnik. Wczoraj wieczorem zrobilem risotto i bylo idealne, kremowe jak w restauracji. Za 349 zl to prezent.", verified: true },
+  { name: "Marek Kowalski", title: "Jakosc ponad oczekiwania", rating: 5, date: "1 tydzien temu", text: "Solidne materialy i bardzo mocny silnik. Wczoraj wieczorem zrobilem risotto i bylo idealne, kremowe jak w restauracji. Za 389 zl to prezent.", verified: true },
   { name: "Walentyna D.", title: "Swietny zakup", rating: 4, date: "3 dni temu", text: "Kupilem jako prezent dla mamy, teraz moja siostra tez chce. Wyswietlacz jest bardzo intuicyjny.", verified: true },
   { name: "Jozef L.", title: "Paczka dotarla nienaruszona i na czas", rating: 5, date: "4 dni temu", text: "Kurier byl bardzo mily. Zaplacilem gotowka zgodnie z obietnica. Robot jest masywny i robi mnostwo rzeczy. Polecam!", verified: true },
   { name: "Aleksandra M.", title: "Zastepuje wszystko w kuchni", rating: 5, date: "5 dni temu", text: "Wyrzucilem stary blender i parownik. Ten robi wszystko. Ekran jest duzy i dobrze widoczny.", verified: true },
-  { name: "Robert P.", title: "Stosunek jakosci do ceny nie do pobicia", rating: 5, date: "6 dni temu", text: "Widzialem podobne produkty za 4000 zl. Ten za 349 zl to okazja, ktora sie nie powtorzy. Waga jest bardzo dokladna.", verified: true },
+  { name: "Robert P.", title: "Stosunek jakosci do ceny nie do pobicia", rating: 5, date: "6 dni temu", text: "Widzialem podobne produkty za 4000 zl. Ten za 389 zl to okazja, ktora sie nie powtorzy. Waga jest bardzo dokladna.", verified: true },
   { name: "Elena G.", title: "Moja corka go uwielbia", rating: 5, date: "1 tydzien temu", text: "Robimy razem desery, ogladajac wideoprzepisy. To stal sie nasz ulubiony moment dnia.", verified: true },
   { name: "Klaudiusz S.", title: "Mocny i cichy", rating: 4, date: "1 tydzien temu", text: "Spodziewalem sie, ze bedzie glosniejszy podczas zagniatania, ale jest dosc cichy. Swietny dla mieszkajacych w bloku.", verified: true },
   { name: "Simona F.", title: "Latwe i smaczne przepisy", rating: 5, date: "9 dni temu", text: "Nie jestem dobra w gotowaniu, ale z przewodnikiem krok po kroku nie popelniam bledow. Moj maz byl zaskoczony!", verified: true },
@@ -157,7 +157,7 @@ const OrderFormContent = () => {
         <h2 className="text-3xl font-black mb-4">ZAMOWIENIE POTWIERDZONE!</h2>
         <p className="text-gray-600 mb-8 font-medium">Dziekujemy za zakup. Nasz konsultant zadzwoni do Ciebie w ciagu 15 minut, aby potwierdzic dane wysylki.</p>
         <div className="p-4 bg-green-50 text-green-700 font-bold rounded-2xl">
-          Twoja paczka dotrze w ciagu 24/48h. Przygotuj 349 PLN gotowka dla kuriera!
+          Twoja paczka dotrze w ciagu 24/48h. Przygotuj 389 PLN gotowka dla kuriera!
         </div>
       </div>
     );
@@ -321,7 +321,7 @@ export default function LandingPage() {
               Natychmiastowy Rabat -73%
             </div>
             <h1 className="text-4xl md:text-6xl font-black leading-none mb-6 tracking-tighter">
-              GOTUJ JAK PROFESJONALISTA ZA JEDYNE <span className="text-rose-600">349 PLN</span>
+              GOTUJ JAK PROFESJONALISTA ZA JEDYNE <span className="text-rose-600">389 PLN</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
               Najlepszy Inteligentny Robot Kuchenny. Zastepuje 15 urzadzen. Wideoprzepisy i sterowanie przez aplikacje.
@@ -335,7 +335,7 @@ export default function LandingPage() {
               />
               <div className="absolute -top-6 -right-6 bg-yellow-400 text-black w-28 h-28 rounded-full flex flex-col items-center justify-center font-black shadow-2xl rotate-12 border-4 border-white animate-pulse">
                 <span className="text-sm line-through opacity-60">1299 PLN</span>
-                <span className="text-2xl italic">349 PLN</span>
+                <span className="text-2xl italic">389 PLN</span>
               </div>
             </div>
 
@@ -343,7 +343,7 @@ export default function LandingPage() {
               onClick={scrollToForm}
               className="w-full max-w-md bg-rose-600 text-white text-2xl font-black py-6 rounded-2xl shadow-[0_10px_0_0_#9f1239] hover:shadow-[0_5px_0_0_#9f1239] hover:translate-y-1 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Tak! Chce za 349 PLN ➔
+              Tak! Chce za 389 PLN ➔
             </button>
             <p className="mt-6 text-green-600 font-bold flex items-center justify-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"></path></svg>
@@ -414,7 +414,7 @@ export default function LandingPage() {
           <section className="py-20 bg-gray-900 text-white px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black uppercase mb-4">NAJBARDZIEJ KOMPLETNY ZESTAW W HISTORII</h2>
-              <p className="text-gray-400 italic">Wszystko w cenie 349 PLN - Wartosc akcesoriow oddzielnie: 649 PLN</p>
+              <p className="text-gray-400 italic">Wszystko w cenie 389 PLN - Wartosc akcesoriow oddzielnie: 649 PLN</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {ACCESSORIES.map((acc, idx) => (
@@ -539,7 +539,7 @@ export default function LandingPage() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-gray-200 z-50 md:hidden flex items-center justify-between gap-4 animate-in slide-in-from-bottom duration-500">
           <div className="flex flex-col">
             <span className="text-[10px] font-black uppercase text-gray-400">Oferta</span>
-            <span className="text-3xl font-black text-rose-600 leading-none">349 PLN</span>
+            <span className="text-3xl font-black text-rose-600 leading-none">389 PLN</span>
           </div>
           <button
             onClick={scrollToForm}
