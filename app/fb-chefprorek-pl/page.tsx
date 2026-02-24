@@ -9,8 +9,8 @@ const API_CONFIG = {
   url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
   uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
   key: 'ec15cab563da6cf51f0c7c',
-  offer: '635',
-  lp: '635'
+  offer: '202',
+  lp: '202'
 };
 
 // --- DATA ---
