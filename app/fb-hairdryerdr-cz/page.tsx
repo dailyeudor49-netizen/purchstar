@@ -248,10 +248,10 @@ function LandingPageContent() {
           <div className="space-y-4 md:space-y-6 text-center lg:text-left">
             <TrustpilotBadge />
             <h1 className="text-3xl md:text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter uppercase">
-              {"SALONOV\u00dd "}<span className="text-rose-500 italic">{"{\u00da\u010cES}"}</span>{" U V\u00c1S DOMA."}
+              {"SALONOV\u00dd "}<span className="text-rose-500 italic">{"\u00da\u010cES"}</span>{" U V\u00c1S DOMA."}
             </h1>
             <p className="text-base md:text-xl text-gray-500 leading-tight max-w-xl mx-auto lg:mx-0 font-medium italic">
-              {"\"Zapome\u0148te na \u017eehli\u010dky, kter\u00e9 ni\u010d\u00ed vlasy. Objevte s\u00edlu vzdu\u0161n\u00e9ho proudu Coanda.\""}</p>
+              {"Zapome\u0148te na \u017eehli\u010dky, kter\u00e9 ni\u010d\u00ed vlasy. Objevte s\u00edlu vzdu\u0161n\u00e9ho proudu Coanda."}</p>
 
             <div className="relative lg:hidden">
               <img src="/images/hairdryer/1.webp" className="rounded-2xl shadow-xl border-2 border-white w-full max-h-[250px] object-cover" alt={"AuraStyler Kompletn\u00ed set"} />
