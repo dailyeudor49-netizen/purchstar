@@ -237,9 +237,9 @@ function FasiSection() {
       </div>
       <div className="lp-fasi-grid">
         {[
-          { img: "https://cdn.shopify.com/s/files/1/0977/4134/1049/files/1.png?v=1770390980", alt: "Protezione", tag: "Fase 1", title: "Protegge", text: "Puntale in acciaio europeo e suola anti-perforazione: le tue dita e i tuoi piedi sono al sicuro da qualsiasi impatto." },
-          { img: "https://cdn.shopify.com/s/files/1/0977/4134/1049/files/2.png?v=1770390979", alt: "Leggerezza", tag: "Fase 2", title: "Leggera", text: "Pesano la metà di uno scarpone tradizionale. Le indossi la mattina e dimentichi di avere scarpe antinfortunistiche." },
-          { img: "https://cdn.shopify.com/s/files/1/0977/4134/1049/files/3.png?v=1770390980", alt: "Resistenza", tag: "Fase 3", title: "Resiste", text: "Materiali di grado militare anti-usura. Cantiere, magazzino, officina: dopo mesi di lavoro duro, sono ancora come nuove." },
+          { img: "/images/land/indestructible/protegge.jpg", alt: "Protezione", tag: "Fase 1", title: "Protegge", text: "Puntale in acciaio europeo e suola anti-perforazione: le tue dita e i tuoi piedi sono al sicuro da qualsiasi impatto." },
+          { img: "/images/land/indestructible/leggera.jpg", alt: "Leggerezza", tag: "Fase 2", title: "Leggera", text: "Pesano la metà di uno scarpone tradizionale. Le indossi la mattina e dimentichi di avere scarpe antinfortunistiche." },
+          { img: "/images/land/indestructible/resiste.jpg", alt: "Resistenza", tag: "Fase 3", title: "Resiste", text: "Materiali di grado militare anti-usura. Cantiere, magazzino, officina: dopo mesi di lavoro duro, sono ancora come nuove." },
         ].map((f) => (
           <div key={f.title} className="lp-fase">
             <img src={f.img} alt={f.alt} />
