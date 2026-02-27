@@ -29,17 +29,17 @@ import { motion } from 'motion/react';
 const BRAND_NAME = "VAPORWASH PRO+";
 const PRO_SERIES = "(PRO Series)";
 const SLOGAN = "Vys\u00e1va, umyje a dezinfikuje v jednom \u0165ahu.";
-const PRICE_CURRENT = "109";
-const PRICE_OLD = "220";
+const PRICE_CURRENT = "79";
+const PRICE_OLD = "158";
 const DISCOUNT = "-50%";
 const CURRENCY = "\u20ac";
 
 const API_CONFIG = {
-  url: 'https://offers.italiadrop.com/forms/api/',
-  uid: '019be4ed-fb60-7ba4-89d4-deecc13c8b0a',
-  key: '7b172b0b1994e9fa9961ad',
-  offer: '3042',
-  lp: '3078',
+  url: 'https://offers.supertrendaffiliateprogram.com/forms/api/',
+  uid: '0198088f-a4bc-7ed8-89aa-83089fe0180e',
+  key: 'ec15cab563da6cf51f0c7c',
+  offer: '401',
+  lp: '401',
 };
 
 // --- COMPONENTS ---
@@ -482,7 +482,7 @@ function LandingPageContent() {
                 </div>
                 <div className="absolute bottom-0 right-0 bg-red-600 text-white w-24 h-24 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center font-black uppercase rotate-12 shadow-xl border-4 border-white">
                   <span className="text-xs md:text-sm">{"\u00daspora"}</span>
-                  <span className="text-2xl md:text-3xl">{"109\u20ac"}</span>
+                  <span className="text-2xl md:text-3xl">{"79\u20ac"}</span>
                 </div>
               </div>
             </div>
@@ -636,10 +636,14 @@ function LandingPageContent() {
       </footer>
 
       {/* --- STICKY BAR MOBILE --- */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-4 bg-white/80 backdrop-blur-lg border-t border-zinc-200">
-        <CTAButton className="w-full text-lg py-4 rounded-lg shadow-2xl">
-          {"OBJEDNA\u0164 (PLATBA NA DOB\u00ceRKU)"}
-        </CTAButton>
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] bg-white/90 backdrop-blur-lg border-t border-zinc-200">
+        <a
+          href="#order-form"
+          className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-500 text-white font-bold text-sm py-3 px-4 rounded-lg shadow-lg uppercase tracking-tight transition-all"
+        >
+          <ShoppingBag size={18} />
+          {"Objedna\u0165 teraz \u2013 79\u20ac"}
+        </a>
       </div>
 
     </div>
