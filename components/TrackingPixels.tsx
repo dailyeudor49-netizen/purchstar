@@ -72,12 +72,14 @@ export default function TrackingPixels() {
     };
 
     /* Try immediately, then retry a few times while scripts load */
-    if (!tryFb() || !tryGtag()) {
+    let fbOk = tryFb();
+    let gOk = tryGtag();
+    if (!fbOk || !gOk) {
       let attempts = 0;
       const iv = setInterval(() => {
         attempts++;
-        const fbOk = tryFb();
-        const gOk = tryGtag();
+        if (!fbOk) fbOk = tryFb();
+        if (!gOk) gOk = tryGtag();
         if ((fbOk && gOk) || attempts >= 10) clearInterval(iv);
       }, 500);
     }

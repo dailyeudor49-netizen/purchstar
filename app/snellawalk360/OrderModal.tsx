@@ -247,11 +247,7 @@ export function OrderSection({ image }: { image: string }) {
         return;
       }
       recordOrder();
-      try {
-        const w = window as unknown as Record<string, unknown>;
-        if (typeof w.fbq === "function") (w.fbq as Function)("track", "Purchase", { value: totalPrice, currency: "EUR" });
-      } catch {}
-      window.location.href = "/snellawalk360/ty";
+      window.location.href = "/snellawalk360/grazie";
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "riprova";
       alert("Errore di rete: " + message);
