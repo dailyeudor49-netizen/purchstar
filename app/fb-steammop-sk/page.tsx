@@ -217,9 +217,9 @@ function LandingPageContent() {
               </div>
               <div className="mt-4 bg-zinc-900 p-4 rounded-xl border border-white/10">
                 <div className="flex items-baseline justify-center gap-3">
-                  <span className="text-3xl font-black text-white">{PRICE_CURRENT} {CURRENCY}</span>
-                  <span className="text-lg text-zinc-500 line-through">{PRICE_OLD} {CURRENCY}</span>
-                  <span className="bg-red-600 text-white text-sm font-black px-2 py-0.5 rounded">{DISCOUNT}</span>
+                  <span className="text-4xl md:text-5xl font-black text-white">{PRICE_CURRENT} {CURRENCY}</span>
+                  <span className="text-xl md:text-2xl text-zinc-500 line-through">{PRICE_OLD} {CURRENCY}</span>
+                  <span className="bg-red-600 text-white text-base md:text-lg font-black px-3 py-1 rounded">{DISCOUNT}</span>
                 </div>
               </div>
             </div>
@@ -600,11 +600,11 @@ function LandingPageContent() {
               <div className="bg-green-50 p-4 md:p-6 rounded-2xl border-2 border-green-100 flex items-center justify-between">
                 <div>
                   <p className="text-xs md:text-sm font-black uppercase text-green-700">Cena</p>
-                  <p className="text-3xl md:text-4xl font-black text-zinc-950">{PRICE_CURRENT} {CURRENCY}</p>
+                  <p className="text-4xl md:text-5xl font-black text-zinc-950">{PRICE_CURRENT} {CURRENCY}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs md:text-sm font-black uppercase text-zinc-400 line-through">{PRICE_OLD} {CURRENCY}</p>
-                  <p className="text-base md:text-lg font-black text-red-600 uppercase">{"Z\u013eava 50%"}</p>
+                  <p className="text-sm md:text-base font-black uppercase text-zinc-400 line-through">{PRICE_OLD} {CURRENCY}</p>
+                  <p className="text-lg md:text-xl font-black text-red-600 uppercase">{"Z\u013eava 50%"}</p>
                 </div>
               </div>
 

@@ -47,7 +47,7 @@ export default function ThankYouPage() {
             </div>
             <div className="flex justify-between items-center border-b border-gray-200 pb-3">
               <span className="text-gray-500 font-bold">Cena:</span>
-              <span className="font-black text-green-600 text-2xl">{"459 z\u0142"}</span>
+              <span className="font-black text-green-600 text-2xl">{"359 z\u0142"}</span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-200 pb-3">
               <span className="text-gray-500 font-bold">{"Metoda p\u0142atno\u015bci:"}</span>
