@@ -74,6 +74,12 @@ const Hero = () => {
             </p>
           </div>
 
+          <div className="flex items-baseline gap-3">
+            <span className="text-4xl font-extrabold text-gray-900">&euro;49,90</span>
+            <span className="text-xl text-gray-400 line-through">&euro;99,90</span>
+            <span className="rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-xs font-bold text-red-600">-50%</span>
+          </div>
+
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" className="text-yellow-400" />)}
