@@ -76,11 +76,10 @@ export default function TrackingPixels() {
       return false;
     };
 
-    /* Segna come completato e pulisci localStorage */
+    /* Segna Purchase come sparato (cf_thankyou lo rimuove ThankYouContent) */
     const markDone = () => {
       try {
         localStorage.setItem(PURCHASE_KEY, "1");
-        localStorage.removeItem("cf_thankyou");
       } catch {}
     };
 
