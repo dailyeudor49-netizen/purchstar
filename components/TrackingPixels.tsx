@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Script from "next/script";
 
-const FB_PIXEL_ID = "1576025786901423";
 const GADS_ID = "AW-17553930868";
 
 export default function TrackingPixels() {
@@ -12,6 +11,12 @@ export default function TrackingPixels() {
   useEffect(() => {
     if (fired.current) return;
     fired.current = true;
+
+    /* Controlla se Purchase già sparato (protegge da refresh pagina) */
+    const PURCHASE_KEY = "cf_purchase_fired";
+    try {
+      if (localStorage.getItem(PURCHASE_KEY)) return;
+    } catch {}
 
     let raw: string | null = null;
     try {
@@ -37,7 +42,7 @@ export default function TrackingPixels() {
     const ups = d.upsell ? parseFloat(d.upsell.price || "0") || 0 : 0;
     const value = price + ups;
 
-    /* Facebook Pixel - Purchase */
+    /* Facebook Pixel - Purchase (usa fbq globale dal layout, NO doppio init) */
     const tryFb = () => {
       const w = window as unknown as Record<string, unknown>;
       if (typeof w.fbq === "function") {
@@ -71,6 +76,14 @@ export default function TrackingPixels() {
       return false;
     };
 
+    /* Segna come completato e pulisci localStorage */
+    const markDone = () => {
+      try {
+        localStorage.setItem(PURCHASE_KEY, "1");
+        localStorage.removeItem("cf_thankyou");
+      } catch {}
+    };
+
     /* Try immediately, then retry a few times while scripts load */
     let fbOk = tryFb();
     let gOk = tryGtag();
@@ -80,40 +93,24 @@ export default function TrackingPixels() {
         attempts++;
         if (!fbOk) fbOk = tryFb();
         if (!gOk) gOk = tryGtag();
-        if ((fbOk && gOk) || attempts >= 10) clearInterval(iv);
+        if (fbOk && gOk) {
+          clearInterval(iv);
+          markDone();
+        } else if (attempts >= 10) {
+          clearInterval(iv);
+          /* Segna solo se almeno fbq ha sparato, altrimenti lascia cf_thankyou
+             così un refresh può riprovare */
+          if (fbOk) markDone();
+        }
       }, 500);
+    } else {
+      markDone();
     }
   }, []);
 
   return (
     <>
-      {/* Facebook Pixel */}
-      <Script
-        id="fb-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','${FB_PIXEL_ID}');
-fbq('track','PageView');`,
-        }}
-      />
-      <noscript>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
-      </noscript>
-
-      {/* Google Ads */}
+      {/* Google Ads — fbq è già caricato dal FacebookPixel globale nel layout */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
         strategy="afterInteractive"

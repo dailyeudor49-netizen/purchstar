@@ -217,8 +217,9 @@ export function OrderSection({ image }: { image: string }) {
       },
     };
 
-    /* Save for TY page */
+    /* Save for TY page + reset purchase flag */
     try {
+      localStorage.removeItem("cf_purchase_fired");
       localStorage.setItem("cf_thankyou", JSON.stringify({
         product: { title: PRODUCT_TITLE, image },
         variant: { size, color, price: PRODUCT_PRICE.toFixed(2) },
