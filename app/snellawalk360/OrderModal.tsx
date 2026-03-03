@@ -229,6 +229,13 @@ export function OrderSection({ image }: { image: string }) {
         timestamp: Date.now(),
         gadsConv: "AW-17553930868/TbPiCNiu25sbEPT0rrJB",
       }));
+      localStorage.setItem("userData", JSON.stringify({
+        nome: form.firstName.trim(),
+        cognome: form.lastName.trim(),
+        telefono: form.phoneNumber.trim(),
+        indirizzo: form.address.trim(),
+        email: form.email.trim(),
+      }));
     } catch {}
 
     try {
