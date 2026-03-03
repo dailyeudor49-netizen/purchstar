@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Script from "next/script";
-import { generateEventId } from "@/app/lib/facebook/pixel";
-import { getUserDataFromStorage, trackPurchaseCAPI } from "@/app/lib/facebook/capi";
 
 const GADS_ID = "AW-17553930868";
 
@@ -44,16 +42,7 @@ export default function TrackingPixels() {
     const ups = d.upsell ? parseFloat(d.upsell.price || "0") || 0 : 0;
     const value = price + ups;
 
-    /* Dati Purchase per Pixel + CAPI (stesso eventId per deduplicazione) */
-    const eventId = generateEventId();
-    const purchaseData = {
-      content_name: d.product?.title || "",
-      content_type: "product" as const,
-      currency: "EUR",
-      value,
-    };
-
-    /* Facebook Pixel - Purchase (usa fbq globale dal layout, NO doppio init) */
+    /* Facebook Pixel - Purchase (solo client-side, usa fbq globale dal layout) */
     const tryFb = () => {
       const w = window as unknown as Record<string, unknown>;
       if (typeof w.fbq === "function") {
@@ -63,18 +52,10 @@ export default function TrackingPixels() {
           content_name: d.product?.title || "",
           value,
           currency: "EUR",
-        }, { eventID: eventId });
+        });
         return true;
       }
       return false;
-    };
-
-    /* Facebook CAPI - Purchase (server-side, stesso eventId) */
-    const fireCAPI = () => {
-      const userData = getUserDataFromStorage();
-      trackPurchaseCAPI(eventId, userData, purchaseData).then((ok) => {
-        console.log(ok ? "[CAPI] Purchase sent" : "[CAPI] Purchase failed");
-      });
     };
 
     /* Google Ads - Conversion (etichetta dinamica per prodotto) */
@@ -102,9 +83,6 @@ export default function TrackingPixels() {
       } catch {}
     };
 
-    /* CAPI va sparato subito (non dipende da fbq) */
-    fireCAPI();
-
     /* Try immediately, then retry a few times while scripts load */
     let fbOk = tryFb();
     let gOk = tryGtag();
@@ -119,8 +97,7 @@ export default function TrackingPixels() {
           markDone();
         } else if (attempts >= 10) {
           clearInterval(iv);
-          /* Segna comunque — CAPI ha già inviato l'evento server-side */
-          markDone();
+          if (fbOk) markDone();
         }
       }, 500);
     } else {
