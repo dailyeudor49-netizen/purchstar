@@ -49,6 +49,32 @@ export default function FacebookPixel() {
 
         // Se siamo su una thank you page (/ty/* o */ty), traccia Purchase
         if (pathname.startsWith('/ty') || pathname.endsWith('/ty')) {
+          // Protezione anti-duplicato: usa timestamp ordine da cf_thankyou
+          const PURCHASE_KEY = 'cf_purchase_fired';
+          let orderTimestamp: string | null = null;
+
+          try {
+            const tyData = localStorage.getItem('cf_thankyou');
+            if (tyData) {
+              const parsed = JSON.parse(tyData);
+              orderTimestamp = String(parsed.timestamp || Date.now());
+            }
+          } catch {}
+
+          // Se non c'è timestamp, usa pathname + timestamp corrente come fallback
+          const orderId = orderTimestamp || `${pathname}_${Date.now()}`;
+
+          // Controlla se questo ordine è già stato tracciato
+          try {
+            const alreadyFired = localStorage.getItem(PURCHASE_KEY);
+            if (alreadyFired === orderId) {
+              console.log('[FB Pixel] Purchase already tracked for this order, skipping...');
+              return;
+            }
+            // Segna come tracciato PRIMA di sparare
+            localStorage.setItem(PURCHASE_KEY, orderId);
+          } catch {}
+
           const purchaseEventId = generateEventId();
           console.log('[FB Pixel] Thank you page detected, tracking Purchase...');
 
@@ -133,6 +159,36 @@ export default function FacebookPixel() {
               content_type: 'product',
               currency: 'PLN',
               value: 339,
+            };
+          }
+          // Thank you page per Cloudstep (VENOCARE PRO)
+          else if (pathname.includes('cloudstep/ty')) {
+            purchaseData = {
+              content_name: 'VENOCARE PRO',
+              content_category: 'Footwear',
+              content_type: 'product',
+              currency: 'EUR',
+              value: 49.90,
+            };
+          }
+          // Thank you page per SnellaWalk 360
+          else if (pathname.includes('snellawalk360/ty')) {
+            purchaseData = {
+              content_name: 'SnellaWalk 360',
+              content_category: 'Footwear',
+              content_type: 'product',
+              currency: 'EUR',
+              value: 49.99,
+            };
+          }
+          // Thank you page per Indestructible
+          else if (pathname.includes('indestructible/ty')) {
+            purchaseData = {
+              content_name: 'Indestructible',
+              content_category: 'Footwear',
+              content_type: 'product',
+              currency: 'EUR',
+              value: 49.99,
             };
           }
 

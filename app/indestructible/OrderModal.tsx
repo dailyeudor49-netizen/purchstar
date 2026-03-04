@@ -255,7 +255,7 @@ export function OrderSection({ image }: { image: string }) {
         return;
       }
       recordOrder();
-      window.location.href = "/indestructible/grazie";
+      window.location.href = "/indestructible/ty";
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "riprova";
       alert("Errore di rete: " + message);

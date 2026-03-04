@@ -256,7 +256,7 @@ export function OrderSection({ image }: { image: string }) {
         return;
       }
       recordOrder();
-      window.location.href = "/cloudstep/grazie";
+      window.location.href = "/cloudstep/ty";
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "riprova";
       alert("Errore di rete: " + message);
