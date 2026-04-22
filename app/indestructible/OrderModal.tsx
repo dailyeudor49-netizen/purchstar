@@ -215,6 +215,8 @@ export function OrderSection({ image }: { image: string }) {
         countryCode: "IT", zip: form.zip.trim(),
         email: form.email.trim(), shippingNotes: form.shippingNotes.trim(),
       },
+      pageId: "indestructible",
+      productTitle: PRODUCT_TITLE,
     };
 
     /* Save for TY page + reset purchase flag */

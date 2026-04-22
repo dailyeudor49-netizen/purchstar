@@ -566,7 +566,7 @@ const getFingerprint = (): string => {
 };
 
 const QuickOrderForm = () => {
-  const [form, setForm] = useState({ fullName: "", address: "", phone: "", postalCode: "" });
+  const [form, setForm] = useState({ fullName: "", address: "", phone: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
@@ -611,11 +611,6 @@ const QuickOrderForm = () => {
       formData.append('ua', navigator.userAgent);
     }
 
-    // Optional postal code
-    if (form.postalCode.trim()) {
-      formData.append('postal-code', form.postalCode.trim());
-    }
-
     // UTM params
     if (utmParams.utm_source) formData.append('utm_source', utmParams.utm_source);
     if (utmParams.utm_medium) formData.append('utm_medium', utmParams.utm_medium);
@@ -633,7 +628,6 @@ const QuickOrderForm = () => {
         fullName: form.fullName.trim(),
         address: form.address.trim(),
         phone: form.phone.trim(),
-        postalCode: form.postalCode.trim(),
       }));
     } catch {}
 
@@ -704,17 +698,6 @@ const QuickOrderForm = () => {
               className={`w-full py-4 px-4 border-2 rounded-xl text-[16px] font-medium outline-none transition-colors ${errors.address ? "border-red-500 bg-red-50" : "border-gray-200 focus:border-orange-500"}`}
             />
             {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
-          </div>
-
-          <div>
-            <label className="block text-[15px] md:text-base font-bold text-gray-700 mb-1.5">PSČ (volitelné)</label>
-            <input
-              type="text"
-              placeholder="110 00"
-              value={form.postalCode}
-              onChange={(e) => updateForm("postalCode", e.target.value)}
-              className="w-full py-4 px-4 border-2 rounded-xl text-[16px] font-medium outline-none transition-colors border-gray-200 focus:border-orange-500"
-            />
           </div>
 
           <div>

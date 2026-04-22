@@ -21,7 +21,6 @@ export default function GazeboSkThankYou() {
     fullName?: string;
     address?: string;
     phone?: string;
-    postalCode?: string;
   }>({});
 
   useEffect(() => {
@@ -130,7 +129,6 @@ export default function GazeboSkThankYou() {
                 <div>
                   <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Adresa Doručenia</p>
                   <p className="text-gray-600">{orderData.address || 'Adresa poskytnutá'}</p>
-                  {orderData.postalCode && <p className="text-gray-500 text-sm">PSČ: {orderData.postalCode}</p>}
                 </div>
               </div>
 

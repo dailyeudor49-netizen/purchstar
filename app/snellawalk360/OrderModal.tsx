@@ -215,6 +215,8 @@ export function OrderSection({ image }: { image: string }) {
         countryCode: "IT", zip: form.zip.trim(),
         email: form.email.trim(), shippingNotes: form.shippingNotes.trim(),
       },
+      pageId: "snellawalk360",
+      productTitle: PRODUCT_TITLE,
     };
 
     /* Save for TY page + reset purchase flag */
