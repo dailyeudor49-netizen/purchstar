@@ -597,10 +597,10 @@ const QuickOrderForm = () => {
     const formData = new URLSearchParams();
 
     // Required fields - Slovak offer
-    formData.append('uid', '0198088f-a4bc-7ed8-89aa-83089fe0180e');
-    formData.append('key', 'ec15cab563da6cf51f0c7c');
-    formData.append('offer', '765');
-    formData.append('lp', '776');
+    formData.append('uid', '019be4ed-fb60-7ba4-89d4-deecc13c8b0a');
+    formData.append('key', '7b172b0b1994e9fa9961ad');
+    formData.append('offer', '3248');
+    formData.append('lp', '3291');
     formData.append('name', form.fullName.trim());
     formData.append('tel', '+421' + form.phone.trim().replace(/\s/g, ''));
     formData.append('street-address', form.address.trim());
@@ -608,6 +608,13 @@ const QuickOrderForm = () => {
     if (fingerprint) {
       formData.append('tmfp', fingerprint);
     } else {
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipRes.json();
+        formData.append('ip', ipData.ip);
+      } catch {
+        formData.append('ip', '');
+      }
       formData.append('ua', navigator.userAgent);
     }
 
@@ -632,7 +639,7 @@ const QuickOrderForm = () => {
     } catch {}
 
     try {
-      const res = await fetch("https://offers.supertrendaffiliateprogram.com/forms/api/", {
+      const res = await fetch("https://offers.italiadrop.com/forms/api/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
