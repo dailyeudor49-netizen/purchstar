@@ -113,7 +113,7 @@ export default function GazeboCzThankYou() {
                   </h3>
                   <p className="text-gray-500 text-sm mb-3">Dvojitá Střecha + 4 Boční Stěny</p>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl md:text-3xl font-black text-orange-600">2 449 Kč</span>
+                    <span className="text-2xl md:text-3xl font-black text-orange-600">2 444 Kč</span>
                     <span className="text-base text-gray-400 line-through">5 449 Kč</span>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export default function GazeboCzThankYou() {
                 <div>
                   <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Způsob Platby</p>
                   <p className="text-gray-600">Dobírka - Platba při doručení</p>
-                  <p className="text-gray-500 text-sm mt-1">Částka k úhradě: <span className="font-bold text-gray-900">2 449 Kč</span></p>
+                  <p className="text-gray-500 text-sm mt-1">Částka k úhradě: <span className="font-bold text-gray-900">2 444 Kč</span></p>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function GazeboCzThankYou() {
             <div className="p-6 md:p-8 bg-gradient-to-r from-orange-500 to-red-500 text-white">
               <div className="flex justify-between items-center">
                 <span className="font-bold text-lg uppercase">Celkem k Úhradě</span>
-                <span className="text-3xl md:text-4xl font-black">2 449 Kč</span>
+                <span className="text-3xl md:text-4xl font-black">2 444 Kč</span>
               </div>
               <p className="text-orange-100 text-sm mt-2">Ušetřili jste 3 000 Kč s letní akcí!</p>
             </div>
@@ -221,7 +221,7 @@ export default function GazeboCzThankYou() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Doručení a Platba</h3>
                 <p className="text-gray-600 text-sm">
-                  Kurýr vás bude kontaktovat před doručením. Zaplatíte 2 449 Kč v hotovosti při převzetí.
+                  Kurýr vás bude kontaktovat před doručením. Zaplatíte 2 444 Kč v hotovosti při převzetí.
                 </p>
               </div>
             </motion.div>

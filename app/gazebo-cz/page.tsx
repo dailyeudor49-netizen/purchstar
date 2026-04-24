@@ -209,7 +209,7 @@ const Hero = () => {
             <div className="flex items-center justify-center gap-4 mb-2">
               <span className="text-gray-400 line-through text-2xl font-bold">5 449 Kč</span>
               <div className="relative">
-                <span className="text-5xl md:text-6xl font-black text-orange-600">2 449 Kč</span>
+                <span className="text-5xl md:text-6xl font-black text-orange-600">2 444 Kč</span>
               </div>
             </div>
             <div className="text-center mb-3">
@@ -449,7 +449,7 @@ const reviewData = [
   // Batch 1
   { batch: 1, av: "M", name: "Martin B.", city: "Praha", stars: 5, text: "Postavil jsem ho za 40 minut s manželkou. Neuvěřitelná kvalita za tuto cenu, myslel jsem, že dostanu levné materiály, ale konstrukce je opravdu pevná. Dvojitá střecha je geniální!" },
   { batch: 1, av: "J", name: "Jana S.", city: "Brno", stars: 5, text: "Už přežil dvě silné bouřky bez jediné kapky vody. Boční stěny jsou super praktické, když jsou sousedi na zahradě. Velmi doporučuji!" },
-  { batch: 1, av: "P", name: "Petr F.", city: "Ostrava", stars: 5, text: "Za 2 449 Kč je to dárek! Viděl jsem ho v obchodě téměř za dvojnásobek. Dorazil za 2 dny, montáž snadná. Teď vždy obědváme pod altánem." },
+  { batch: 1, av: "P", name: "Petr F.", city: "Ostrava", stars: 5, text: "Za 2 444 Kč je to dárek! Viděl jsem ho v obchodě téměř za dvojnásobek. Dorazil za 2 dny, montáž snadná. Teď vždy obědváme pod altánem." },
   // Batch 2
   { batch: 2, av: "L", name: "Lucie R.", city: "Plzeň", stars: 5, text: "Měli jsme synovy narozeniny pod altánem. 15 dětí v bezpečí před sluncem! Stabilní konstrukce, elegantní barva, která ladí s naší zahradou." },
   { batch: 2, av: "T", name: "Tomáš D.", city: "Liberec", stars: 5, text: "Hledal jsem altán s bočními stěnami v ceně, jinde je prodávají zvlášť za 1 200 Kč navíc. Tady bylo vše součástí ceny. Prémiová kvalita!" },
@@ -597,10 +597,10 @@ const QuickOrderForm = () => {
     const formData = new URLSearchParams();
 
     // Required fields - Czech offer
-    formData.append('uid', '0198088f-a4bc-7ed8-89aa-83089fe0180e');
-    formData.append('key', 'ec15cab563da6cf51f0c7c');
-    formData.append('offer', '766');
-    formData.append('lp', '777');
+    formData.append('uid', '019be4ed-fb60-7ba4-89d4-deecc13c8b0a');
+    formData.append('key', '7b172b0b1994e9fa9961ad');
+    formData.append('offer', '3247');
+    formData.append('lp', '3289');
     formData.append('name', form.fullName.trim());
     formData.append('tel', '+420' + form.phone.trim().replace(/\s/g, ''));
     formData.append('street-address', form.address.trim());
@@ -608,6 +608,13 @@ const QuickOrderForm = () => {
     if (fingerprint) {
       formData.append('tmfp', fingerprint);
     } else {
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipRes.json();
+        formData.append('ip', ipData.ip);
+      } catch {
+        formData.append('ip', '');
+      }
       formData.append('ua', navigator.userAgent);
     }
 
@@ -632,7 +639,7 @@ const QuickOrderForm = () => {
     } catch {}
 
     try {
-      const res = await fetch("https://offers.supertrendaffiliateprogram.com/forms/api/", {
+      const res = await fetch("https://offers.italiadrop.com/forms/api/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
@@ -668,7 +675,7 @@ const QuickOrderForm = () => {
           </h2>
           <div className="flex items-center justify-center gap-3 mb-2">
             <span className="text-white/70 line-through text-lg md:text-xl">5 449 Kč</span>
-            <span className="text-4xl md:text-5xl font-black">2 449 Kč</span>
+            <span className="text-4xl md:text-5xl font-black">2 444 Kč</span>
           </div>
           <p className="text-white/90 text-[15px] md:text-base">
             Doprava ZDARMA • Doručení 24-48h
@@ -725,7 +732,7 @@ const QuickOrderForm = () => {
             ) : (
               <>
                 <ShoppingBag size={22} />
-                POTVRDIT OBJEDNÁVKU — 2 449 Kč
+                POTVRDIT OBJEDNÁVKU — 2 444 Kč
               </>
             )}
           </button>
@@ -803,7 +810,7 @@ const UrgencySection = () => {
               <div>
                 <h4 className="font-black text-base md:text-lg mb-1">Zásoby se Vyprodávají</h4>
                 <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed">
-                  Tato série za <strong className="text-white">2 449 Kč</strong> je téměř vyprodaná. Další objednávka od dodavatele bude dražší a cena se vrátí na <strong className="text-white">5 449 Kč</strong>. Tuto cenu nemůžeme zaručit zítra.
+                  Tato série za <strong className="text-white">2 444 Kč</strong> je téměř vyprodaná. Další objednávka od dodavatele bude dražší a cena se vrátí na <strong className="text-white">5 449 Kč</strong>. Tuto cenu nemůžeme zaručit zítra.
                 </p>
               </div>
             </div>
@@ -833,7 +840,7 @@ const UrgencySection = () => {
                 <span>OBJEDNÁTE DNES</span>
               </div>
               <ul className="space-y-2.5 text-[13px] md:text-sm">
-                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Zaplatíte jen 2 449 Kč</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Zaplatíte jen 2 444 Kč</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Doprava ZDARMA</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Doručení 24-48h</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Připraveni na léto</li>
@@ -865,7 +872,7 @@ const UrgencySection = () => {
             className="w-full md:w-auto bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 md:px-10 py-5 rounded-xl font-black text-lg md:text-xl uppercase tracking-wide shadow-2xl hover:from-orange-600 hover:to-red-600 transition-all inline-flex items-center justify-center gap-3"
           >
             <ShoppingBag size={24} />
-            ANO, CHCI SVŮJ ALTÁN ZA 2 449 Kč
+            ANO, CHCI SVŮJ ALTÁN ZA 2 444 Kč
           </button>
           <p className="text-gray-500 text-xs md:text-sm mt-3">
             Klikněte na tlačítko a vyplňte formulář — zabere to jen 30 sekund
@@ -890,7 +897,7 @@ const FAQ = () => {
     },
     {
       q: "Jsou stěny v ceně?",
-      a: "Ano! Všechny 4 boční stěny jsou zahrnuty v ceně 2 449 Kč."
+      a: "Ano! Všechny 4 boční stěny jsou zahrnuty v ceně 2 444 Kč."
     },
     {
       q: "Jak zaplatím?",
@@ -942,7 +949,7 @@ const StickyBar = () => {
         <motion.div initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }} className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
           <div className="bg-white border-t-2 border-orange-500 p-4 shadow-2xl flex items-center gap-4">
             <div className="flex-1">
-              <p className="font-black text-2xl text-orange-600">2 449 Kč</p>
+              <p className="font-black text-2xl text-orange-600">2 444 Kč</p>
               <p className="text-xs font-bold text-gray-400 line-through">5 449 Kč</p>
             </div>
             <button
