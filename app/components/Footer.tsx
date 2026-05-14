@@ -1,58 +1,171 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="font-bold text-lg mb-3">Purchstar</h3>
-            <p className="text-gray-400 text-sm mb-3">
-              Premium tech gadgets and electronics at wholesale prices. Fast delivery worldwide.
+    <footer className="bg-[#1a1a1a] text-white">
+      {/* Benefits bar */}
+      <div className="border-b border-white/10">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                ),
+                title: "3,500+ Products",
+                desc: "Extensive tech catalogue",
+              },
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+                title: "24/48h Delivery",
+                desc: "Fast worldwide shipping",
+              },
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                title: "Quality Tested",
+                desc: "Every product inspected",
+              },
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                title: "Pay on Delivery",
+                desc: "No upfront payment",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#e30613]/10 rounded-xl flex items-center justify-center text-[#e30613]">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm">{item.title}</h4>
+                  <p className="text-gray-400 text-xs mt-0.5">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main footer */}
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-4 lg:col-span-1">
+            <Image
+              src="/images/logo.webp"
+              alt="Purchstar"
+              width={140}
+              height={42}
+              className="h-8 w-auto brightness-0 invert mb-4"
+              unoptimized
+            />
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Premium tech gadgets and electronics at wholesale prices. Trusted by 720+ customers worldwide.
             </p>
-            <div className="text-gray-400 text-sm space-y-1">
-              <p>info@purchstar.com</p>
-              <p>78 Commerce Street, Manchester</p>
-              <p>M2 4WQ, United Kingdom</p>
+            <div className="text-gray-400 text-sm space-y-1.5">
+              <p className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#e30613]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@purchstar.com
+              </p>
+              <p className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#e30613]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Manchester, UK
+              </p>
             </div>
           </div>
 
+          {/* Products */}
           <div>
-            <h4 className="font-semibold mb-3">Products</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/products#speakers" className="hover:text-rose-400">Speakers</Link></li>
-              <li><Link href="/products#power" className="hover:text-rose-400">Power Banks</Link></li>
-              <li><Link href="/products#wearables" className="hover:text-rose-400">Wearables</Link></li>
-              <li><Link href="/products#accessories" className="hover:text-rose-400">Accessories</Link></li>
+            <h4 className="font-semibold text-sm mb-4 text-white">Products</h4>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { href: "/products#speakers", label: "Speakers" },
+                { href: "/products#audio", label: "Audio" },
+                { href: "/products#power", label: "Power Banks" },
+                { href: "/products#wearables", label: "Wearables" },
+                { href: "/products#accessories", label: "Accessories" },
+                { href: "/products#cables", label: "Cables" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-[#e30613] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-3">Company</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/about" className="hover:text-rose-400">About</Link></li>
-              <li><Link href="/products" className="hover:text-rose-400">Products</Link></li>
-              <li><Link href="/contact" className="hover:text-rose-400">Contact</Link></li>
+            <h4 className="font-semibold text-sm mb-4 text-white">Company</h4>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { href: "/about", label: "About Us" },
+                { href: "/products", label: "All Products" },
+                { href: "/contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-[#e30613] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-3">Legal</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/privacy-policy" className="hover:text-rose-400">Privacy</Link></li>
-              <li><Link href="/cookie-policy" className="hover:text-rose-400">Cookies</Link></li>
-              <li><Link href="/terms-of-service" className="hover:text-rose-400">Terms</Link></li>
+            <h4 className="font-semibold text-sm mb-4 text-white">Legal</h4>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { href: "/privacy-policy", label: "Privacy Policy" },
+                { href: "/cookie-policy", label: "Cookie Policy" },
+                { href: "/terms-of-service", label: "Terms of Service" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-[#e30613] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
+      </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
-          <p>&copy; {year} Purchstar Ltd. All rights reserved.</p>
-          <div className="flex gap-4">
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-gray-500 text-xs">
+            &copy; {year} Purchstar Ltd. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-gray-500">
             <span>VAT: GB 847 2156 93</span>
-            <span>Registered in England</span>
+            <span className="hidden sm:inline">|</span>
+            <span className="hidden sm:inline">Registered in England & Wales</span>
+            <span className="hidden sm:inline">|</span>
+            <span className="hidden sm:inline">78 Commerce Street, Manchester M2 4WQ</span>
           </div>
         </div>
       </div>
